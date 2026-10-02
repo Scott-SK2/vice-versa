@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Charte VICE VERSA (cahier v3, « Charte visuelle ») */
+@theme {
+  --color-green-deep: #0e4d36;
+  --color-yellow: #f4b400;
+  --color-ink: #14231c;
+  --color-muted: #5a6560;
+  --color-paper: #faf6ec;
+  --color-state-locked: #d5d2c8;
+  --color-state-locked-text: #3d423f;
+  --color-state-progress: #f28c28;
+  --color-state-progress-text: #1b1b1b;
+  --color-state-done: #157347;
+  --color-here: #1d5fd1;
+  --color-error: #9a2a12;
+  --font-display: var(--font-bricolage), system-ui, sans-serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+  --radius-card: 16px;
+  --radius-button: 12px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+}

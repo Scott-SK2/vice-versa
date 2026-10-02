@@ -34,7 +34,7 @@ Un seul service applicatif. Le front participant, le front admin et l'API vivent
 | UI | React 19 + Tailwind CSS | Rapidité pour reproduire la maquette ; tokens de la charte en config Tailwind | CSS modules |
 | Validation | Zod | Schémas partagés requête/réponse, génération des types | Valibot |
 | Base de données | **PostgreSQL 16** | JSONB pour `Answer.value` et `text_i18n`, index partiels, transactions pour le scan et la réponse | — |
-| ORM / migrations | Prisma (migrations SQL versionnées) | Migrations reproductibles, client typé | Drizzle |
+| ORM / migrations | **Drizzle ORM + drizzle-kit** (migrations SQL versionnées dans `drizzle/`) | Schéma en TypeScript proche du SQL ; exprime nativement l’index unique partiel « une seule séance live » et les contraintes `check`, que Prisma ne sait pas déclarer ; client typé sans génération | Prisma (demande des migrations SQL éditées à la main pour l’index partiel) |
 | Auth admin | Sessions serveur maison (table `admin_sessions`) + Argon2id (`@node-rs/argon2`) | Pas de fournisseur externe, modèle simple à auditer | Lucia |
 | Tests | Vitest (unitaire, API), Playwright (E2E, mobile 360 px), k6 (charge) | Standard, rapide | — |
 | Médias | Fichiers statiques sur **Bunny CDN** (zone de stockage EU) ou Cloudflare R2 + cache | 2 Go servis en 30 min sans toucher au VPS | Dossier `public/` derrière Caddy si le CDN n'est pas prêt (solution de secours, voir § 7) |
@@ -58,7 +58,7 @@ vice-versa/
 │   ├── banned-words.txt
 │   └── map.svg
 ├── messages/fr.json, nl.json, en.json   # textes d'interface
-├── prisma/schema.prisma, migrations/
+├── drizzle/                    # migrations SQL générées (drizzle-kit generate)
 ├── src/
 │   ├── app/
 │   │   ├── (participant)/vv26/…          # routes participant (05)
@@ -67,7 +67,7 @@ vice-versa/
 │   │   └── api/…                         # Route Handlers (04)
 │   ├── components/                       # VideoPlayer, CaptionsOverlay, VenueMap, QuestionForm, …
 │   ├── lib/
-│   │   ├── db.ts                         # client Prisma
+│   ├── db/client.ts, db/schema/*.ts   # client Drizzle et schéma
 │   │   ├── auth/                         # sessions admin, rôles, rate limit
 │   │   ├── participant/                  # résolution du jeton, règles de phase
 │   │   ├── domain/                       # progression, agrégation, normalisation des mots, machine à états
@@ -137,7 +137,7 @@ sequenceDiagram
 
 ## 6. Exploitation
 
-- **Déploiement** : `docker compose up -d` (services `app`, `db`, `caddy`). Image Next.js `standalone`. Migrations Prisma lancées au démarrage du conteneur `app`.
+- **Déploiement** : `docker compose up -d` (services `app`, `db`, `caddy`). Image Next.js `standalone`. Migrations Drizzle (`drizzle-kit migrate`) lancées au démarrage du conteneur `app`.
 - **Sauvegardes** : `pg_dump` toutes les nuits + **un dump manuel juste avant de lancer la séance `live` du 10 octobre** (bouton « Sauvegarde » dans l'admin qui déclenche le dump, ou commande documentée).
 - **Santé** : `GET /api/health` vérifie la base et renvoie la séance live et sa phase ; surveillé par un ping externe toutes les minutes pendant l'événement.
 - **Capacité** : 80 participants × 1 requête / 10 s = 8 req/s de polling plus les scans et réponses ; largement sous ce que tient une instance Node + Postgres. Le trafic lourd (vidéos) ne touche pas le VPS.

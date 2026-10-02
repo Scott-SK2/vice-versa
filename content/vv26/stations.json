@@ -1,0 +1,202 @@
+[
+  {
+    "code": "A",
+    "position": 0,
+    "slug": "accueil",
+    "counts_in_progress": false,
+    "title": {
+      "fr": "Accueil",
+      "nl": "Onthaal",
+      "en": "Welcome"
+    },
+    "intro": {
+      "fr": "Entrer dans l’expérience, photographier les perceptions de départ.",
+      "nl": "Stap in de ervaring, leg je eerste indrukken vast.",
+      "en": "Step into the experience and capture your starting perceptions."
+    },
+    "x_pct": 8,
+    "y_pct": 50,
+    "qr_token": "74UJM8GF",
+    "short_code": "T58Z"
+  },
+  {
+    "code": "1",
+    "position": 1,
+    "slug": "image-de-l-autre",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "L’image de l’autre",
+      "nl": "Het beeld van de ander",
+      "en": "The image of the other"
+    },
+    "intro": {
+      "fr": "Confronter les images que chaque côté se fait de l’autre.",
+      "nl": "De beelden die elke kant van de ander heeft, naast elkaar leggen.",
+      "en": "Comparing the images each side has of the other."
+    },
+    "x_pct": 22,
+    "y_pct": 28,
+    "qr_token": "7BRJBPCX",
+    "short_code": "NCQZ"
+  },
+  {
+    "code": "2",
+    "position": 2,
+    "slug": "pourquoi-partir",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "Pourquoi partir ?",
+      "nl": "Waarom vertrekken?",
+      "en": "Why leave?"
+    },
+    "intro": {
+      "fr": "Le regard de jeunes Congolais sur le départ.",
+      "nl": "Hoe jonge Congolezen naar vertrekken kijken.",
+      "en": "How young Congolese see leaving."
+    },
+    "x_pct": 36,
+    "y_pct": 20,
+    "qr_token": "KMJ7PTSQ",
+    "short_code": "4QN4"
+  },
+  {
+    "code": "3",
+    "position": 3,
+    "slug": "pourquoi-aller-en-afrique",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "Pourquoi aller en Afrique ?",
+      "nl": "Waarom naar Afrika gaan?",
+      "en": "Why go to Africa?"
+    },
+    "intro": {
+      "fr": "Le regard de jeunes de Belgique qui font le chemin inverse.",
+      "nl": "Hoe jongeren uit België de omgekeerde weg beleven.",
+      "en": "How young Belgians experience the reverse journey."
+    },
+    "x_pct": 50,
+    "y_pct": 28,
+    "qr_token": "GNHDA4C4",
+    "short_code": "XEDU"
+  },
+  {
+    "code": "4",
+    "position": 4,
+    "slug": "la-realite",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "La réalité",
+      "nl": "De werkelijkheid",
+      "en": "Reality"
+    },
+    "intro": {
+      "fr": "Entre rêves et réalités : ce qui a surpris sur place.",
+      "nl": "Tussen droom en werkelijkheid: wat ter plaatse verraste.",
+      "en": "Between dreams and reality: what surprised us there."
+    },
+    "x_pct": 64,
+    "y_pct": 20,
+    "qr_token": "QVHMRFQK",
+    "short_code": "JUED"
+  },
+  {
+    "code": "5",
+    "position": 5,
+    "slug": "travail-et-opportunites",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "Travail & opportunités",
+      "nl": "Werk & kansen",
+      "en": "Work & opportunities"
+    },
+    "intro": {
+      "fr": "Études, emploi, entrepreneuriat des deux côtés.",
+      "nl": "Studies, werk en ondernemen aan beide kanten.",
+      "en": "Studies, jobs and entrepreneurship on both sides."
+    },
+    "x_pct": 78,
+    "y_pct": 28,
+    "qr_token": "392VHUNW",
+    "short_code": "J5V3"
+  },
+  {
+    "code": "6",
+    "position": 6,
+    "slug": "famille-et-culture",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "Famille & culture",
+      "nl": "Familie & cultuur",
+      "en": "Family & culture"
+    },
+    "intro": {
+      "fr": "Liens, traditions, sentiment d’appartenance.",
+      "nl": "Banden, tradities, het gevoel erbij te horen.",
+      "en": "Bonds, traditions and belonging."
+    },
+    "x_pct": 78,
+    "y_pct": 70,
+    "qr_token": "YJ6T7847",
+    "short_code": "VACG"
+  },
+  {
+    "code": "7",
+    "position": 7,
+    "slug": "prejuges",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "Préjugés",
+      "nl": "Vooroordelen",
+      "en": "Prejudices"
+    },
+    "intro": {
+      "fr": "Vrai, faux ou ça dépend ?",
+      "nl": "Waar, niet waar of het hangt ervan af?",
+      "en": "True, false or it depends?"
+    },
+    "x_pct": 60,
+    "y_pct": 78,
+    "qr_token": "887ADHG2",
+    "short_code": "JV4X"
+  },
+  {
+    "code": "8",
+    "position": 8,
+    "slug": "si-tu-devais-partir-demain",
+    "counts_in_progress": true,
+    "title": {
+      "fr": "Si tu devais partir demain…",
+      "nl": "Als je morgen zou vertrekken…",
+      "en": "If you had to leave tomorrow…"
+    },
+    "intro": {
+      "fr": "Choix, priorités, ce qu’on emporte.",
+      "nl": "Keuzes, prioriteiten, wat je meeneemt.",
+      "en": "Choices, priorities, what you take with you."
+    },
+    "x_pct": 42,
+    "y_pct": 78,
+    "qr_token": "MWFBYQJF",
+    "short_code": "NXV7"
+  },
+  {
+    "code": "Z",
+    "position": 9,
+    "slug": "cloture",
+    "counts_in_progress": false,
+    "title": {
+      "fr": "Clôture",
+      "nl": "Afsluiting",
+      "en": "Closing"
+    },
+    "intro": {
+      "fr": "Mesurer ce qui a bougé, laisser une trace.",
+      "nl": "Meten wat veranderd is, een spoor achterlaten.",
+      "en": "See what shifted and leave a trace."
+    },
+    "x_pct": 22,
+    "y_pct": 70,
+    "qr_token": "VX8MCR8N",
+    "short_code": "53SF"
+  }
+]

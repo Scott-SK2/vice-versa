@@ -41,8 +41,9 @@ Toutes les routes sont sous `/api`, répondent en JSON, et portent `Cache-Contro
 | `GET` | `/api/me` | Session, langue, séance, phase, prochain écran conseillé | toutes |
 | `PATCH` | `/api/me` | Change la langue | toutes |
 | `GET` | `/api/me/progress` | Stations avec état, `last_station_id`, pourcentage | toutes |
-| `POST` | `/api/stations/{code}/scan` | Corps `{ "token": "7Q2M9XKD" }` ou `{ "short_code": "7Q2M" }` ; débloque et met à jour `last_station_id` | voir matrice 02 § 3 |
-| `GET` | `/api/stations/{code}` | Contenu d'une station débloquée : médias, sous-titres, questions, réponse déjà donnée | toutes (403 si jamais scannée) |
+| `POST` | `/api/scan` | Corps `{ "token": "7Q2M9XKD" }` ou `{ "short_code": "7Q2M" }` ; la station est résolue côté serveur (l’onglet « Saisir un code » ne connaît pas la station) ; débloque et met à jour `last_station_id` | voir matrice 02 § 3 |
+| `POST` | `/api/stations/{code}/scan` | Même corps ; variante du cahier où le code de l’URL doit correspondre au jeton, sinon `404 UNKNOWN_CODE` | idem |
+| `GET` | `/api/stations/{code}` | Contenu d'une station débloquée : médias, sous-titres, questions, réponse déjà donnée | toutes (403 si jamais scannée, sauf en `discussion`/`trace` où tout est consultable en lecture seule) |
 | `POST` | `/api/stations/{code}/media-progress` | `{ "media_ref": "VV-V10", "progress": 0.83 }` ; termine une station `media_only` à ≥ 0,8 | `parcours`, `apres` |
 | `GET` | `/api/questions?phase=avant` | Questions d'une phase hors station (`avant`, `apres`, `trace`) avec réponses déjà données | toutes |
 | `PUT` | `/api/answers/{question_key}` | Crée ou remplace la réponse ; recalcule l'état de la station | matrice 02 § 3 |
@@ -66,7 +67,7 @@ Requête `{ "lang": "fr" }`. Réponse `201` :
 
 Si une séance `test` est live, le champ `run.kind` permet d'afficher le bandeau.
 
-### `POST /api/stations/{code}/scan`
+### `POST /api/scan` (et `POST /api/stations/{code}/scan`)
 
 ```json
 // requête (depuis l'URL /vv26/s/3?k=7Q2M9XKD)
@@ -85,6 +86,10 @@ Réponse `200` :
   "needs_before_questions": false
 }
 ```
+
+`station.read_only` vaut `true` en `discussion` et `trace` : la station s’ouvre, « Je suis ici » est mis à jour, mais aucune visite n’est créée.
+
+**Règle de complétion d’une station** (appliquée au scan, à la réponse et au `media-progress`) : toutes ses questions obligatoires répondues ; sans question obligatoire, média publié lu à 80 % ; sans média publié, la station est terminée dès l’ouverture (cas de A et Z, qui ne comptent pas dans la progression).
 
 `needs_before_questions = true` quand la session vient d'être créée par un scan de station et que les questions « Avant » n'ont pas été remplies : le client les propose après la station (règle 6 du cahier). Le code court est comparé insensible à la casse et aux caractères ambigus (`0/O`, `1/I/L` ne sont jamais générés).
 
@@ -123,7 +128,14 @@ Pour `guess_reveal`, la réponse ajoute `"reveal": { "correct": false, "correct_
 { "type": "tri_state", "total": 61, "choices": [ { "key": "oui", "label": "Oui", "count": 14, "percent": 23 }, { "key": "non", "label": "Non", "count": 9, "percent": 15 }, { "key": "depend", "label": "Ça dépend", "count": 38, "percent": 62 } ] }
 ```
 
-Renvoyé uniquement pour `single_choice`, `multi_choice`, `tri_state`, `guess_reveal` (pour celle-ci : `% de bonnes réponses`). Masqué (`total` seulement) tant que `total < 5`, pour ne pas révéler une réponse individuelle.
+Renvoyé uniquement pour `single_choice`, `multi_choice`, `tri_state`, `guess_reveal` (pour celle-ci : `correct_percent`). Masqué (`masked: true`, `total` seulement) tant que `total < 5`, pour ne pas révéler une réponse individuelle. `403` tant que la session n’a pas elle-même répondu.
+
+### Codes d’erreur supplémentaires côté participant
+
+| HTTP | `code` | Sens |
+|---|---|---|
+| 400 | `BANNED_WORD` | Un mot libre, un texte court ou un commentaire contient un mot de la liste interdite (`details.words`) ; rien n’est enregistré |
+| 409 | `NO_RUN_LIVE` | `POST /api/sessions` sans séance live |
 
 ## 3. Route projection (écran de la salle)
 

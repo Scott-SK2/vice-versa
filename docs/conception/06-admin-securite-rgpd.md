@@ -78,7 +78,7 @@ Version du contenu chargée vs dossier `content/`, bouton Recharger (diff affich
 - **Jetons participants** : 128 bits d'aléa, stockés hachés ; un jeton ne donne accès qu'à ses propres données ; aucune énumération possible (identifiants UUID, pas de liste).
 - **Jetons QR** : 8 caractères alphabet `A-Z2-9` sans `O/0/I/1` (≈ 40 bits), codes courts 4 caractères du même alphabet (≈ 20 bits, protégés par la limite de débit : 120 essais / min / jeton rendent l'énumération impraticable pendant l'atelier) ; `404 UNKNOWN_CODE` a le même temps de réponse qu'un succès.
 - **Validation** : tout corps passe par Zod ; `value` est validé selon le type de question ; longueur des textes bornée ; mots filtrés.
-- **Injection / XSS** : requêtes paramétrées (Prisma) ; les textes libres sont rendus comme texte, jamais comme HTML, y compris en projection.
+- **Injection / XSS** : requêtes paramétrées (Drizzle) ; les textes libres sont rendus comme texte, jamais comme HTML, y compris en projection.
 - **Journalisation** : pas de jeton ni de texte libre dans les logs ; identifiants de session tronqués.
 - **Dépendances** : `pnpm audit` en CI ; image Docker non-root ; secrets uniquement en variables d'environnement.
 - **Séparation des espaces** : les Route Handlers `/api/admin/*` passent par un middleware unique (`requireRole`) ; les pages `/admin/*` sont rendues côté serveur après vérification du cookie (redirection vers `/admin/login`).

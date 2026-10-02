@@ -1,0 +1,147 @@
+[
+  {
+    "key": "avant_futur", "phase": "avant", "type": "single_choice", "position": 1,
+    "text": { "fr": "Si tu pouvais construire ton avenir n’importe où, ce serait…", "nl": "Als je je toekomst om het even waar kon opbouwen, dan zou dat zijn…", "en": "If you could build your future anywhere, it would be…" },
+    "choices": [
+      { "key": "afrique", "label": { "fr": "En Afrique", "nl": "In Afrika", "en": "In Africa" } },
+      { "key": "europe", "label": { "fr": "En Europe", "nl": "In Europa", "en": "In Europe" } },
+      { "key": "ailleurs", "label": { "fr": "Ailleurs", "nl": "Elders", "en": "Elsewhere" } },
+      { "key": "nsp", "label": { "fr": "Je ne sais pas", "nl": "Ik weet het niet", "en": "I don’t know" } }
+    ]
+  },
+  {
+    "key": "avant_mots_europe", "phase": "avant", "type": "three_words", "position": 2,
+    "text": { "fr": "3 mots que tu associes à l’Europe", "nl": "3 woorden die je met Europa verbindt", "en": "3 words you associate with Europe" }
+  },
+  {
+    "key": "avant_mots_afrique", "phase": "avant", "type": "three_words", "position": 3,
+    "text": { "fr": "3 mots que tu associes à l’Afrique", "nl": "3 woorden die je met Afrika verbindt", "en": "3 words you associate with Africa" }
+  },
+
+  {
+    "key": "s1_qui_parle", "phase": "station", "station": "1", "type": "guess_reveal", "position": 1,
+    "text": { "fr": "À ton avis, qui parle ?", "nl": "Wie spreekt er volgens jou?", "en": "Who do you think is speaking?" },
+    "help": { "fr": "Deux témoignages « miroir », origine masquée. Devine, puis découvre la réponse.", "nl": "Twee spiegelgetuigenissen zonder herkomst. Raad, en ontdek dan het antwoord.", "en": "Two mirror testimonies with the origin hidden. Guess, then reveal." },
+    "choices": [
+      { "key": "kinshasa", "label": { "fr": "Un jeune de Kinshasa", "nl": "Een jongere uit Kinshasa", "en": "A young person from Kinshasa" }, "is_correct": true },
+      { "key": "belgique", "label": { "fr": "Un jeune de Belgique", "nl": "Een jongere uit België", "en": "A young person from Belgium" }, "is_correct": false }
+    ],
+    "note": "is_correct dépend du clip retenu au montage : à ajuster quand le témoignage miroir est choisi."
+  },
+  {
+    "key": "s2_partir_necessaire", "phase": "station", "station": "2", "type": "tri_state", "position": 1,
+    "text": { "fr": "Partir est-il nécessaire pour réussir ?", "nl": "Moet je vertrekken om te slagen?", "en": "Do you have to leave to succeed?" },
+    "help": { "fr": "Tu peux ajouter une phrase pour expliquer (facultatif).", "nl": "Je mag een zin toevoegen om uit te leggen (optioneel).", "en": "You can add a sentence to explain (optional)." },
+    "choices": [
+      { "key": "oui", "label": { "fr": "Oui", "nl": "Ja", "en": "Yes" } },
+      { "key": "non", "label": { "fr": "Non", "nl": "Nee", "en": "No" } },
+      { "key": "depend", "label": { "fr": "Ça dépend", "nl": "Het hangt ervan af", "en": "It depends" } }
+    ]
+  },
+  {
+    "key": "s3_motivation", "phase": "station", "station": "3", "type": "single_choice", "position": 1,
+    "text": { "fr": "Selon toi, quelle est leur principale motivation ?", "nl": "Wat is volgens jou hun belangrijkste drijfveer?", "en": "In your view, what is their main motivation?" },
+    "choices": [
+      { "key": "origines", "label": { "fr": "Retrouver leurs origines", "nl": "Hun roots terugvinden", "en": "Reconnecting with their roots" } },
+      { "key": "decouverte", "label": { "fr": "Découvrir un autre continent", "nl": "Een ander continent ontdekken", "en": "Discovering another continent" } },
+      { "key": "projet", "label": { "fr": "Monter un projet là-bas", "nl": "Daar een project opzetten", "en": "Starting a project there" } },
+      { "key": "rencontre", "label": { "fr": "Rencontrer des jeunes comme eux", "nl": "Jongeren zoals zij ontmoeten", "en": "Meeting young people like them" } },
+      { "key": "image", "label": { "fr": "Vérifier l’image qu’ils en avaient", "nl": "Het beeld dat ze hadden toetsen", "en": "Testing the image they had" } }
+    ],
+    "note": "Liste de choix proposée, à valider par l'équipe éditoriale."
+  },
+  {
+    "key": "s4_surprise", "phase": "station", "station": "4", "type": "three_words", "position": 1,
+    "text": { "fr": "Qu’est-ce qui te surprend ? (3 mots)", "nl": "Wat verrast je? (3 woorden)", "en": "What surprises you? (3 words)" }
+  },
+  {
+    "key": "s5_facteurs", "phase": "station", "station": "5", "type": "multi_choice", "position": 1,
+    "min_choices": 2, "max_choices": 2,
+    "text": { "fr": "Qu’est-ce qui compte le plus pour ton avenir ? (choisis-en 2)", "nl": "Wat telt het meest voor je toekomst? (kies er 2)", "en": "What matters most for your future? (pick 2)" },
+    "choices": [
+      { "key": "etudes", "label": { "fr": "Les études", "nl": "Studies", "en": "Studies" } },
+      { "key": "emploi", "label": { "fr": "Un emploi stable", "nl": "Een vaste job", "en": "A stable job" } },
+      { "key": "entreprendre", "label": { "fr": "Créer mon activité", "nl": "Mijn eigen zaak starten", "en": "Starting my own business" } },
+      { "key": "famille", "label": { "fr": "Rester près de ma famille", "nl": "Dicht bij mijn familie blijven", "en": "Staying close to my family" } },
+      { "key": "reseau", "label": { "fr": "Un réseau, des rencontres", "nl": "Een netwerk, ontmoetingen", "en": "A network, meeting people" } },
+      { "key": "liberte", "label": { "fr": "La liberté de bouger", "nl": "De vrijheid om te bewegen", "en": "The freedom to move" } }
+    ],
+    "note": "Six facteurs proposés, à valider par l'équipe éditoriale."
+  },
+  {
+    "key": "s6_tradition", "phase": "station", "station": "6", "type": "short_text", "position": 1, "max_length": 140,
+    "text": { "fr": "Une tradition que tu garderais partout ?", "nl": "Een traditie die je overal zou bewaren?", "en": "A tradition you would keep anywhere?" },
+    "help": { "fr": "140 caractères maximum. N’écris pas de nom de personne.", "nl": "Maximaal 140 tekens. Schrijf geen namen van personen.", "en": "140 characters max. Do not write anyone’s name." }
+  },
+  {
+    "key": "s7_affirmation_1", "phase": "station", "station": "7", "type": "tri_state", "position": 1,
+    "text": { "fr": "« Les jeunes de Kinshasa rêvent tous de partir en Europe. »", "nl": "“Alle jongeren in Kinshasa dromen ervan naar Europa te vertrekken.”", "en": "“All young people in Kinshasa dream of leaving for Europe.”" },
+    "choices": [
+      { "key": "vrai", "label": { "fr": "Vrai", "nl": "Waar", "en": "True" } },
+      { "key": "faux", "label": { "fr": "Faux", "nl": "Niet waar", "en": "False" } },
+      { "key": "depend", "label": { "fr": "Ça dépend", "nl": "Het hangt ervan af", "en": "It depends" } }
+    ],
+    "note": "Affirmation provisoire : les 3 affirmations seront rédigées à partir des témoignages (guide de tournage, station 7)."
+  },
+  {
+    "key": "s7_affirmation_2", "phase": "station", "station": "7", "type": "tri_state", "position": 2,
+    "text": { "fr": "« En Belgique, on connaît bien la réalité du Congo. »", "nl": "“In België kent men de realiteit van Congo goed.”", "en": "“In Belgium, people know the reality of Congo well.”" },
+    "choices": [
+      { "key": "vrai", "label": { "fr": "Vrai", "nl": "Waar", "en": "True" } },
+      { "key": "faux", "label": { "fr": "Faux", "nl": "Niet waar", "en": "False" } },
+      { "key": "depend", "label": { "fr": "Ça dépend", "nl": "Het hangt ervan af", "en": "It depends" } }
+    ],
+    "note": "Affirmation provisoire."
+  },
+  {
+    "key": "s7_affirmation_3", "phase": "station", "station": "7", "type": "tri_state", "position": 3,
+    "text": { "fr": "« Réussir, c’est forcément réussir ailleurs. »", "nl": "“Slagen betekent noodzakelijk elders slagen.”", "en": "“Succeeding necessarily means succeeding elsewhere.”" },
+    "choices": [
+      { "key": "vrai", "label": { "fr": "Vrai", "nl": "Waar", "en": "True" } },
+      { "key": "faux", "label": { "fr": "Faux", "nl": "Niet waar", "en": "False" } },
+      { "key": "depend", "label": { "fr": "Ça dépend", "nl": "Het hangt ervan af", "en": "It depends" } }
+    ],
+    "note": "Affirmation provisoire."
+  },
+  {
+    "key": "s8_valise", "phase": "station", "station": "8", "type": "multi_choice", "position": 1,
+    "min_choices": 3, "max_choices": 3,
+    "text": { "fr": "Si tu devais partir demain, qu’emporterais-tu ? (choisis-en 3)", "nl": "Als je morgen zou vertrekken, wat zou je meenemen? (kies er 3)", "en": "If you had to leave tomorrow, what would you take? (pick 3)" },
+    "choices": [
+      { "key": "photos", "icon": "photo", "label": { "fr": "Des photos", "nl": "Foto’s", "en": "Photos" } },
+      { "key": "telephone", "icon": "phone", "label": { "fr": "Mon téléphone", "nl": "Mijn telefoon", "en": "My phone" } },
+      { "key": "musique", "icon": "music", "label": { "fr": "Ma musique", "nl": "Mijn muziek", "en": "My music" } },
+      { "key": "recette", "icon": "pot", "label": { "fr": "Une recette de famille", "nl": "Een familierecept", "en": "A family recipe" } },
+      { "key": "langue", "icon": "speech", "label": { "fr": "Ma langue", "nl": "Mijn taal", "en": "My language" } },
+      { "key": "diplome", "icon": "diploma", "label": { "fr": "Mon diplôme", "nl": "Mijn diploma", "en": "My diploma" } },
+      { "key": "foi", "icon": "candle", "label": { "fr": "Ma foi", "nl": "Mijn geloof", "en": "My faith" } },
+      { "key": "vetement", "icon": "shirt", "label": { "fr": "Un vêtement qui compte", "nl": "Een kledingstuk dat telt", "en": "A piece of clothing that matters" } },
+      { "key": "carnet", "icon": "notebook", "label": { "fr": "Un carnet d’adresses", "nl": "Een adresboekje", "en": "An address book" } }
+    ],
+    "note": "Neuf icônes proposées, à valider par l'équipe éditoriale."
+  },
+
+  {
+    "key": "apres_futur", "phase": "apres", "type": "single_choice", "position": 1, "paired_with": "avant_futur",
+    "text": { "fr": "Et maintenant : si tu pouvais construire ton avenir n’importe où, ce serait…", "nl": "En nu: als je je toekomst om het even waar kon opbouwen, dan zou dat zijn…", "en": "And now: if you could build your future anywhere, it would be…" },
+    "choices": "same_as_paired"
+  },
+  {
+    "key": "apres_mots_europe", "phase": "apres", "type": "three_words", "position": 2, "paired_with": "avant_mots_europe",
+    "text": { "fr": "Et maintenant : 3 mots que tu associes à l’Europe", "nl": "En nu: 3 woorden die je met Europa verbindt", "en": "And now: 3 words you associate with Europe" }
+  },
+  {
+    "key": "apres_mots_afrique", "phase": "apres", "type": "three_words", "position": 3, "paired_with": "avant_mots_afrique",
+    "text": { "fr": "Et maintenant : 3 mots que tu associes à l’Afrique", "nl": "En nu: 3 woorden die je met Afrika verbindt", "en": "And now: 3 words you associate with Africa" }
+  },
+  {
+    "key": "apres_surpris", "phase": "apres", "type": "short_text", "position": 4, "max_length": 140, "required": false,
+    "text": { "fr": "Qu’est-ce qui t’a le plus surpris ?", "nl": "Wat heeft je het meest verrast?", "en": "What surprised you most?" }
+  },
+
+  {
+    "key": "trace", "phase": "trace", "type": "short_text", "position": 1, "max_length": 140,
+    "text": { "fr": "Après VICE VERSA, je repars avec…", "nl": "Na VICE VERSA neem ik mee…", "en": "After VICE VERSA, I leave with…" },
+    "help": { "fr": "Ton message pourra être projeté dans la salle après validation.", "nl": "Je boodschap kan na goedkeuring in de zaal geprojecteerd worden.", "en": "Your message may be shown in the room after review." }
+  }
+]

@@ -1,0 +1,25 @@
+# Un mot par ligne, FR / NL / EN. Comparaison insensible à la casse et aux accents.
+# Liste de départ à compléter par l'équipe éditoriale avant le 8 octobre.
+connard
+connasse
+salope
+pute
+enculé
+nique
+merde
+putain
+bougnoule
+nègre
+negro
+macaque
+singe
+sale noir
+sale blanc
+kut
+klootzak
+hoer
+neger
+fuck
+shit
+bitch
+nigger
