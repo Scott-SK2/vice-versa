@@ -26,7 +26,7 @@ Tests ajoutés : `tests/api/security.test.ts` (codes devinés, jetons inventés,
 - **Participants** : jeton 128 bits d'aléa stocké haché, un jeton n'accède qu'à ses propres données, aucune énumération (UUID, pas de liste), agrégats masqués sous 5 réponses, textes libres jamais montrés aux autres participants, projection limitée aux textes validés.
 - **Entrées** : tout corps validé par Zod, valeurs de réponse validées selon le type de question, textes bornés à 140 caractères, mots interdits filtrés, requêtes SQL paramétrées (Drizzle ; les fragments `sql` n'interpolent que des références de colonnes).
 - **Sorties** : React échappe tout ; aucun HTML non échappé après S1 ; textes libres rendus comme texte en projection ; export CSV sans cellule commençant par un caractère de formule (empreinte, codes, JSON entre guillemets).
-- **En-têtes** : CSP (`default-src 'self'`, médias et `connect-src` limités à l'origine de `MEDIA_BASE_URL`, `frame-ancestors 'none'`), `nosniff`, `Referrer-Policy`, `Permissions-Policy` (caméra, micro, géolocalisation refusés), `X-Frame-Options`, HSTS par Caddy, `X-Powered-By` retiré.
+- **En-têtes** : CSP à nonce par requête (`default-src 'self'`, `script-src 'self' 'nonce-…' 'strict-dynamic'`, médias et `connect-src` limités à l'origine de `MEDIA_BASE_URL`, `object-src 'none'`, `frame-ancestors 'none'`), `nosniff`, `Referrer-Policy`, `Permissions-Policy` (caméra, micro, géolocalisation refusés), `X-Frame-Options`, HSTS par Caddy, `X-Powered-By` retiré.
 - **Secrets** : aucun secret dans le dépôt ni dans l'image (variables de build factices) ; `.env*` ignorés par git ; clé Groq utilisée uniquement par les scripts sur le poste de l'équipe.
 - **Journalisation** : pas de jeton, de mot de passe ni de texte libre dans les logs ; erreurs internes renvoyées comme `500` générique.
 - **Déploiement** : conteneur non root, PostgreSQL non exposé, journaux bornés, sauvegardes avec rotation, migrations additives.
@@ -36,7 +36,7 @@ Tests ajoutés : `tests/api/security.test.ts` (codes devinés, jetons inventés,
 
 | Sujet | État | Recommandation |
 |---|---|---|
-| CSP avec `script-src 'unsafe-inline'` | Nécessaire à l'hydratation Next.js sans nonce | Passer à une CSP avec nonce (middleware) après le 10 octobre ; aucune donnée personnelle n'est exposée côté participant, le risque est limité à la session admin, protégée par `HttpOnly`. |
+| CSP et scripts inline | **Résolu** : nonce par requête (`src/proxy.ts`), `script-src 'self' 'nonce-…' 'strict-dynamic'`, `object-src 'none'` ; `'unsafe-inline'` ne subsiste que pour `style-src` (attributs `style` des barres et positions, sans nonce possible) | Garder `style-src` ainsi ; vérifier la console du navigateur après chaque mise à jour de Next.js. |
 | Limites de débit en mémoire | Correctes pour une instance unique | Si plusieurs instances un jour : Redis ou limite au niveau de Caddy. |
 | Pas de second facteur sur les comptes admin | Hors périmètre du 10 octobre | Mots de passe longs, peu de comptes, journal d'audit ; envisager un second facteur pour les éditions futures. |
 | Clé de projection dans l'URL | Donne accès à des agrégats et textes validés seulement | Régénérer la clé après la séance (bouton dans la console) ; ne pas partager le lien hors de l'équipe. |

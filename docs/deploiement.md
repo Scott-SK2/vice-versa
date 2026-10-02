@@ -93,7 +93,7 @@ Juste avant de lancer la séance Live du 10 octobre : `./deploy/backup.sh avant-
 
 ## 7. Sécurité en place
 
-- TLS et HSTS par Caddy ; HTTP redirigé vers HTTPS ; en-têtes `Content-Security-Policy`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Frame-Options` posés par l'application.
+- TLS et HSTS par Caddy ; HTTP redirigé vers HTTPS ; `Content-Security-Policy` à nonce par requête (scripts autorisés uniquement par nonce, `object-src 'none'`), `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Frame-Options` posés par l'application. La CSP autorise automatiquement l'origine de `MEDIA_BASE_URL` pour les médias.
 - Conteneur `app` sans privilèges (utilisateur `app`), ports de la base non exposés, journaux limités en taille.
 - Cookies `Secure` + `HttpOnly` + `SameSite=Lax` en production ; limite de débit par jeton participant et par IP (l'IP réelle vient de `X-Forwarded-For` posé par Caddy).
 - Rétention automatique : séances clôturées archivées après `RETENTION_MONTHS` mois (résumé agrégé conservé), journal purgé après 24 mois.
