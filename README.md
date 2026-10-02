@@ -26,6 +26,7 @@ pnpm dev                        # http://localhost:3000
 |---|---|
 | `pnpm dev` / `pnpm build` / `pnpm start` | Next.js |
 | `pnpm lint` / `pnpm typecheck` / `pnpm test` | Qualité |
+| `pnpm load --vus 80 --duration 1800 --base https://…` | Test de charge : participants virtuels, séance de test pilotée, seuils p95 et erreurs |
 | `pnpm test:e2e` | Parcours participant complet dans Chromium contre un serveur démarré (`BASE`, `PW_CHROMIUM`, `OUT`) |
 | `pnpm db:generate` | Génère une migration SQL à partir de `src/db/schema/` |
 | `pnpm db:migrate` | Applique les migrations |

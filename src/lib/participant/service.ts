@@ -56,7 +56,8 @@ function publicRun(run: RunRow, eventSlug: string) {
 }
 
 export async function createSession(input: { lang: string; ip: string; eventSlug?: string }) {
-  rateLimit(`ip:${input.ip}:sessions`, 30);
+  // Un Wi-Fi de salle présente une seule IP pour tous : la limite par IP doit absorber une arrivée groupée.
+  rateLimit(`ip:${input.ip}:sessions`, env.sessionsPerIpPerMin);
   const eventSlug = input.eventSlug ?? env.eventSlug;
   const run = await getLiveRun(eventSlug);
   if (!run) throw errors.noRunLive();

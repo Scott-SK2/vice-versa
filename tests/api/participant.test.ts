@@ -253,7 +253,7 @@ describe("API participant", () => {
     await startRun(db, null, run.id);
     resetRateLimits();
     let last = 0;
-    for (let i = 0; i < 31; i++) last = (await call(postSessions, "POST", "/api/sessions", { body: {}, ip: "10.9.9.9" })).status;
+    for (let i = 0; i < 121; i++) last = (await call(postSessions, "POST", "/api/sessions", { body: {}, ip: "10.9.9.9" })).status;
     expect(last).toBe(429);
     await closeRun(db, null, run.id);
   });
