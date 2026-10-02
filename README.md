@@ -26,14 +26,35 @@ pnpm dev                        # http://localhost:3000
 |---|---|
 | `pnpm dev` / `pnpm build` / `pnpm start` | Next.js |
 | `pnpm lint` / `pnpm typecheck` / `pnpm test` | Qualité |
+| `pnpm test:e2e` | Parcours participant complet dans Chromium contre un serveur démarré (`BASE`, `PW_CHROMIUM`, `OUT`) |
 | `pnpm db:generate` | Génère une migration SQL à partir de `src/db/schema/` |
 | `pnpm db:migrate` | Applique les migrations |
 | `pnpm db:studio` | Explorateur de base de données |
 | `pnpm content:validate` | Valide `content/vv26/` sans toucher à la base |
 | `pnpm qr:tokens` | Attribue les jetons QR et codes courts manquants |
+| `pnpm captions extract\|transcribe\|translate\|emit\|check` | Chaîne de sous-titrage (Groq Whisper puis traduction NL/EN), hors application : voir `content/vv26/captions/README.md` |
+| `pnpm qr:render --pdf` | Génère `qr/<code>.png` et `.svg` (correction H), `qr/planche.html` et `qr/planche.pdf` (une affiche A4 par station + récapitulatif) à partir de `APP_BASE_URL` |
 | `pnpm db:seed` | Charge (ou recharge) le contenu en base, de façon idempotente |
 | `pnpm admin:create` | Crée un compte d'administration |
 | `pnpm seance list\|create\|start\|phase\|close\|reopen\|reset\|delete` | Pilote les séances en ligne de commande, en attendant la console admin |
+
+## Application participant
+
+Routes sous `/vv26` : accueil et choix de langue, questions « Avant », parcours (liste des 8 stations), carte, saisie de code, station (`/vv26/s/{code}`, arrivée QR avec `?k=<jeton>`), station terminée, questions « Après », bilan Avant/Après, trace finale, merci. `/vv26/reset` efface la session d'une tablette prêtée.
+
+L'application interroge `/api/runs/current` toutes les 10 s : un changement de phase déplace le participant vers le bon écran, une séance stoppée l'envoie sur « Merci », une nouvelle séance le fait repartir de zéro en gardant sa langue. Les réponses envoyées sans réseau sont mises en file et renvoyées automatiquement.
+
+En local, les médias sont servis depuis `public/media/` (`MEDIA_BASE_URL=/media`) : le plan `map.svg` y est copié ; les vidéos, posters et sous-titres y seront déposés avec les mêmes noms que dans `content/vv26/media.json`.
+
+## Console d'administration
+
+- `/admin/login` : connexion par e-mail et mot de passe (compte créé avec `pnpm admin:create`, ou `ADMIN_BOOTSTRAP_EMAIL` / `ADMIN_BOOTSTRAP_PASSWORD` au premier démarrage).
+- `/admin` : séances (créer, lancer, piloter les phases, stopper, rouvrir, réinitialiser, archiver, supprimer), tableau de bord, modération, projection, export, journal.
+- `/admin/users` et `/admin/content` : comptes et rechargement du contenu (admin uniquement).
+- `/animateur` et `/moderation` : raccourcis vers la console de la séance en cours.
+- `/projection/<id>?key=…` : écran de la salle, lien affiché dans l'onglet Projection.
+
+Rôles : **admin** (tout), **animateur** (phases, projection, modération), **modérateur** (modération et lecture).
 
 ## Tester l'API participant à la main
 
@@ -50,18 +71,28 @@ pnpm seance close --id <uuid>                    # stopper : résultats figés, 
 
 Les routes et leurs contrats sont décrits dans [`docs/conception/04-api.md`](docs/conception/04-api.md). Les tests d'intégration (`tests/api/`) exigent une base migrée et seedée.
 
+## Déploiement
+
+Image Docker (`Dockerfile`, Next.js standalone, utilisateur non root) publiée sur GHCR par la CI depuis `main`, Compose de production (`docker-compose.prod.yml` : app, PostgreSQL, Caddy avec TLS automatique et médias statiques), migrations, premier admin et contenu chargés au démarrage, sauvegardes `deploy/backup.sh`. Guide complet : [`docs/deploiement.md`](docs/deploiement.md).
+
 ## Organisation
 
 ```
 content/vv26/        contenu versionné : événement, stations, questions, médias, mots interdits, plan
 docs/conception/     dossier de conception
 drizzle/             migrations SQL
+deploy/              Caddyfile, scripts de sauvegarde et restauration, données montées (ignorées par git)
 scripts/             seed, validation, jetons QR, création d'admin
 src/db/              client et schéma Drizzle (enums, contenu, administration, séances)
 src/lib/domain/      règles métier pures : phases, progression, réponses, mots, jetons
 src/lib/content/     schémas et chargement du dossier content/, catalogue en base
 src/lib/participant/ API participant : résolution du jeton, scan, stations, réponses, agrégats
 src/lib/runs/        cycle de vie des séances (créer, lancer, phases, stopper, résumé)
+src/lib/admin/       authentification admin, services de la console, client fetch
+src/components/      console (admin/), diapositives (projection/), application participant (participant/)
+src/lib/captions/    format des sous-titres, répartition des mots, WebVTT, client Groq (scripts seulement)
+src/lib/participant/client/  état client participant : jeton, séance, langue, file hors-ligne, textes FR/NL/EN
+messages/            textes d'interface fr.json, nl.json, en.json
 src/lib/api/         erreurs, enveloppe des Route Handlers, limite de débit
 src/app/api/         Route Handlers Next.js
 src/app/             pages Next.js (participant /vv26, admin /admin, projection)

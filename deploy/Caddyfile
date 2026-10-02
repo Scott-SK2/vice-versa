@@ -1,0 +1,31 @@
+# Reverse proxy VICE VERSA : TLS automatique, HTTP/2 et HTTP/3, médias statiques, compression.
+{$DOMAIN} {
+	encode zstd gzip
+
+	# Médias (vidéos, posters, sous-titres, plan) : fichiers immuables, cache long, requêtes de plage pour la vidéo.
+	handle_path /media/* {
+		root * /srv/media
+		header Cache-Control "public, max-age=31536000, immutable"
+		header Access-Control-Allow-Origin "*"
+		file_server
+	}
+
+	# Assets Next.js empreints : cache long.
+	@static path /_next/static/*
+	header @static Cache-Control "public, max-age=31536000, immutable"
+
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+	}
+
+	reverse_proxy app:3000 {
+		header_up X-Forwarded-For {remote_host}
+		header_up X-Real-IP {remote_host}
+	}
+
+	log {
+		output stdout
+		format json
+	}
+}

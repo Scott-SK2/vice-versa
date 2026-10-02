@@ -1,0 +1,13 @@
+node_modules
+.next
+.git
+.env
+.env.*
+!.env.example
+docs
+tests
+e2e-shots
+*.md
+!README.md
+.github
+deploy/data

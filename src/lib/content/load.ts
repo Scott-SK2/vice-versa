@@ -21,7 +21,7 @@ export class ContentError extends Error {
 
 function readJson(file: string): unknown {
   try {
-    return JSON.parse(readFileSync(file, "utf8"));
+    return JSON.parse(readFileSync(/* turbopackIgnore: true */ file, "utf8"));
   } catch (e) {
     throw new ContentError(`JSON invalide : ${file}`, [(e as Error).message]);
   }
@@ -42,18 +42,26 @@ function parse<T>(schema: z.ZodType<T>, data: unknown, file: string): T {
 export function loadContent(dir: string): ContentBundle {
   const file = (name: string) => path.join(dir, name);
   for (const name of ["event.json", "stations.json", "questions.json", "media.json", "banned-words.txt"]) {
-    if (!existsSync(file(name))) throw new ContentError(`Fichier manquant : ${file(name)}`, []);
+    if (!existsSync(/* turbopackIgnore: true */ file(name))) throw new ContentError(`Fichier manquant : ${file(name)}`, []);
   }
   const event = parse(eventFileSchema, readJson(file("event.json")), "event.json");
   const stations = parse(z.array(stationFileSchema), readJson(file("stations.json")), "stations.json");
   const questions = parse(z.array(questionFileSchema), readJson(file("questions.json")), "questions.json");
   const media = parse(z.array(mediaFileSchema), readJson(file("media.json")), "media.json");
-  const bannedWords = readFileSync(file("banned-words.txt"), "utf8");
+  const bannedWords = readFileSync(/* turbopackIgnore: true */ file("banned-words.txt"), "utf8");
   const mapPath = file(event.map.file);
-  if (!existsSync(mapPath)) throw new ContentError(`Plan introuvable : ${mapPath}`, []);
-  const mapSvg = readFileSync(mapPath, "utf8");
+  if (!existsSync(/* turbopackIgnore: true */ mapPath)) throw new ContentError(`Plan introuvable : ${mapPath}`, []);
+  const mapSvg = readFileSync(/* turbopackIgnore: true */ mapPath, "utf8");
 
   const problems = checkConsistency({ event, stations, questions, media });
+  for (const m of media) {
+    for (const lang of Object.keys(m.captions ?? {})) {
+      for (const ext of ["json", "vtt"]) {
+        const f = path.join(dir, "captions", `${m.ref}.${lang}.${ext}`);
+        if (!existsSync(/* turbopackIgnore: true */ f)) problems.push(`media ${m.ref} : sous-titres ${lang} déclarés mais captions/${m.ref}.${lang}.${ext} absent`);
+      }
+    }
+  }
   if (problems.length) throw new ContentError("Incohérences dans le contenu", problems);
 
   const version = createHash("sha256")

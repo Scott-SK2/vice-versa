@@ -38,6 +38,7 @@ export const errors = {
   bannedWord: (words: string[]) =>
     new ApiError(400, "BANNED_WORD", "Certains mots ne peuvent pas être affichés.", { words }),
   sessionUnknown: () => new ApiError(401, "SESSION_UNKNOWN", "Session inconnue."),
+  adminUnauthenticated: (message = "Connexion requise.") => new ApiError(401, "ADMIN_UNAUTHENTICATED", message),
   stationLocked: () =>
     new ApiError(403, "STATION_LOCKED", "Rends-toi à la station pour la découvrir."),
   forbidden: (message = "Action non autorisée.") => new ApiError(403, "FORBIDDEN", message),

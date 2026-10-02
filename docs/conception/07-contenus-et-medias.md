@@ -87,14 +87,12 @@ Les URL finales sont `MEDIA_BASE_URL + file`. Le script de chargement refuse un 
 
 ## 4. Génération des QR codes
 
-`pnpm qr:generate` :
+Deux scripts :
 
-1. Pour chaque station sans `qr_token`, tire un jeton de 8 caractères et un code court de 4 caractères (alphabet `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`), vérifie l'unicité, écrit dans `stations.json`.
-2. Génère `qr/<code>.png` (niveau de correction **H**, 1200 px, marge 4 modules) pour l'URL `APP_BASE_URL/vv26/s/<code>?k=<token>` ; pour l'accueil, l'URL `APP_BASE_URL/vv26` (le repère A a tout de même un jeton pour pouvoir être « scanné » et poser « Je suis ici »).
-3. Génère `qr/planche.pdf` : une page par station avec le QR, le numéro, le titre, l'URL courte et le code en gros caractères (lisible à 2 m).
-4. Le script refuse de retirer un jeton existant : une régénération se fait en supprimant explicitement la valeur dans `stations.json`.
+1. `pnpm qr:tokens` : pour chaque station sans `qr_token`, tire un jeton de 8 caractères et un code court de 4 caractères (alphabet `ABCDEFGHJKMNPQRSTUVWXYZ23456789`, sans `0/O`, `1/I/L`), vérifie l'unicité, écrit dans `stations.json`. Il ne retire jamais un jeton existant : une régénération se fait en supprimant explicitement la valeur dans le fichier.
+2. `pnpm qr:render --pdf` : génère `qr/<code>.png` (niveau de correction **H**, 1200 px, marge 4 modules) et `qr/<code>.svg` pour l'URL `APP_BASE_URL/vv26/s/<code>?k=<token>` ; pour l'accueil, l'URL `APP_BASE_URL/vv26`. Puis `qr/planche.html` et `qr/planche.pdf` : une page A4 par station (QR, repère, titre FR/NL/EN, URL courte, code à 4 caractères lisible à 2 m) et une page récapitulative pour les organisateurs. Le test `tests/unit/qr.test.ts` décode les PNG produits et vérifie l'URL.
 
-Avant l'impression du 7 octobre : `content:seed`, test de scan de chaque PNG sur iPhone et Android, puis **Geler les jetons** dans l'admin.
+Avant l'impression du 7 octobre : `APP_BASE_URL=https://<domaine> pnpm qr:render --pdf`, test de scan de chaque PNG sur iPhone et Android, **Geler les jetons** dans `/admin/content`, puis envoi de `qr/planche.pdf` à l'imprimeur.
 
 ## 5. Pipeline médias (résumé opérationnel du cahier)
 
@@ -111,21 +109,21 @@ Le repli « médias locaux » (01 § 7) consiste à copier `dist/` dans le volum
 
 ## 6. Sous-titres
 
-Chaîne exécutée **une fois, avant l'événement**, sur un poste de l'équipe (clé Groq hors application) :
+Chaîne exécutée **une fois, avant l'événement**, sur un poste de l'équipe (clé Groq hors application), par la commande `pnpm captions` (`scripts/captions.ts`, bibliothèque `src/lib/captions/`) :
 
-```
-scripts/captions/
-├── 01-extract-audio.sh      # ffmpeg -ar 16000 -ac 1 -c:a flac
-├── 02-transcribe.ts         # Groq whisper-large-v3, verbose_json, word+segment, prompt avec les noms propres
-├── 03-review/               # fichiers fr.json édités à la main (noms, lingala), status: reviewed
-├── 04-translate.ts          # LLM segment par segment, JSON {id, text} → même ids, horodatages conservés
-├── 05-split-words.ts        # NL/EN : groupes de 2 à 4 mots au prorata des caractères
-└── 06-emit.ts               # écrit captions.<lang>.json + .vtt
-```
+| Étape | Commande | Ce qu'elle fait |
+|---|---|---|
+| 1. Extraction audio | `pnpm captions extract VV-V10 --in dist/VV-V10_….mp4` | `ffmpeg -ar 16000 -ac 1 -c:a flac` → `work/captions/VV-V10.flac` (≈ 1 Mo par minute) |
+| 2. Transcription | `pnpm captions transcribe VV-V10` | Groq `whisper-large-v3`, `verbose_json`, horodatages par mot et par segment, `prompt.txt` pour les noms propres → `captions/VV-V10.fr.json` (`status: auto`) et `.vtt`. Refuse d'écraser un fichier déjà relu sans `--force`. |
+| 3. Relecture humaine (obligatoire) | édition du `.fr.json` | Noms, mots mal entendus, passages en lingala transcrits par un locuteur puis traduits ; passer `"status": "reviewed"`. |
+| 4. Traduction NL / EN | `pnpm captions translate VV-V10 --to nl,en` | Modèle de langage (Groq, `llama-3.3-70b-versatile` par défaut, tout point d'accès compatible OpenAI via `GROQ_API_BASE` / `TRANSLATE_MODEL`) : segments envoyés en JSON `{id, text}`, réponse JSON stricte avec les mêmes ids, horodatages conservés, mots répartis au prorata des caractères. Refuse une réponse incomplète. |
+| 5. Relecture des traductions | édition des `.nl.json` / `.en.json` | Au minimum une vérification rapide ; `"status": "reviewed"`. |
+| 6. Génération des fichiers | `pnpm captions emit VV-V10` | Régénère les `.vtt` après toute modification manuelle. |
+| 7. Vérification | `pnpm captions check` | Valide chaque fichier (schéma, ids, chronologie, mots dans leur segment, `.vtt` présent) et croise avec `media.json` (langues déclarées, statuts). `pnpm content:validate` refuse un média dont un fichier de sous-titres déclaré manque. |
 
-Format `captions.<lang>.json` : celui du cahier (`media`, `lang`, `source`, `status`, `segments[{id,start,end,text,words[{w,start,end}]}]`). Pour NL/EN, `words` contient les groupes pré-découpés. Le `.vtt` reprend les segments.
+Format `captions.<lang>.json` : celui du cahier (`media`, `lang`, `source`, `status`, `segments[{id,start,end,text,words[{w,start,end}]}]`), validé par `src/lib/captions/schema.ts`. Le lecteur regroupe les mots par 3 au moment de l'affichage ; pour NL/EN, les horodatages de mots viennent de la répartition proportionnelle.
 
-Le lecteur ne dépend que de ces fichiers statiques : si Groq est remplacé par `faster-whisper` en local, rien ne change dans l'application.
+Le lecteur ne dépend que de ces fichiers statiques : si Groq est remplacé par `faster-whisper` en local (même format `verbose_json`), seule la variable `GROQ_API_BASE` change. Les tests `tests/unit/captions.test.ts` couvrent le format, la répartition, le VTT et les appels (serveur simulé).
 
 ## 7. Consentements
 
