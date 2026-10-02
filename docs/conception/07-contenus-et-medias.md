@@ -87,14 +87,12 @@ Les URL finales sont `MEDIA_BASE_URL + file`. Le script de chargement refuse un 
 
 ## 4. Génération des QR codes
 
-`pnpm qr:generate` :
+Deux scripts :
 
-1. Pour chaque station sans `qr_token`, tire un jeton de 8 caractères et un code court de 4 caractères (alphabet `ABCDEFGHJKLMNPQRSTUVWXYZ23456789`), vérifie l'unicité, écrit dans `stations.json`.
-2. Génère `qr/<code>.png` (niveau de correction **H**, 1200 px, marge 4 modules) pour l'URL `APP_BASE_URL/vv26/s/<code>?k=<token>` ; pour l'accueil, l'URL `APP_BASE_URL/vv26` (le repère A a tout de même un jeton pour pouvoir être « scanné » et poser « Je suis ici »).
-3. Génère `qr/planche.pdf` : une page par station avec le QR, le numéro, le titre, l'URL courte et le code en gros caractères (lisible à 2 m).
-4. Le script refuse de retirer un jeton existant : une régénération se fait en supprimant explicitement la valeur dans `stations.json`.
+1. `pnpm qr:tokens` : pour chaque station sans `qr_token`, tire un jeton de 8 caractères et un code court de 4 caractères (alphabet `ABCDEFGHJKMNPQRSTUVWXYZ23456789`, sans `0/O`, `1/I/L`), vérifie l'unicité, écrit dans `stations.json`. Il ne retire jamais un jeton existant : une régénération se fait en supprimant explicitement la valeur dans le fichier.
+2. `pnpm qr:render --pdf` : génère `qr/<code>.png` (niveau de correction **H**, 1200 px, marge 4 modules) et `qr/<code>.svg` pour l'URL `APP_BASE_URL/vv26/s/<code>?k=<token>` ; pour l'accueil, l'URL `APP_BASE_URL/vv26`. Puis `qr/planche.html` et `qr/planche.pdf` : une page A4 par station (QR, repère, titre FR/NL/EN, URL courte, code à 4 caractères lisible à 2 m) et une page récapitulative pour les organisateurs. Le test `tests/unit/qr.test.ts` décode les PNG produits et vérifie l'URL.
 
-Avant l'impression du 7 octobre : `content:seed`, test de scan de chaque PNG sur iPhone et Android, puis **Geler les jetons** dans l'admin.
+Avant l'impression du 7 octobre : `APP_BASE_URL=https://<domaine> pnpm qr:render --pdf`, test de scan de chaque PNG sur iPhone et Android, **Geler les jetons** dans `/admin/content`, puis envoi de `qr/planche.pdf` à l'imprimeur.
 
 ## 5. Pipeline médias (résumé opérationnel du cahier)
 

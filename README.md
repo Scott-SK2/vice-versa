@@ -32,6 +32,7 @@ pnpm dev                        # http://localhost:3000
 | `pnpm db:studio` | Explorateur de base de données |
 | `pnpm content:validate` | Valide `content/vv26/` sans toucher à la base |
 | `pnpm qr:tokens` | Attribue les jetons QR et codes courts manquants |
+| `pnpm qr:render --pdf` | Génère `qr/<code>.png` et `.svg` (correction H), `qr/planche.html` et `qr/planche.pdf` (une affiche A4 par station + récapitulatif) à partir de `APP_BASE_URL` |
 | `pnpm db:seed` | Charge (ou recharge) le contenu en base, de façon idempotente |
 | `pnpm admin:create` | Crée un compte d'administration |
 | `pnpm seance list\|create\|start\|phase\|close\|reopen\|reset\|delete` | Pilote les séances en ligne de commande, en attendant la console admin |

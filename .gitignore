@@ -42,3 +42,4 @@ next-env.d.ts
 e2e-shots/
 deploy/data/*
 !deploy/data/.gitkeep
+/qr/
