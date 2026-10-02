@@ -1,6 +1,6 @@
 # 03 — Modèle de données (PostgreSQL)
 
-Le modèle du cahier v3 est conservé et étendu : `Spot` devient `Station`, `Event.state` devient `Run.phase`, les données participants sont rattachées à une séance, et les tables d'administration apparaissent. Les migrations sont gérées par Prisma ; ce DDL est la référence lisible.
+Le modèle du cahier v3 est conservé et étendu : `Spot` devient `Station`, `Event.state` devient `Run.phase`, les données participants sont rattachées à une séance, et les tables d'administration apparaissent. Le schéma source est `src/db/schema/*.ts` (Drizzle) et les migrations générées sont dans `drizzle/` ; ce DDL en est la lecture SQL. Deux écarts volontaires dans l’implémentation : les hachages de jetons sont stockés en `text` hexadécimal plutôt qu’en `bytea`, et `admin_users.email` est un `text` normalisé en minuscules par l’application plutôt qu’un `citext`. Les tables `questions`, `choices` et `media` portent aussi une colonne `active` pour désactiver sans supprimer.
 
 ## 1. Schéma d'ensemble
 

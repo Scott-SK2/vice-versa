@@ -1,0 +1,22 @@
+# Développement local : base de données seule.
+#   docker compose up -d db
+# Les services app et caddy de production seront ajoutés avec le Dockerfile.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: viceversa
+      POSTGRES_PASSWORD: viceversa
+      POSTGRES_DB: viceversa
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U viceversa -d viceversa"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
