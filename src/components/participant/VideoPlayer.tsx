@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { TFn } from "@/lib/participant/client/i18n";
 import { CaptionsOverlay } from "./CaptionsOverlay";
 
@@ -24,6 +24,20 @@ export function VideoPlayer({ media, lang, langs, t, onProgress }: { media: Medi
   const [chosenLang, setCapLang] = useState<string | null>(null);
   const capLang = chosenLang ?? lang;
   const reported = useRef(new Set<number>());
+  /** Vrai quand l'affichage mot à mot fonctionne : les sous-titres natifs (<track>) sont alors masqués, sinon ils servent de repli. */
+  const [overlayOk, setOverlayOk] = useState(false);
+  const onOverlayLoaded = useCallback((ok: boolean) => setOverlayOk(ok), []);
+
+  useEffect(() => {
+    const v = video.current;
+    if (!v) return;
+    const apply = () => {
+      for (const track of Array.from(v.textTracks)) track.mode = overlayOk ? "hidden" : "showing";
+    };
+    apply();
+    v.textTracks.addEventListener("addtrack", apply);
+    return () => v.textTracks.removeEventListener("addtrack", apply);
+  }, [overlayOk, capLang, state]);
 
   const report = useCallback(
     (ratio: number) => {
@@ -67,7 +81,7 @@ export function VideoPlayer({ media, lang, langs, t, onProgress }: { media: Medi
 
   return (
     <div className="flex flex-col gap-3">
-      <div className="relative mx-auto aspect-[9/16] w-full max-w-[360px] overflow-hidden rounded-card bg-black">
+      <div className="relative mx-auto aspect-[9/16] w-full max-w-[360px] overflow-hidden rounded-card bg-black" style={{ containerType: "inline-size" }}>
         <video
           ref={video}
           className="h-full w-full object-contain"
@@ -94,7 +108,7 @@ export function VideoPlayer({ media, lang, langs, t, onProgress }: { media: Medi
         >
           {captions && <track kind="subtitles" src={captions.vtt} srcLang={capLang} label={capLang.toUpperCase()} default />}
         </video>
-        {captions && state !== "idle" && <CaptionsOverlay videoRef={video} src={captions.words} />}
+        {captions && state !== "idle" && <CaptionsOverlay key={captions.words} videoRef={video} src={captions.words} onLoaded={onOverlayLoaded} />}
         {state === "idle" && (
           <button
             onClick={play}

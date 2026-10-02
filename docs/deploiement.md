@@ -32,9 +32,11 @@ Si le dépôt GitHub est privé, l'image GHCR l'est aussi : `docker login ghcr.i
 mkdir -p deploy/data/media deploy/data/content deploy/data/backups
 cp -r content/vv26 deploy/data/content/           # stations, questions, médias, jetons QR figés
 cp content/vv26/map.svg deploy/data/media/
-# Vidéos, posters, sous-titres : mêmes noms que dans content/vv26/media.json
-rsync -av dist/ user@serveur:~/vice-versa/deploy/data/media/
+# Vidéos, posters, sous-titres : produits par pnpm media encode / pnpm media sync-captions (noms de media.json)
+pnpm media check                                   # vérification locale avant envoi
+rsync -av public/media/ user@serveur:~/vice-versa/deploy/data/media/
 #   → deploy/data/media/VV-V10_appartement-membre.mp4, VV-V10.jpg, captions/VV-V10.fr.json, captions/VV-V10.fr.vtt, …
+# Puis, depuis n'importe quel poste : MEDIA_BASE_URL=https://<DOMAIN>/media pnpm media check
 ```
 
 Le dossier `deploy/data/content` est monté dans l'application : « Recharger le contenu » dans `/admin/content` relit ce dossier, sans reconstruire l'image. Au démarrage, l'application charge aussi le contenu si sa version diffère de celle en base (`SEED_CONTENT_ON_START`).

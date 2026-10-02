@@ -34,6 +34,7 @@ pnpm dev                        # http://localhost:3000
 | `pnpm db:studio` | Explorateur de base de données |
 | `pnpm content:validate` | Valide `content/vv26/` sans toucher à la base |
 | `pnpm qr:tokens` | Attribue les jetons QR et codes courts manquants |
+| `pnpm media encode\|sample\|grant\|revoke\|sync-captions\|check` | Encodage conforme au cahier, clip de test, passage en consentement validé, copie des sous-titres, vérification des médias publiés |
 | `pnpm captions extract\|transcribe\|translate\|emit\|check` | Chaîne de sous-titrage (Groq Whisper puis traduction NL/EN), hors application : voir `content/vv26/captions/README.md` |
 | `pnpm qr:render --pdf` | Génère `qr/<code>.png` et `.svg` (correction H), `qr/planche.html` et `qr/planche.pdf` (une affiche A4 par station + récapitulatif) à partir de `APP_BASE_URL` |
 | `pnpm db:seed` | Charge (ou recharge) le contenu en base, de façon idempotente |
@@ -46,7 +47,7 @@ Routes sous `/vv26` : accueil et choix de langue, questions « Avant », parcour
 
 L'application interroge `/api/runs/current` toutes les 10 s : un changement de phase déplace le participant vers le bon écran, une séance stoppée l'envoie sur « Merci », une nouvelle séance le fait repartir de zéro en gardant sa langue. Les réponses envoyées sans réseau sont mises en file et renvoyées automatiquement.
 
-En local, les médias sont servis depuis `public/media/` (`MEDIA_BASE_URL=/media`) : le plan `map.svg` y est copié ; les vidéos, posters et sous-titres y seront déposés avec les mêmes noms que dans `content/vv26/media.json`.
+En local, les médias sont servis depuis `public/media/` (`MEDIA_BASE_URL=/media`) : le plan `map.svg` y est versionné ; vidéos, posters et sous-titres y sont produits par `pnpm media encode` / `pnpm media sync-captions` (ignorés par git). Pour tester le lecteur sans attendre les clips : `pnpm media sample --ref VV-V12`, une ligne de test dans `content/vv26/consents.csv`, `pnpm media grant VV-V12`, `pnpm db:seed`.
 
 ## Console d'administration
 

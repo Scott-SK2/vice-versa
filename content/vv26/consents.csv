@@ -1,0 +1,3 @@
+media_ref,personnes_reconnaissables,consentement,mineur,accord_parent,logos_partenaires,autorisation_diffusion,autorisation_reseaux,date,note
+# Une ligne par média (07 § 7). consentement : ecrit | message | aucun. mineur et accord_parent : oui | non. autorisation_diffusion : oui | non.
+# Exemple : VV-V10,1 membre du groupe,ecrit,non,,non,oui,oui,2026-10-03,formulaire signé le 3 oct.

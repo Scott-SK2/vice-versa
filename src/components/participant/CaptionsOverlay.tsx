@@ -30,7 +30,7 @@ function buildGroups(file: CaptionFile): Group[] {
  * Sous-titres « façon TikTok » (05 § 5) : groupe courant centré vers 65 % de la hauteur,
  * mot en cours en jaune, synchronisé par requestAnimationFrame sur video.currentTime.
  */
-export function CaptionsOverlay({ videoRef, src }: { videoRef: RefObject<HTMLVideoElement | null>; src: string }) {
+export function CaptionsOverlay({ videoRef, src, onLoaded }: { videoRef: RefObject<HTMLVideoElement | null>; src: string; onLoaded?: (ok: boolean) => void }) {
   const [groups, setGroups] = useState<Group[] | null>(null);
   const [current, setCurrent] = useState<{ group: Group; wordIdx: number } | null>(null);
   const raf = useRef<number>(0);
@@ -39,12 +39,21 @@ export function CaptionsOverlay({ videoRef, src }: { videoRef: RefObject<HTMLVid
     let alive = true;
     fetch(src)
       .then((r) => (r.ok ? r.json() : null))
-      .then((f: CaptionFile | null) => alive && setGroups(f ? buildGroups(f) : []))
-      .catch(() => alive && setGroups([]));
+      .then((f: CaptionFile | null) => {
+        if (!alive) return;
+        const g = f ? buildGroups(f) : [];
+        setGroups(g);
+        onLoaded?.(g.length > 0);
+      })
+      .catch(() => {
+        if (!alive) return;
+        setGroups([]);
+        onLoaded?.(false);
+      });
     return () => {
       alive = false;
     };
-  }, [src]);
+  }, [src, onLoaded]);
 
   useEffect(() => {
     if (!groups?.length) return;
@@ -72,9 +81,8 @@ export function CaptionsOverlay({ videoRef, src }: { videoRef: RefObject<HTMLVid
       {current && (
         <p className="font-display font-extrabold leading-tight text-white [text-shadow:_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000,_2px_2px_0_#000]" style={{ fontSize: "7cqw" }}>
           {current.group.words.map((w, i) => (
-            <span key={i} className={i === current.wordIdx ? "inline-block scale-110 text-yellow" : ""}>
+            <span key={i} className={`inline-block ${i < current.group.words.length - 1 ? "mr-[0.3em]" : ""} ${i === current.wordIdx ? "scale-110 text-yellow" : ""}`}>
               {w.w}
-              {i < current.group.words.length - 1 ? " " : ""}
             </span>
           ))}
         </p>
