@@ -18,6 +18,9 @@ export const env = {
   get participantRatePerMin(): number {
     return Number(process.env.RATE_LIMIT_PARTICIPANT_PER_MIN ?? 120);
   },
+  get sessionsPerIpPerMin(): number {
+    return Number(process.env.RATE_LIMIT_SESSIONS_PER_IP_PER_MIN ?? 120);
+  },
   get retentionMonths(): number {
     return Number(process.env.RETENTION_MONTHS ?? 12);
   },
