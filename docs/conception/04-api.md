@@ -153,7 +153,7 @@ Renvoyé uniquement pour `single_choice`, `multi_choice`, `tri_state`, `guess_re
 
 ## 4. Routes administration
 
-Toutes exigent le cookie `vv_admin`. La colonne « Rôle » indique le rôle minimal (`admin` peut tout). Les mutations exigent l'en-tête `X-Requested-With: vv-admin` (protection CSRF en plus de `SameSite=Lax`).
+Toutes exigent le cookie `vv_admin`. La colonne « Rôle » indique le rôle minimal ; les rôles sont hiérarchiques (`moderateur` < `animateur` < `admin`). Les mutations exigent l'en-tête `X-Requested-With: vv-admin` (protection CSRF en plus de `SameSite=Lax`) et, s'il est présent, un `Origin` du même hôte. Un compte dont le mot de passe est temporaire (`must_change_password`) n'a accès qu'aux routes `/api/admin/auth/*` tant qu'il ne l'a pas changé. Échecs : `401 ADMIN_UNAUTHENTICATED`, `403 FORBIDDEN`.
 
 ### 4.1 Authentification
 
@@ -186,10 +186,12 @@ Toutes exigent le cookie `vv_admin`. La colonne « Rôle » indique le rôle min
 | Méthode | Route | Rôle | Description |
 |---|---|---|---|
 | `GET` | `/api/admin/runs/{id}/dashboard` | tous | Sessions actives (vues < 2 min), total, progression moyenne, « Avant » remplies, textes à modérer, fréquentation par station, réponses « Après » reçues |
-| `GET` | `/api/admin/runs/{id}/answers?status=pending&cursor=` | moderateur | Textes libres (`short_text`, commentaires `tri_state`, trace) avec question, station, horodatage, **jamais l'identifiant de session en clair** |
+| `GET` | `/api/admin/runs/{id}/answers?status=pending&before=&limit=` | moderateur | Textes libres (`short_text`, commentaires `tri_state`, trace) avec question, station, horodatage, **jamais l'identifiant de session en clair** |
 | `POST` | `/api/admin/answers/{id}/moderate` | moderateur | `{ decision: "approved" \| "rejected" }` |
-| `GET` | `/api/admin/runs/{id}/projection/{kind}?question=` | animateur | Aperçu des données d'une diapositive |
-| `PUT` | `/api/admin/runs/{id}/projection` | animateur | `{ kind, question_key? }` → `current_slide` |
+| `GET` | `/api/admin/runs/{id}/projection` | tous | Diapositives disponibles, diapositive courante, URL de projection |
+| `GET` | `/api/admin/runs/{id}/projection/preview?kind=&question=` | tous | Aperçu des données d'une diapositive |
+| `PUT` | `/api/admin/runs/{id}/projection` | animateur | `{ kind, questionKey? }` → `current_slide` |
+| `POST` | `/api/admin/runs/{id}/projection-key` | admin | Régénère la clé de projection (l'ancienne URL cesse de fonctionner) |
 | `GET` | `/api/admin/runs/{id}/export.csv` | admin | Une ligne par réponse : `session_hash, station, question_key, type, value_json, moderation_status, updated_at` (`session_hash` = hachage tronqué, pour relier les réponses d'une même session sans identifier le jeton) |
 | `GET` | `/api/admin/runs/{id}/export.json` | admin | `summary` (recalculé si la séance est encore live) |
 | `GET` | `/api/admin/runs/{id}/audit` | admin | Journal filtré sur la séance |

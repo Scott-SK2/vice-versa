@@ -35,6 +35,16 @@ pnpm dev                        # http://localhost:3000
 | `pnpm admin:create` | Crée un compte d'administration |
 | `pnpm seance list\|create\|start\|phase\|close\|reopen\|reset\|delete` | Pilote les séances en ligne de commande, en attendant la console admin |
 
+## Console d'administration
+
+- `/admin/login` : connexion par e-mail et mot de passe (compte créé avec `pnpm admin:create`, ou `ADMIN_BOOTSTRAP_EMAIL` / `ADMIN_BOOTSTRAP_PASSWORD` au premier démarrage).
+- `/admin` : séances (créer, lancer, piloter les phases, stopper, rouvrir, réinitialiser, archiver, supprimer), tableau de bord, modération, projection, export, journal.
+- `/admin/users` et `/admin/content` : comptes et rechargement du contenu (admin uniquement).
+- `/animateur` et `/moderation` : raccourcis vers la console de la séance en cours.
+- `/projection/<id>?key=…` : écran de la salle, lien affiché dans l'onglet Projection.
+
+Rôles : **admin** (tout), **animateur** (phases, projection, modération), **modérateur** (modération et lecture).
+
 ## Tester l'API participant à la main
 
 ```bash
@@ -62,6 +72,8 @@ src/lib/domain/      règles métier pures : phases, progression, réponses, mot
 src/lib/content/     schémas et chargement du dossier content/, catalogue en base
 src/lib/participant/ API participant : résolution du jeton, scan, stations, réponses, agrégats
 src/lib/runs/        cycle de vie des séances (créer, lancer, phases, stopper, résumé)
+src/lib/admin/       authentification admin, services de la console, client fetch
+src/components/      composants de la console (admin/) et des diapositives (projection/)
 src/lib/api/         erreurs, enveloppe des Route Handlers, limite de débit
 src/app/api/         Route Handlers Next.js
 src/app/             pages Next.js (participant /vv26, admin /admin, projection)
