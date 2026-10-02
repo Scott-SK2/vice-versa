@@ -32,6 +32,7 @@ pnpm dev                        # http://localhost:3000
 | `pnpm db:studio` | Explorateur de base de données |
 | `pnpm content:validate` | Valide `content/vv26/` sans toucher à la base |
 | `pnpm qr:tokens` | Attribue les jetons QR et codes courts manquants |
+| `pnpm captions extract\|transcribe\|translate\|emit\|check` | Chaîne de sous-titrage (Groq Whisper puis traduction NL/EN), hors application : voir `content/vv26/captions/README.md` |
 | `pnpm qr:render --pdf` | Génère `qr/<code>.png` et `.svg` (correction H), `qr/planche.html` et `qr/planche.pdf` (une affiche A4 par station + récapitulatif) à partir de `APP_BASE_URL` |
 | `pnpm db:seed` | Charge (ou recharge) le contenu en base, de façon idempotente |
 | `pnpm admin:create` | Crée un compte d'administration |
@@ -89,6 +90,7 @@ src/lib/participant/ API participant : résolution du jeton, scan, stations, ré
 src/lib/runs/        cycle de vie des séances (créer, lancer, phases, stopper, résumé)
 src/lib/admin/       authentification admin, services de la console, client fetch
 src/components/      console (admin/), diapositives (projection/), application participant (participant/)
+src/lib/captions/    format des sous-titres, répartition des mots, WebVTT, client Groq (scripts seulement)
 src/lib/participant/client/  état client participant : jeton, séance, langue, file hors-ligne, textes FR/NL/EN
 messages/            textes d'interface fr.json, nl.json, en.json
 src/lib/api/         erreurs, enveloppe des Route Handlers, limite de débit

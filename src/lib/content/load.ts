@@ -54,6 +54,14 @@ export function loadContent(dir: string): ContentBundle {
   const mapSvg = readFileSync(/* turbopackIgnore: true */ mapPath, "utf8");
 
   const problems = checkConsistency({ event, stations, questions, media });
+  for (const m of media) {
+    for (const lang of Object.keys(m.captions ?? {})) {
+      for (const ext of ["json", "vtt"]) {
+        const f = path.join(dir, "captions", `${m.ref}.${lang}.${ext}`);
+        if (!existsSync(/* turbopackIgnore: true */ f)) problems.push(`media ${m.ref} : sous-titres ${lang} déclarés mais captions/${m.ref}.${lang}.${ext} absent`);
+      }
+    }
+  }
   if (problems.length) throw new ContentError("Incohérences dans le contenu", problems);
 
   const version = createHash("sha256")

@@ -43,3 +43,4 @@ e2e-shots/
 deploy/data/*
 !deploy/data/.gitkeep
 /qr/
+work/

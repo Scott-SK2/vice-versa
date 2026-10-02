@@ -104,8 +104,9 @@ export const mediaFileSchema = z
     orientation: z.enum(["portrait", "landscape"]).default("portrait"),
     consent_status: z.enum(["pending", "granted", "refused"]).default("pending"),
     credits: z.string().optional(),
+    /** Langues de sous-titres disponibles ; déclaration partielle autorisée (fr seul, puis nl, en). */
     captions: z
-      .record(z.enum(LANGS), z.object({ status: z.enum(["auto", "reviewed"]), source: z.enum(["whisper", "manual", "translation"]).optional() }))
+      .partialRecord(z.enum(LANGS), z.object({ status: z.enum(["auto", "reviewed"]), source: z.enum(["whisper", "manual", "translation"]).optional() }))
       .optional(),
     /** Description du catalogue, non chargée en base. */
     note: z.string().optional(),
