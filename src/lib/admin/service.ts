@@ -3,7 +3,7 @@
  * modération, projection, export, comptes, contenu.
  */
 import { and, desc, eq, inArray, lt, sql } from "drizzle-orm";
-import { createHash } from "node:crypto";
+import { createHash, timingSafeEqual } from "node:crypto";
 import { alias } from "drizzle-orm/pg-core";
 import { type Db, schema } from "@/db/client";
 import type { AdminRole, ModerationStatus } from "@/db/schema/enums";
@@ -375,10 +375,16 @@ export async function setSlide(db: Db, actor: Actor, runId: string, slide: Slide
   return { current_slide: slide };
 }
 
+function safeEqual(a: string, b: string): boolean {
+  const ba = Buffer.from(a);
+  const bb = Buffer.from(b);
+  return ba.length === bb.length && ba.length > 0 && timingSafeEqual(ba, bb);
+}
+
 /** Écran de la salle : accès par clé de projection, données agrégées et modérées uniquement. */
 export async function publicProjection(db: Db, runId: string, key: string) {
   const run = await getRunOrThrow(db, runId);
-  if (!key || key !== run.projectionKey) throw errors.forbidden("Clé de projection invalide.");
+  if (!safeEqual(key, run.projectionKey)) throw errors.forbidden("Clé de projection invalide.");
   const slide: Slide = run.currentSlide ?? { kind: "blank" };
   const payload = await projectionData(db, run, slide);
   return {

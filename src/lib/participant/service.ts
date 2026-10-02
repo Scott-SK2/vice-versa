@@ -66,6 +66,10 @@ export async function createSession(input: { lang: string; ip: string; eventSlug
   if (!catalog) throw errors.notFound("Événement");
   const lang = catalog.event.languages.includes(input.lang) ? input.lang : catalog.event.defaultLang;
 
+  // Garde-fou contre le remplissage de la base : plafond de sessions par séance.
+  const [{ n }] = await getDb().select({ n: sql<number>`count(*)::int` }).from(participantSessions).where(eq(participantSessions.runId, run.id));
+  if (n >= env.maxSessionsPerRun) throw errors.rateLimited(60);
+
   const token = newParticipantToken(run.id);
   const [session] = await getDb()
     .insert(participantSessions)
@@ -217,8 +221,12 @@ export async function scan(ctx: ParticipantContext, input: ScanInput) {
   } else {
     throw errors.validation(["token ou short_code requis"]);
   }
-  if (!station) throw errors.unknownCode();
-  if (input.expectedCode && station.code !== input.expectedCode) throw errors.unknownCode();
+  if (!station || (input.expectedCode && station.code !== input.expectedCode)) {
+    // Codes devinés : 10 échecs par minute et par session, 40 par IP (Wi-Fi de salle compris).
+    rateLimit(`scan-fail:${session.id}`, 10);
+    rateLimit(`scan-fail-ip:${ctx.ip}`, 40);
+    throw errors.unknownCode();
+  }
   const found = station;
   const readOnly = scanIsReadOnly(run.phase);
 

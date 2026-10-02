@@ -21,6 +21,9 @@ export const env = {
   get sessionsPerIpPerMin(): number {
     return Number(process.env.RATE_LIMIT_SESSIONS_PER_IP_PER_MIN ?? 120);
   },
+  get maxSessionsPerRun(): number {
+    return Number(process.env.MAX_SESSIONS_PER_RUN ?? 2000);
+  },
   get retentionMonths(): number {
     return Number(process.env.RETENTION_MONTHS ?? 12);
   },

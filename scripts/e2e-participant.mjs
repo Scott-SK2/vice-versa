@@ -117,10 +117,13 @@ try {
   await page.waitForSelector("text=Vraag 1 van 4");
   await page.click("text=In Afrika");
   await page.click("button:has-text('Volgende')");
+  await page.waitForSelector("text=Vraag 2 van 4");
   for (const [i, w] of ["regen", "koud", "werk"].entries()) await page.fill(`input[aria-label='Woord ${i + 1}']`, w);
   await page.click("button:has-text('Volgende')");
+  await page.waitForSelector("text=Vraag 3 van 4");
   for (const [i, w] of ["zon", "familie", "ondernemen"].entries()) await page.fill(`input[aria-label='Woord ${i + 1}']`, w);
   await page.click("button:has-text('Volgende')");
+  await page.waitForSelector("text=Vraag 4 van 4");
   await page.fill("textarea", "De energie van de stad");
   await page.click("button:has-text('Mijn antwoord versturen')");
   await page.waitForURL("**/vv26/bilan", { timeout: 15000 });

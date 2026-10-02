@@ -23,6 +23,9 @@ const SESSION_TTL_MS = 12 * 60 * 60 * 1000;
 const SESSION_MAX_MS = 24 * 60 * 60 * 1000;
 const ARGON = { memoryCost: 65536, timeCost: 3, parallelism: 1 };
 const ROLE_LEVEL: Record<AdminRole, number> = { moderateur: 1, animateur: 2, admin: 3 };
+/** Hachage Argon2id d'un mot de passe aléatoire, calculé une fois, pour une vérification factice à durée identique. */
+let dummyHash: Promise<string> | null = null;
+const getDummyHash = () => (dummyHash ??= hash(randomBytes(32).toString("hex"), ARGON));
 
 export function hasRole(user: Pick<AdminUser, "role">, min: AdminRole): boolean {
   return ROLE_LEVEL[user.role] >= ROLE_LEVEL[min];
@@ -61,10 +64,14 @@ export async function login(req: Request, email: string, password: string) {
   const ip = clientIp(req);
   const normalized = email.trim().toLowerCase();
   rateLimit(`login:${ip}:${normalized}`, 5, 15 * 60 * 1000);
+  rateLimit(`login-email:${normalized}`, 20, 15 * 60 * 1000); // toutes IP confondues
+  rateLimit(`login-ip:${ip}`, 30, 15 * 60 * 1000); // énumération d'e-mails depuis une IP
   await bootstrapAdminIfEmpty();
   const db = getDb();
   const [user] = await db.select().from(adminUsers).where(eq(adminUsers.email, normalized)).limit(1);
-  const ok = user && user.active && (await verifyPassword(user.passwordHash, password));
+  // Vérification factice si le compte n'existe pas : même durée de réponse, pas d'énumération par le temps.
+  const verified = user ? await verifyPassword(user.passwordHash, password) : await verifyPassword(await getDummyHash(), password);
+  const ok = user && user.active && verified;
   if (!ok) {
     await db.insert(auditLog).values({ actorId: user?.id ?? null, action: "auth.failed", payload: { email: normalized, ip } });
     throw errors.adminUnauthenticated("Identifiants incorrects.");

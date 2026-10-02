@@ -22,6 +22,12 @@ export function rateLimit(key: string, limit: number, windowMs = 60_000, now = D
   if (b.count > limit) throw errors.rateLimited(Math.max(1, Math.ceil((b.resetAt - now) / 1000)));
 }
 
+/** Vrai si la clé a déjà dépassé sa limite (sans consommer d'essai). */
+export function isRateLimited(key: string, limit: number, now = Date.now()): boolean {
+  const b = buckets.get(key);
+  return Boolean(b && b.resetAt > now && b.count >= limit);
+}
+
 /** Pour les tests. */
 export function resetRateLimits(): void {
   buckets.clear();
