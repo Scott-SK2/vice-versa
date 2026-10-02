@@ -1,0 +1,63 @@
+# Production : docker compose -f docker-compose.prod.yml --env-file .env.production up -d
+# Voir docs/deploiement.md.
+services:
+  app:
+    image: ${APP_IMAGE:-ghcr.io/scott-sk2/vice-versa:latest}
+    # Pour construire sur le serveur au lieu de tirer l'image :
+    # build: { context: ., args: { APP_VERSION: "${APP_VERSION:-local}" } }
+    restart: unless-stopped
+    env_file: .env.production
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://viceversa:${POSTGRES_PASSWORD}@db:5432/viceversa
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      # Médias (vidéos, posters, sous-titres, plan) servis par Caddy sous /media ; l'app n'en a pas besoin,
+      # mais le dossier content/ peut être monté pour recharger le contenu sans reconstruire l'image.
+      - ./deploy/data/content:/app/content:ro
+    expose: ["3000"]
+    logging:
+      driver: json-file
+      options: { max-size: "20m", max-file: "5" }
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: viceversa
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: viceversa
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./deploy/data/backups:/backups
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U viceversa -d viceversa"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    logging:
+      driver: json-file
+      options: { max-size: "20m", max-file: "5" }
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./deploy/data/media:/srv/media:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [app]
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:

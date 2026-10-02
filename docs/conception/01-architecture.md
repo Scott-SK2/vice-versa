@@ -137,7 +137,7 @@ sequenceDiagram
 
 ## 6. Exploitation
 
-- **Déploiement** : `docker compose up -d` (services `app`, `db`, `caddy`). Image Next.js `standalone`. Migrations Drizzle (`drizzle-kit migrate`) lancées au démarrage du conteneur `app`.
+- **Déploiement** : `docker compose -f docker-compose.prod.yml up -d` (services `app`, `db`, `caddy`). Image Next.js `standalone` construite par la CI et publiée sur GHCR. Au démarrage, `app` applique les migrations Drizzle (migrateur programmatique dans `src/instrumentation.ts`), crée le premier admin si besoin et charge `content/` s’il a changé. Guide : `docs/deploiement.md`.
 - **Sauvegardes** : `pg_dump` toutes les nuits + **un dump manuel juste avant de lancer la séance `live` du 10 octobre** (bouton « Sauvegarde » dans l'admin qui déclenche le dump, ou commande documentée).
 - **Santé** : `GET /api/health` vérifie la base et renvoie la séance live et sa phase ; surveillé par un ping externe toutes les minutes pendant l'événement.
 - **Capacité** : 80 participants × 1 requête / 10 s = 8 req/s de polling plus les scans et réponses ; largement sous ce que tient une instance Node + Postgres. Le trafic lourd (vidéos) ne touche pas le VPS.

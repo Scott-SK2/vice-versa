@@ -69,12 +69,17 @@ pnpm seance close --id <uuid>                    # stopper : résultats figés, 
 
 Les routes et leurs contrats sont décrits dans [`docs/conception/04-api.md`](docs/conception/04-api.md). Les tests d'intégration (`tests/api/`) exigent une base migrée et seedée.
 
+## Déploiement
+
+Image Docker (`Dockerfile`, Next.js standalone, utilisateur non root) publiée sur GHCR par la CI depuis `main`, Compose de production (`docker-compose.prod.yml` : app, PostgreSQL, Caddy avec TLS automatique et médias statiques), migrations, premier admin et contenu chargés au démarrage, sauvegardes `deploy/backup.sh`. Guide complet : [`docs/deploiement.md`](docs/deploiement.md).
+
 ## Organisation
 
 ```
 content/vv26/        contenu versionné : événement, stations, questions, médias, mots interdits, plan
 docs/conception/     dossier de conception
 drizzle/             migrations SQL
+deploy/              Caddyfile, scripts de sauvegarde et restauration, données montées (ignorées par git)
 scripts/             seed, validation, jetons QR, création d'admin
 src/db/              client et schéma Drizzle (enums, contenu, administration, séances)
 src/lib/domain/      règles métier pures : phases, progression, réponses, mots, jetons
