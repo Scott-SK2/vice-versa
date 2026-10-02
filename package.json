@@ -17,7 +17,10 @@
     "db:seed": "tsx scripts/seed.ts",
     "content:validate": "tsx scripts/content-validate.ts",
     "qr:tokens": "tsx scripts/qr-tokens.ts",
-    "admin:create": "tsx scripts/create-admin.ts"
+    "admin:create": "tsx scripts/create-admin.ts",
+    "seance": "tsx scripts/seance.ts",
+    "test:unit": "vitest run tests/unit",
+    "test:api": "vitest run tests/api"
   },
   "dependencies": {
     "@node-rs/argon2": "^2.2.1",

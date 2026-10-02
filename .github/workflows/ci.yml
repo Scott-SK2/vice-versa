@@ -33,7 +33,7 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm content:validate
-      - run: pnpm test
       - run: pnpm db:migrate
       - run: pnpm db:seed
+      - run: pnpm test
       - run: pnpm build

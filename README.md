@@ -33,6 +33,22 @@ pnpm dev                        # http://localhost:3000
 | `pnpm qr:tokens` | Attribue les jetons QR et codes courts manquants |
 | `pnpm db:seed` | Charge (ou recharge) le contenu en base, de façon idempotente |
 | `pnpm admin:create` | Crée un compte d'administration |
+| `pnpm seance list\|create\|start\|phase\|close\|reopen\|reset\|delete` | Pilote les séances en ligne de commande, en attendant la console admin |
+
+## Tester l'API participant à la main
+
+```bash
+pnpm seance create --label "Test interne 1"      # séance en brouillon
+pnpm seance start --id <uuid>                    # la séance passe live, phase accueil
+pnpm seance phase --id <uuid> --to parcours
+curl -s localhost:3000/api/runs/current
+TOKEN=$(curl -s -X POST localhost:3000/api/sessions -H 'content-type: application/json' -d '{"lang":"fr"}' | jq -r .token)
+curl -s -X POST localhost:3000/api/scan -H "authorization: Bearer $TOKEN" -H 'content-type: application/json' -d '{"short_code":"XEDU"}'
+curl -s localhost:3000/api/stations/3 -H "authorization: Bearer $TOKEN"
+pnpm seance close --id <uuid>                    # stopper : résultats figés, participants sur « Merci »
+```
+
+Les routes et leurs contrats sont décrits dans [`docs/conception/04-api.md`](docs/conception/04-api.md). Les tests d'intégration (`tests/api/`) exigent une base migrée et seedée.
 
 ## Organisation
 
@@ -43,7 +59,12 @@ drizzle/             migrations SQL
 scripts/             seed, validation, jetons QR, création d'admin
 src/db/              client et schéma Drizzle (enums, contenu, administration, séances)
 src/lib/domain/      règles métier pures : phases, progression, réponses, mots, jetons
-src/lib/content/     schémas et chargement du dossier content/
+src/lib/content/     schémas et chargement du dossier content/, catalogue en base
+src/lib/participant/ API participant : résolution du jeton, scan, stations, réponses, agrégats
+src/lib/runs/        cycle de vie des séances (créer, lancer, phases, stopper, résumé)
+src/lib/api/         erreurs, enveloppe des Route Handlers, limite de débit
+src/app/api/         Route Handlers Next.js
 src/app/             pages Next.js (participant /vv26, admin /admin, projection)
-tests/unit/          tests Vitest
+tests/unit/          tests unitaires (règles métier, contenu)
+tests/api/           tests d'intégration de l'API contre PostgreSQL
 ```
