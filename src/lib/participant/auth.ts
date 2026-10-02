@@ -2,7 +2,7 @@ import { and, eq, sql } from "drizzle-orm";
 import { getDb, schema } from "@/db/client";
 import { env } from "@/lib/env";
 import { errors } from "@/lib/api/errors";
-import { bearerToken } from "@/lib/api/http";
+import { bearerToken, clientIp } from "@/lib/api/http";
 import { rateLimit } from "@/lib/api/rate-limit";
 import { type Catalog, getCatalogBySlug } from "@/lib/content/catalog";
 import { hashToken } from "./token";
@@ -16,6 +16,7 @@ export type ParticipantContext = {
   session: SessionRow;
   run: RunRow;
   catalog: Catalog;
+  ip: string;
 };
 
 /** Séance live d'un événement, ou null. */
@@ -41,6 +42,7 @@ export async function requireParticipant(req: Request): Promise<ParticipantConte
   if (!token) throw errors.sessionUnknown();
   const tokenHash = hashToken(token);
   rateLimit(`p:${tokenHash}`, env.participantRatePerMin);
+  const ip = clientIp(req);
 
   const db = getDb();
   const [row] = await db
@@ -50,7 +52,10 @@ export async function requireParticipant(req: Request): Promise<ParticipantConte
     .innerJoin(events, eq(events.id, runs.eventId))
     .where(eq(participantSessions.tokenHash, tokenHash))
     .limit(1);
-  if (!row) throw errors.sessionUnknown();
+  if (!row) {
+    rateLimit(`p-unknown:${ip}`, 60); // jetons inventés depuis une IP
+    throw errors.sessionUnknown();
+  }
 
   if (row.run.status !== "live") {
     const live = await getLiveRun(row.eventSlug);
@@ -67,5 +72,5 @@ export async function requireParticipant(req: Request): Promise<ParticipantConte
       .set({ lastSeenAt: sql`now()` })
       .where(eq(participantSessions.id, row.session.id));
   }
-  return { session: row.session, run: row.run, catalog };
+  return { session: row.session, run: row.run, catalog, ip };
 }

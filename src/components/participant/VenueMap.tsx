@@ -1,27 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Pill, type StationState } from "./ui";
 
 export type MapStation = { code: string; title: string; state: StationState; is_here: boolean; x_pct: number | null; y_pct: number | null; counts_in_progress: boolean };
 
-/** Plan SVG inline avec pastilles positionnées en % et pin « Je suis ici » (05 § 4). */
+/**
+ * Plan SVG avec pastilles positionnées en % et pin « Je suis ici » (05 § 4).
+ * Le plan est affiché dans une balise <img> : un SVG servi par le CDN ne peut ainsi
+ * exécuter aucun script ni gestionnaire d'événement, quelle que soit la CSP.
+ */
 export function VenueMap({ svgUrl, width, height, stations, onSelect }: { svgUrl: string; width: number; height: number; stations: MapStation[]; onSelect: (code: string) => void }) {
-  const [svg, setSvg] = useState<string | null>(null);
-  useEffect(() => {
-    let alive = true;
-    fetch(svgUrl)
-      .then((r) => (r.ok ? r.text() : ""))
-      .then((s) => alive && setSvg(s.replace(/<\?xml[^>]*>/, "").replace(/<script[\s\S]*?<\/script>/gi, "")))
-      .catch(() => alive && setSvg(""));
-    return () => {
-      alive = false;
-    };
-  }, [svgUrl]);
-
   return (
     <div className="relative w-full overflow-hidden rounded-card border border-state-locked bg-white" style={{ aspectRatio: `${width} / ${height}` }}>
-      {svg !== null && <div className="absolute inset-0 [&>svg]:h-full [&>svg]:w-full" dangerouslySetInnerHTML={{ __html: svg }} aria-hidden />}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={svgUrl} alt="" className="absolute inset-0 h-full w-full object-contain" draggable={false} />
       {stations
         .filter((s) => s.x_pct !== null && s.y_pct !== null)
         .map((s) => (

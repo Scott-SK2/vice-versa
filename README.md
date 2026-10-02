@@ -4,6 +4,7 @@ Application web de l'atelier VICE VERSA (Mix'Up, 10 octobre 2026) : parcours de 
 
 - Cahier de concept fonctionnel v3 : document de référence fonctionnel (fourni par les organisateurs).
 - **Dossier de conception technique : [`docs/conception/`](docs/conception/README.md)**.
+- Guide de déploiement : [`docs/deploiement.md`](docs/deploiement.md). Revue de sécurité : [`docs/securite-revue.md`](docs/securite-revue.md).
 
 ## Démarrer en local
 
