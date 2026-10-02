@@ -20,7 +20,8 @@
     "admin:create": "tsx scripts/create-admin.ts",
     "seance": "tsx scripts/seance.ts",
     "test:unit": "vitest run tests/unit",
-    "test:api": "vitest run tests/api"
+    "test:api": "vitest run tests/api",
+    "test:e2e": "node scripts/e2e-participant.mjs"
   },
   "dependencies": {
     "@node-rs/argon2": "^2.2.1",

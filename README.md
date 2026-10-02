@@ -26,6 +26,7 @@ pnpm dev                        # http://localhost:3000
 |---|---|
 | `pnpm dev` / `pnpm build` / `pnpm start` | Next.js |
 | `pnpm lint` / `pnpm typecheck` / `pnpm test` | Qualité |
+| `pnpm test:e2e` | Parcours participant complet dans Chromium contre un serveur démarré (`BASE`, `PW_CHROMIUM`, `OUT`) |
 | `pnpm db:generate` | Génère une migration SQL à partir de `src/db/schema/` |
 | `pnpm db:migrate` | Applique les migrations |
 | `pnpm db:studio` | Explorateur de base de données |
@@ -34,6 +35,14 @@ pnpm dev                        # http://localhost:3000
 | `pnpm db:seed` | Charge (ou recharge) le contenu en base, de façon idempotente |
 | `pnpm admin:create` | Crée un compte d'administration |
 | `pnpm seance list\|create\|start\|phase\|close\|reopen\|reset\|delete` | Pilote les séances en ligne de commande, en attendant la console admin |
+
+## Application participant
+
+Routes sous `/vv26` : accueil et choix de langue, questions « Avant », parcours (liste des 8 stations), carte, saisie de code, station (`/vv26/s/{code}`, arrivée QR avec `?k=<jeton>`), station terminée, questions « Après », bilan Avant/Après, trace finale, merci. `/vv26/reset` efface la session d'une tablette prêtée.
+
+L'application interroge `/api/runs/current` toutes les 10 s : un changement de phase déplace le participant vers le bon écran, une séance stoppée l'envoie sur « Merci », une nouvelle séance le fait repartir de zéro en gardant sa langue. Les réponses envoyées sans réseau sont mises en file et renvoyées automatiquement.
+
+En local, les médias sont servis depuis `public/media/` (`MEDIA_BASE_URL=/media`) : le plan `map.svg` y est copié ; les vidéos, posters et sous-titres y seront déposés avec les mêmes noms que dans `content/vv26/media.json`.
 
 ## Console d'administration
 
@@ -73,7 +82,9 @@ src/lib/content/     schémas et chargement du dossier content/, catalogue en ba
 src/lib/participant/ API participant : résolution du jeton, scan, stations, réponses, agrégats
 src/lib/runs/        cycle de vie des séances (créer, lancer, phases, stopper, résumé)
 src/lib/admin/       authentification admin, services de la console, client fetch
-src/components/      composants de la console (admin/) et des diapositives (projection/)
+src/components/      console (admin/), diapositives (projection/), application participant (participant/)
+src/lib/participant/client/  état client participant : jeton, séance, langue, file hors-ligne, textes FR/NL/EN
+messages/            textes d'interface fr.json, nl.json, en.json
 src/lib/api/         erreurs, enveloppe des Route Handlers, limite de débit
 src/app/api/         Route Handlers Next.js
 src/app/             pages Next.js (participant /vv26, admin /admin, projection)

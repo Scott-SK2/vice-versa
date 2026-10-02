@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" role="img" aria-label="Plan provisoire du lieu">
+  <!-- Plan de substitution : à remplacer par le plan réel coté fourni par les organisateurs (question ouverte du cahier). -->
+  <rect x="20" y="20" width="960" height="660" rx="24" fill="#FAF6EC" stroke="#D5D2C8" stroke-width="4"/>
+  <rect x="60" y="400" width="320" height="240" rx="16" fill="#EFEADB" stroke="#D5D2C8" stroke-width="3"/>
+  <text x="220" y="530" text-anchor="middle" font-family="sans-serif" font-size="28" fill="#5A6560">Salle principale</text>
+  <path d="M60 350 H940" stroke="#D5D2C8" stroke-width="3" stroke-dasharray="12 10"/>
+  <text x="500" y="340" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#5A6560">Couloir</text>
+</svg>
