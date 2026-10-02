@@ -13,6 +13,9 @@
  *   sync-captions [--out public/media] [<ref>]
  *       copie les fichiers de sous-titres (json + vtt) de content/<slug>/captions/ vers <out>/captions/,
  *       le dossier servi sous MEDIA_BASE_URL (à faire avant rsync vers le serveur ou le CDN).
+ *   list [--dir public/media]
+ *       tableau des fichiers attendus pour chaque média (vidéo ou image, poster, sous-titres ×3)
+ *       avec présent / manquant : la liste de ce qu'il reste à déposer.
  *   check [--dir public/media] [--all]
  *       vérifie chaque média publié (granted, ou tous avec --all) : fichier, poster, sous-titres,
  *       codec/dimensions/durée (local, via ffprobe) ou en-têtes HTTP (MEDIA_BASE_URL absolu).
@@ -217,6 +220,25 @@ async function main() {
       console.log("  Puis pnpm db:seed, ou « Recharger le contenu » dans la console.");
       return;
     }
+    case "list": {
+      const bundle = loadContent(dir);
+      const localDir = path.resolve(arg("dir") ?? "public/media");
+      const has = (rel: string) => existsSync(path.join(localDir, rel));
+      let missing = 0;
+      console.log(`Fichiers attendus dans ${path.relative(process.cwd(), localDir)}/ (noms de media.json) :\n`);
+      for (const m of bundle.media) {
+        const items: [string, boolean][] = [[m.file, has(m.file)]];
+        if (m.poster) items.push([m.poster, has(m.poster)]);
+        if (m.type === "video") for (const lang of bundle.event.languages) for (const ext of ["json", "vtt"]) items.push([`captions/${m.ref}.${lang}.${ext}`, has(`captions/${m.ref}.${lang}.${ext}`)]);
+        const miss = items.filter(([, ok]) => !ok).length;
+        missing += miss;
+        const status = m.consent_status === "granted" ? "publié" : m.consent_status === "refused" ? "refusé" : "en attente de consentement";
+        console.log(`${m.ref}  station ${m.station}  ${status}${m.note ? `  — ${m.note}` : ""}`);
+        for (const [rel, ok] of items) console.log(`   ${ok ? "✔" : "·"} ${rel}`);
+      }
+      console.log(`\n${missing} fichier(s) manquant(s). Déposer les fichiers, puis : pnpm media grant <ref> → pnpm media check → git add public/media content && git commit && git push`);
+      return;
+    }
     case "sync-captions": {
       const outDir = path.resolve(arg("out") ?? "public/media");
       const n = syncCaptions(outDir, refArg);
@@ -297,7 +319,7 @@ async function main() {
       return;
     }
     default:
-      console.log("Commandes : encode | sample | grant | revoke | sync-captions | check (voir l'en-tête du script)");
+      console.log("Commandes : encode | sample | grant | revoke | sync-captions | list | check (voir l'en-tête du script)");
   }
 }
 

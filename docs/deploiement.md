@@ -12,20 +12,63 @@ Dans les trois cas, les **médias** (vidéos, posters, sous-titres, plan) sont v
 
 **Recommandation** : l'option A. L'architecture (limites de débit en mémoire, migrations et contenu au démarrage, tâche de rétention intégrée) est conçue pour une instance unique, et Render la respecte telle quelle. L'option B fonctionne aussi : le projet détecte Vercel et bascule les compteurs sensibles en base, applique migrations et contenu au build, et confie la rétention à Vercel Cron.
 
-## A. Render : application + base de données
+## A. Render : base de données à la main, application par le blueprint
 
-1. Pousser le dépôt sur GitHub (`main` à jour), puis sur Render : **New → Blueprint**, choisir le dépôt. Le fichier `render.yaml` crée le service web (Docker, Francfort, plan Starter) et la base PostgreSQL 16 (plan Basic 256 Mo ; le plan gratuit est supprimé après 30 jours, à éviter pour l'événement).
-2. Render demande les variables marquées `sync: false` : `APP_BASE_URL` (`https://<service>.onrender.com`, ou le domaine personnalisé une fois ajouté dans Settings → Custom Domains, avec son enregistrement DNS), `ADMIN_BOOTSTRAP_EMAIL` et `ADMIN_BOOTSTRAP_PASSWORD` (mot de passe temporaire, à changer à la première connexion). `SESSION_SECRET` et `CRON_SECRET` sont générés par Render.
-3. Au démarrage, le conteneur applique les migrations, crée le premier admin, charge `content/vv26/`, puis lance la rétention quotidienne. Vérifier `https://<service>.onrender.com/api/health`, puis `/admin/login`.
-4. Mise à jour : chaque push sur `main` redéploie (`autoDeploy`). Retour arrière : Render → Deploys → Rollback.
-5. Sauvegardes : Render → base → Backups (quotidiennes sur les plans payants) ; en plus, avant la séance Live : `pg_dump "$(render psql url)" | gzip > avant-live.sql.gz` depuis un poste, ou l'onglet Recovery.
-6. Test de charge depuis n'importe quel poste : `pnpm load --vus 80 --duration 1800 --base https://<service>.onrender.com`.
+La base est créée **à la main** et n'apparaît pas dans `render.yaml` : aucun redéploiement ne peut la recréer, la modifier ou la supprimer. Le blueprint ne gère que le service web.
 
-Le plan Starter n'a pas de « mise en veille » : l'application reste réactive. Le disque du conteneur est éphémère, ce qui ne pose pas de problème car les médias sont dans l'image et les données dans PostgreSQL.
+### A.1 Créer la base PostgreSQL (une fois)
+
+1. Render → **New → PostgreSQL**.
+2. Name : `vice-versa-db` · Database : `viceversa` · User : `viceversa` · Region : **Frankfurt (EU Central)** · PostgreSQL Version : **16** · Plan : **Basic-256mb** (premier plan payant ; le plan gratuit est supprimé après 30 jours).
+3. Create Database. Attendre « Available ».
+4. Dans la page de la base, section **Connections**, copier l'**Internal Database URL** (`postgresql://viceversa:…@dpg-…-a/viceversa`). C'est elle qu'on donnera à l'application (même région, pas de passage par Internet). Garder aussi l'**External Database URL** sous la main pour les sauvegardes depuis un poste.
+5. Backups : onglet **Backups** (quotidiens sur ce plan). Avant la séance Live : **Create backup** ou, depuis un poste, `pg_dump "<External Database URL>" | gzip > avant-live.sql.gz`.
+
+### A.2 Créer l'application
+
+1. Render → **New → Blueprint** → connecter GitHub → choisir `Scott-SK2/vice-versa`, branche `main`. Render lit `render.yaml` et propose un seul service : `vice-versa` (Docker, Frankfurt, plan Starter, healthcheck `/api/health`).
+2. Render demande les variables marquées `sync: false` :
+
+   | Variable | Valeur à saisir |
+   |---|---|
+   | `DATABASE_URL` | l'**Internal Database URL** copiée en A.1 |
+   | `APP_BASE_URL` | `https://vice-versa.onrender.com` (le nom exact est affiché par Render ; si le nom est pris, Render en propose un autre : reprendre celui-là). À remplacer par le domaine personnalisé plus tard |
+   | `ADMIN_BOOTSTRAP_EMAIL` | votre e-mail, par exemple `scott@…` |
+   | `ADMIN_BOOTSTRAP_PASSWORD` | un mot de passe **temporaire** de 12 caractères minimum |
+
+   `SESSION_SECRET` et `CRON_SECRET` sont générés par Render automatiquement. Les autres valeurs (`MEDIA_BASE_URL=/media`, `EVENT_SLUG=vv26`, limites) sont déjà dans le blueprint.
+3. **Apply**. Render construit l'image Docker (3 à 5 minutes la première fois) puis démarre le conteneur, qui applique les migrations, crée le compte admin de démarrage, charge `content/vv26/` et lance la rétention quotidienne.
+4. Vérifier : `https://<service>.onrender.com/api/health` doit répondre `{"ok":true,"db":true,…}`.
+
+**À quoi servent `ADMIN_BOOTSTRAP_EMAIL` et `ADMIN_BOOTSTRAP_PASSWORD`** : la console `/admin` n'a aucun compte au départ, et il n'y a pas de formulaire d'inscription (volontairement). Ces deux variables créent le **premier compte admin** au premier démarrage, uniquement si la table des comptes est vide. Le mot de passe est marqué temporaire : à la première connexion, la console vous oblige à en choisir un nouveau. Ensuite les variables ne servent plus à rien (elles sont ignorées dès qu'un compte existe) et peuvent être supprimées de Render. Les autres comptes (animateur, modérateur, second admin) se créent dans `/admin/users`.
+
+### A.3 Première connexion
+
+1. `https://<service>.onrender.com/admin/login` avec l'e-mail et le mot de passe temporaire.
+2. Choisir le mot de passe définitif (la console le demande d'office).
+3. `/admin/users` : créer les autres comptes. `/admin` : créer une séance de test, la lancer, scanner l'accueil avec un téléphone (`https://<service>.onrender.com/vv26`).
+
+### A.4 Déposer les fichiers médias
+
+Les médias sont versionnés dans `public/media/` et servis par Render sous `/media/`. Il n'y a rien à transférer sur le serveur : on ajoute les fichiers au dépôt et on pousse.
+
+1. Voir ce qui est attendu et ce qui manque : `pnpm media list` (noms exacts tirés de `content/vv26/media.json`).
+2. Pour chaque clip monté : `pnpm media encode VV-V10 --in source/VV-V10.mp4` (vidéo et poster écrits dans `public/media/`), puis sous-titres (`pnpm captions …`, relecture, `pnpm media sync-captions`), ligne dans `content/vv26/consents.csv`, `pnpm media grant VV-V10`.
+3. Pour une photo : copier le JPEG sous le nom attendu dans `public/media/`, ligne de consentement, `pnpm media grant VV-P05`.
+4. `pnpm media check`, puis `git add public/media content && git commit -m "Médias : VV-V10" && git push`. Render redéploie et recharge le contenu au démarrage.
+
+Un **clip de test** (`VV-V12`, mire + bip, 15 s, sous-titres FR/NL/EN d'exemple) est déjà dans le dépôt et publié sur la station d'accueil : il permet de vérifier le lecteur et les sous-titres sur de vrais téléphones dès le premier déploiement. Il sera écrasé par le vrai clip avec `pnpm media encode VV-V12 --in …` et la vraie ligne de consentement.
+
+### A.5 Mettre à jour, revenir en arrière, tester la charge
+
+- Chaque push sur `main` redéploie (`autoDeploy`). Retour arrière : Render → service → **Deploys → Rollback**. La base n'est jamais touchée par un déploiement (migrations additives seulement).
+- Gel des déploiements à partir du vendredi 9 octobre 18 h.
+- Test de charge depuis un poste : `pnpm load --vus 80 --duration 1800 --base https://<service>.onrender.com`.
+- Domaine personnalisé : service → Settings → **Custom Domains**, suivre l'enregistrement DNS indiqué, puis mettre `APP_BASE_URL` à jour et régénérer les QR (`APP_BASE_URL=https://<domaine> pnpm qr:render --pdf`) **avant** le gel des jetons et l'impression.
 
 ## B. Vercel (application) + Render (base de données)
 
-1. **Base** : sur Render, New → PostgreSQL (Francfort, PostgreSQL 16, plan Basic 256 Mo). Copier l'**External Database URL** (avec `?sslmode=require` si absent).
+1. **Base** : comme en A.1, mais copier l'**External Database URL** (Vercel n'est pas dans le réseau Render), avec `?sslmode=require` si absent.
 2. **Vercel** : New Project → importer le dépôt. Framework Next.js détecté ; le script `vercel-build` applique les migrations et charge le contenu avant `next build` (`scripts/predeploy.ts`). Région des fonctions : `fra1` (`vercel.json`).
 3. Variables d'environnement (Settings → Environment Variables, environnement **Production** seulement, pour qu'un aperçu ne touche pas la base) :
 
