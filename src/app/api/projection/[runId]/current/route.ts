@@ -1,7 +1,7 @@
 import { getDb } from "@/db/client";
 import { clientIp, json, withApi } from "@/lib/api/http";
 import { ApiError, errors } from "@/lib/api/errors";
-import { isRateLimited, rateLimit } from "@/lib/api/rate-limit";
+import { rateLimit, sharedIsRateLimited, sharedRateLimit } from "@/lib/api/rate-limit";
 import { publicProjection } from "@/lib/admin/service";
 
 export const dynamic = "force-dynamic";
@@ -15,13 +15,13 @@ export const GET = withApi<{ runId: string }>(async (req, { params }) => {
   rateLimit(`proj:${ip}`, 120);
   const FAILS = 10;
   const FAIL_WINDOW = 10 * 60_000;
-  if (isRateLimited(`proj-fail:${ip}`, FAILS)) throw errors.rateLimited(600); // clé devinée : 10 essais / 10 min
+  if (await sharedIsRateLimited(`proj-fail:${ip}`, FAILS)) throw errors.rateLimited(600); // clé devinée : 10 essais / 10 min
   try {
     return json(await publicProjection(getDb(), runId, key));
   } catch (e) {
     if (e instanceof ApiError && e.status === 403) {
       try {
-        rateLimit(`proj-fail:${ip}`, FAILS, FAIL_WINDOW);
+        await sharedRateLimit(`proj-fail:${ip}`, FAILS, FAIL_WINDOW);
       } catch {
         /* comptabilisé ; la prochaine requête de cette IP sera refusée */
       }

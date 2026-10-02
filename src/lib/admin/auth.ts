@@ -9,7 +9,7 @@ import { getDb, schema } from "@/db/client";
 import type { AdminRole } from "@/db/schema/enums";
 import { errors } from "@/lib/api/errors";
 import { clientIp } from "@/lib/api/http";
-import { rateLimit } from "@/lib/api/rate-limit";
+import { sharedRateLimit } from "@/lib/api/rate-limit";
 import { hashToken } from "@/lib/participant/token";
 
 const { adminUsers, adminSessions, auditLog } = schema;
@@ -63,9 +63,9 @@ export async function bootstrapAdminIfEmpty(): Promise<void> {
 export async function login(req: Request, email: string, password: string) {
   const ip = clientIp(req);
   const normalized = email.trim().toLowerCase();
-  rateLimit(`login:${ip}:${normalized}`, 5, 15 * 60 * 1000);
-  rateLimit(`login-email:${normalized}`, 20, 15 * 60 * 1000); // toutes IP confondues
-  rateLimit(`login-ip:${ip}`, 30, 15 * 60 * 1000); // énumération d'e-mails depuis une IP
+  await sharedRateLimit(`login:${ip}:${normalized}`, 5, 15 * 60 * 1000);
+  await sharedRateLimit(`login-email:${normalized}`, 20, 15 * 60 * 1000); // toutes IP confondues
+  await sharedRateLimit(`login-ip:${ip}`, 30, 15 * 60 * 1000); // énumération d'e-mails depuis une IP
   await bootstrapAdminIfEmpty();
   const db = getDb();
   const [user] = await db.select().from(adminUsers).where(eq(adminUsers.email, normalized)).limit(1);

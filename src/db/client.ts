@@ -9,7 +9,9 @@ const globalForDb = globalThis as unknown as { __vvPool?: Pool; __vvDb?: Db };
 function createPool(): Pool {
   const connectionString = process.env.DATABASE_URL;
   if (!connectionString) throw new Error("DATABASE_URL manquante (voir .env.example)");
-  return new Pool({ connectionString, max: 10 });
+  // Sur une plateforme sans état, chaque instance a son pool : on le garde petit pour ménager PostgreSQL.
+  const max = Number(process.env.DB_POOL_MAX ?? (process.env.VERCEL ? 3 : 10));
+  return new Pool({ connectionString, max, idleTimeoutMillis: 30_000, connectionTimeoutMillis: 10_000 });
 }
 
 /** Pool et client partagés (le rechargement à chaud de Next.js ne doit pas en recréer). */

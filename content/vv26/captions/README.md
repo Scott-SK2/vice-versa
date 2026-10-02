@@ -14,6 +14,8 @@ pnpm captions translate VV-V10 --to nl,en    # modèle de langage, segment par s
 #   → relecture des traductions (au minimum une vérification rapide), puis "status": "reviewed"
 pnpm captions emit VV-V10                    # régénère les .vtt après toute modification manuelle
 pnpm captions check                          # valide tous les fichiers et croise avec media.json
+pnpm media sync-captions                     # copie json + vtt dans public/media/captions/ (dossier servi)
+pnpm media grant VV-V10                      # consentement validé → déclare les sous-titres et publie le média
 ```
 
 `prompt.txt` contient les noms propres soufflés à Whisper pour qu'ils soient bien orthographiés : ajouter les prénoms des intervenants avant de transcrire.

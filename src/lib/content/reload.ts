@@ -19,6 +19,8 @@ export class ContentReloadError extends Error {
   }
 }
 
+const bannedList = (text: string) => text.split(/\r?\n/).map((l) => l.trim()).filter((l) => l && !l.startsWith("#"));
+
 export type ReloadResult = { eventId: number; version: string; stations: number; questions: number; media: number };
 
 export async function reloadContent(db: Db, b: ContentBundle, mediaBase: string): Promise<ReloadResult> {
@@ -40,6 +42,7 @@ export async function reloadContent(db: Db, b: ContentBundle, mediaBase: string)
         defaultLang: b.event.default_lang,
         requiredStations: b.event.required_stations,
         contentVersion: b.version,
+        bannedWords: bannedList(b.bannedWords),
       })
       .onConflictDoUpdate({
         target: events.slug,
@@ -49,6 +52,7 @@ export async function reloadContent(db: Db, b: ContentBundle, mediaBase: string)
           defaultLang: b.event.default_lang,
           requiredStations: b.event.required_stations,
           contentVersion: b.version,
+          bannedWords: bannedList(b.bannedWords),
           updatedAt: sql`now()`,
         },
       })

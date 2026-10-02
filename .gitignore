@@ -44,3 +44,4 @@ deploy/data/*
 !deploy/data/.gitkeep
 /qr/
 work/
+/public/media/.*

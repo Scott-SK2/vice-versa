@@ -16,6 +16,9 @@ const figtree = Figtree({
   display: "swap",
 });
 
+/** Rendu dynamique : la CSP à nonce exige que chaque page soit rendue par requête (pas de HTML pré-généré). */
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "VICE VERSA — Deux regards, deux continents",
   description: "Parcours interactif de l’atelier VICE VERSA.",

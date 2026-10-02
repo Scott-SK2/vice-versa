@@ -24,7 +24,10 @@
     "test:e2e": "node scripts/e2e-participant.mjs",
     "qr:render": "tsx scripts/qr-render.ts",
     "captions": "tsx scripts/captions.ts",
-    "load": "node scripts/load-test.mjs"
+    "load": "node scripts/load-test.mjs",
+    "media": "tsx scripts/media.ts",
+    "vercel-build": "tsx scripts/predeploy.ts && next build",
+    "predeploy": "tsx scripts/predeploy.ts"
   },
   "dependencies": {
     "@node-rs/argon2": "^2.2.1",

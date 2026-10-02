@@ -8,6 +8,13 @@
       "when": 1790937494816,
       "tag": "0000_initial_schema",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790948449109,
+      "tag": "0001_rate_limits_banned_words",
+      "breakpoints": true
     }
   ]
 }

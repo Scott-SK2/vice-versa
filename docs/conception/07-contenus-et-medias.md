@@ -94,18 +94,24 @@ Deux scripts :
 
 Avant l'impression du 7 octobre : `APP_BASE_URL=https://<domaine> pnpm qr:render --pdf`, test de scan de chaque PNG sur iPhone et Android, **Geler les jetons** dans `/admin/content`, puis envoi de `qr/planche.pdf` à l'imprimeur.
 
-## 5. Pipeline médias (résumé opérationnel du cahier)
+## 5. Pipeline médias
 
-| Étape | Outil | Sortie |
+Outillé par `pnpm media` (`scripts/media.ts`) :
+
+| Étape | Commande | Ce qu'elle fait |
 |---|---|---|
 | Montage | Équipe éditoriale, 30–60 s par station | `source/<ref>.mp4` |
-| Encodage | `ffmpeg` (commande du cahier : 720×1280, H.264 1,2 Mbit/s, AAC 96 kbit/s, `loudnorm` −16 LUFS, `+faststart`) | `dist/<ref>.mp4` (≈ 7 Mo / 45 s) |
-| Poster | `ffmpeg -ss <t> -frames:v 1` + conversion WebP/JPEG 720 px | `dist/<ref>.jpg` |
-| Sous-titres | `scripts/captions/*` (§ 6) | `content/vv26/captions/<ref>.<lang>.{json,vtt}` |
-| Publication | `rclone sync dist/ cdn:vv26-media/` | CDN, `Cache-Control: public, max-age=31536000, immutable` |
-| Vérification | `pnpm media:check` : chaque `file`/`poster`/sous-titre de `media.json` répond `200` sur le CDN avec le bon `Content-Type` et `Accept-Ranges: bytes` | rapport |
+| Encodage | `pnpm media encode VV-V10 --in source/VV-V10.mp4 [--out public/media]` | `ffmpeg` selon le cahier : 720×1280 portrait (recadrage avec bandes si besoin), H.264 high 4.0 à 1,2 Mbit/s, 30 i/s, AAC 96 kbit/s, `loudnorm` −16 LUFS, `+faststart` ; poster JPEG extrait ; durée réécrite dans `media.json` ; nom de fichier tiré de `media.json` |
+| Clip de test | `pnpm media sample --ref VV-V12` | Mire portrait + bip encodés par la même chaîne, avec sous-titres FR/NL/EN d'exemple : pour tester le lecteur sur de vrais téléphones avant les clips |
+| Sous-titres | `pnpm captions …` puis `pnpm media sync-captions [--out public/media]` | Génération (§ 6) puis copie des `.json`/`.vtt` dans le dossier servi sous `MEDIA_BASE_URL/captions/` |
+| Consentement | `pnpm media grant VV-V10` | Vérifie la ligne de `consents.csv` (consentement écrit ou message, autorisation de diffusion, accord parental si mineur) et la présence des trois langues de sous-titres, puis passe `consent_status: granted` et déclare les sous-titres dans `media.json`. `revoke` retire le média. |
+| Publication | `rsync -av public/media/ serveur:~/vice-versa/deploy/data/media/` ou `rclone sync` vers le CDN | `Cache-Control: public, max-age=31536000, immutable` |
+| Vérification | `pnpm media check [--dir …]` ou `MEDIA_BASE_URL=https://cdn… pnpm media check` | Chaque média publié : fichier, poster, sous-titres déclarés et présents ; en local `ffprobe` (H.264, 720×1280, durée) ; à distance en-têtes HTTP (`Content-Type`, requêtes de plage) |
+| Chargement | `pnpm db:seed` ou « Recharger le contenu » dans la console | Les médias `granted` deviennent visibles dans les stations |
 
-Le repli « médias locaux » (01 § 7) consiste à copier `dist/` dans le volume servi par Caddy sous `/media/` et à changer `MEDIA_BASE_URL`.
+Le repli « médias locaux » (01 § 7) consiste à copier le dossier dans `deploy/data/media` (servi par Caddy sous `/media/`) et à mettre `MEDIA_BASE_URL=/media`.
+
+Vérifié de bout en bout avec un clip de test : lecture sans autoplay, sélecteur FR/NL/EN, sous-titres mot à mot par-dessus l'image, progression envoyée à 25 / 50 / 80 %, station à média seul terminée à 80 % puis écran « Station terminée ».
 
 ## 6. Sous-titres
 

@@ -2,7 +2,7 @@
  * Comptes d'administration et journal d'audit.
  * Référence : docs/conception/03-modele-de-donnees.md § 4 et 06.
  */
-import { boolean, index, inet, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
+import { boolean, index, inet, integer, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { adminRole } from "./enums";
 
 export const adminUsers = pgTable("admin_users", {
@@ -34,4 +34,19 @@ export const adminSessions = pgTable(
     userAgent: text(),
   },
   (t) => [index("admin_sessions_user_idx").on(t.userId)],
+);
+
+/**
+ * Limites de débit partagées entre instances (hébergement sans état comme Vercel) :
+ * une ligne par clé, fenêtre fixe. Utilisée pour les compteurs sensibles et peu fréquents
+ * (connexions, clés de projection, codes de station, jetons inconnus).
+ */
+export const rateLimits = pgTable(
+  "rate_limits",
+  {
+    key: text().primaryKey(),
+    count: integer().notNull().default(0),
+    resetAt: timestamp({ withTimezone: true }).notNull(),
+  },
+  (t) => [index("rate_limits_reset_idx").on(t.resetAt)],
 );
