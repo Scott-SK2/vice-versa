@@ -6,7 +6,7 @@ import { and, eq, inArray, sql } from "drizzle-orm";
 import { type Db, getDb, schema } from "@/db/client";
 import type { EventPhase, OpenedVia, QuestionPhase } from "@/db/schema/enums";
 import { errors } from "@/lib/api/errors";
-import { rateLimit } from "@/lib/api/rate-limit";
+import { rateLimit, sharedRateLimit } from "@/lib/api/rate-limit";
 import { getBannedWords } from "@/lib/content/banned";
 import { type Catalog, getCatalogBySlug, type QuestionRow, type StationRow } from "@/lib/content/catalog";
 import { AGGREGATABLE_TYPES, validateAnswer } from "@/lib/domain/answer-value";
@@ -223,8 +223,8 @@ export async function scan(ctx: ParticipantContext, input: ScanInput) {
   }
   if (!station || (input.expectedCode && station.code !== input.expectedCode)) {
     // Codes devinés : 10 échecs par minute et par session, 40 par IP (Wi-Fi de salle compris).
-    rateLimit(`scan-fail:${session.id}`, 10);
-    rateLimit(`scan-fail-ip:${ctx.ip}`, 40);
+    await sharedRateLimit(`scan-fail:${session.id}`, 10);
+    await sharedRateLimit(`scan-fail-ip:${ctx.ip}`, 40);
     throw errors.unknownCode();
   }
   const found = station;
@@ -425,7 +425,7 @@ export async function putAnswer(ctx: ParticipantContext, key: string, input: { v
     },
     input.value,
   );
-  checkBannedWords(catalog.event.slug, validated.valueNormalized);
+  checkBannedWords(catalog.event.slug, catalog.event.bannedWords, validated.valueNormalized);
 
   const clientTs = input.clientTs ? new Date(input.clientTs) : null;
   const station = question.stationId ? catalog.stationById.get(question.stationId) : undefined;
@@ -510,9 +510,9 @@ export async function putAnswer(ctx: ParticipantContext, key: string, input: { v
   };
 }
 
-function checkBannedWords(slug: string, normalized: Record<string, unknown> | null) {
+function checkBannedWords(slug: string, fromDb: readonly string[] | null, normalized: Record<string, unknown> | null) {
   if (!normalized) return;
-  const banned = getBannedWords(slug);
+  const banned = getBannedWords(slug, fromDb);
   const candidates: string[] = [];
   if (Array.isArray(normalized.words)) candidates.push(...(normalized.words as string[]));
   if (typeof normalized.text === "string") candidates.push(normalized.text);

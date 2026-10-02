@@ -44,5 +44,4 @@ deploy/data/*
 !deploy/data/.gitkeep
 /qr/
 work/
-/public/media/*
-!/public/media/map.svg
+/public/media/.*

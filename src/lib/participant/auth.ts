@@ -3,7 +3,7 @@ import { getDb, schema } from "@/db/client";
 import { env } from "@/lib/env";
 import { errors } from "@/lib/api/errors";
 import { bearerToken, clientIp } from "@/lib/api/http";
-import { rateLimit } from "@/lib/api/rate-limit";
+import { rateLimit, sharedRateLimit } from "@/lib/api/rate-limit";
 import { type Catalog, getCatalogBySlug } from "@/lib/content/catalog";
 import { hashToken } from "./token";
 
@@ -53,7 +53,7 @@ export async function requireParticipant(req: Request): Promise<ParticipantConte
     .where(eq(participantSessions.tokenHash, tokenHash))
     .limit(1);
   if (!row) {
-    rateLimit(`p-unknown:${ip}`, 60); // jetons inventés depuis une IP
+    await sharedRateLimit(`p-unknown:${ip}`, 60); // jetons inventés depuis une IP
     throw errors.sessionUnknown();
   }
 

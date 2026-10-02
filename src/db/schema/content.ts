@@ -40,6 +40,8 @@ export const events = pgTable("events", {
   tokensFrozenAt: timestamp({ withTimezone: true }),
   /** Hash du dossier content/ chargé en base. */
   contentVersion: text(),
+  /** Mots interdits (banned-words.txt), normalisés, pour ne pas dépendre du disque à l'exécution. */
+  bannedWords: text().array().notNull().default(sql`'{}'::text[]`),
   createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
   updatedAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
 });

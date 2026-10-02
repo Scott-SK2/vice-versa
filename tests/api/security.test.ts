@@ -97,3 +97,21 @@ describe("garde-fous", () => {
     delete process.env.MAX_SESSIONS_PER_RUN;
   });
 });
+
+describe("tâche de maintenance externe", () => {
+  it("exige CRON_SECRET et renvoie un rapport", async () => {
+    const { GET: cron } = await import("@/app/api/cron/maintenance/route");
+    process.env.CRON_SECRET = "secret-cron-de-test";
+    const call2 = (auth?: string) =>
+      cron(new Request("http://test.local/api/cron/maintenance", { headers: auth ? { authorization: auth } : {} }), { params: Promise.resolve({}) });
+    expect((await call2()).status).toBe(403);
+    expect((await call2("Bearer mauvais")).status).toBe(403);
+    const ok = await call2("Bearer secret-cron-de-test");
+    expect(ok.status).toBe(200);
+    const body = await ok.json();
+    expect(body.ok).toBe(true);
+    expect(typeof body.archivedRuns).toBe("number");
+    expect(typeof body.sweptLimits).toBe("number");
+    delete process.env.CRON_SECRET;
+  });
+});

@@ -24,6 +24,11 @@ const flag = (name: string, def: boolean) => {
 };
 
 export async function startup(): Promise<void> {
+  if (process.env.VERCEL) {
+    // Fonctions sans état : migrations et contenu sont appliqués au build (scripts/predeploy.ts),
+    // la maintenance passe par /api/cron/maintenance (Vercel Cron). Rien à faire au démarrage.
+    return;
+  }
   const db = getDb();
 
   if (flag("RUN_MIGRATIONS_ON_START", true)) {

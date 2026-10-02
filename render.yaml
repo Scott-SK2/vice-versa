@@ -1,0 +1,51 @@
+# Blueprint Render : https://render.com/docs/blueprint-spec
+# Déploie l'application (image Docker du dépôt) et une base PostgreSQL dans la même région.
+# Après le premier déploiement : https://<service>.onrender.com/admin/login avec le compte de démarrage.
+services:
+  - type: web
+    name: vice-versa
+    runtime: docker
+    region: frankfurt
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: vice-versa-db
+          property: connectionString
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: CRON_SECRET
+        generateValue: true
+      - key: APP_BASE_URL
+        sync: false # https://<service>.onrender.com ou le domaine personnalisé
+      - key: MEDIA_BASE_URL
+        value: /media
+      - key: EVENT_SLUG
+        value: vv26
+      - key: ADMIN_BOOTSTRAP_EMAIL
+        sync: false
+      - key: ADMIN_BOOTSTRAP_PASSWORD
+        sync: false
+      - key: RUN_MIGRATIONS_ON_START
+        value: "true"
+      - key: SEED_CONTENT_ON_START
+        value: "true"
+      - key: RATE_LIMIT_PARTICIPANT_PER_MIN
+        value: "120"
+      - key: RATE_LIMIT_SESSIONS_PER_IP_PER_MIN
+        value: "120"
+      - key: MAX_SESSIONS_PER_RUN
+        value: "2000"
+      - key: RETENTION_MONTHS
+        value: "12"
+
+databases:
+  - name: vice-versa-db
+    region: frankfurt
+    plan: basic-256mb
+    databaseName: viceversa
+    user: viceversa
+    postgresMajorVersion: "16"

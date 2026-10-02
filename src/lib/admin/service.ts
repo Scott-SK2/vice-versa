@@ -527,7 +527,10 @@ export async function contentStatus(db: Db, slug = env.eventSlug) {
     const b = loadContent(contentDir(slug));
     folder = { version: b.version, stations: b.stations.length, questions: b.questions.length, media: b.media.length, warnings: contentWarnings(b), problems: [] };
   } catch (e) {
-    folder.problems = e instanceof ContentError ? [e.message, ...e.problems] : [String(e)];
+    folder.problems =
+      e instanceof ContentError
+        ? [e.message, ...e.problems]
+        : [process.env.VERCEL ? "Hébergement sans disque : le contenu est chargé à chaque déploiement (git push), le rechargement depuis la console est indisponible." : String(e)];
   }
   const [mediaStats] = await db
     .select({
