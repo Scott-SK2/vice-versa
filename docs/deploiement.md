@@ -24,6 +24,16 @@ La base est créée **à la main** et n'apparaît pas dans `render.yaml` : aucun
 4. Dans la page de la base, section **Connections**, copier l'**Internal Database URL** (`postgresql://viceversa:…@dpg-…-a/viceversa`). C'est elle qu'on donnera à l'application (même région, pas de passage par Internet). Garder aussi l'**External Database URL** sous la main pour les sauvegardes depuis un poste.
 5. Backups : onglet **Backups** (quotidiens sur ce plan). Avant la séance Live : **Create backup** ou, depuis un poste, `pg_dump "<External Database URL>" | gzip > avant-live.sql.gz`.
 
+**Variante : réutiliser une instance PostgreSQL Render existante.** Possible si elle est en version 14 ou plus et sur un plan payant. Ne pas partager la même base qu'un autre projet (noms de tables génériques, sauvegardes mêlées) : créer une base dédiée dans l'instance, puis pointer l'application dessus.
+
+```bash
+psql "<External Database URL de l'instance>" -c 'CREATE DATABASE viceversa;'
+# DATABASE_URL de l'application = Internal Database URL avec le nom de base final remplacé par viceversa
+# ex. postgresql://user:mdp@dpg-xxxx-a/ancienne_base  →  postgresql://user:mdp@dpg-xxxx-a/viceversa
+```
+
+Si l'instance est dans une autre région que le service web, utiliser l'External Database URL (connexion chiffrée via Internet) à la place de l'interne. Le Shell de l'instance dans Render permet aussi d'exécuter `CREATE DATABASE viceversa;` sans `psql` local.
+
 ### A.2 Créer l'application
 
 1. Render → **New → Blueprint** → connecter GitHub → choisir `Scott-SK2/vice-versa`, branche `main`. Render lit `render.yaml` et propose un seul service : `vice-versa` (Docker, Frankfurt, plan Starter, healthcheck `/api/health`).
