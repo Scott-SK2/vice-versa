@@ -6,7 +6,8 @@
     "position": 1,
     "file": "VV-P01_groupe-aeroport.jpg",
     "orientation": "landscape",
-    "note": "Groupe à l’aéroport avec valises (Image 23.25.46, paysage 2048×1536). Aussi rattachée à 3 et 8 dans le cahier : une seule station porteuse ici, les autres la réutiliseront par référence."
+    "note": "Groupe à l’aéroport avec valises (Image 23.25.46, paysage 2048×1536). Aussi rattachée à 3 et 8 dans le cahier : une seule station porteuse ici, les autres la réutiliseront par référence.",
+    "consent_status": "granted"
   },
   {
     "ref": "VV-V12",
@@ -15,18 +16,18 @@
     "position": 2,
     "file": "VV-V12_ambiance-bus.mp4",
     "poster": "VV-V12.jpg",
-    "duration_s": 15.1,
+    "duration_s": 28.4,
     "note": "Ambiance dans le bus (Video 23.37.22).",
     "consent_status": "granted",
     "captions": {
       "fr": {
-        "status": "reviewed"
+        "status": "auto"
       },
       "nl": {
-        "status": "reviewed"
+        "status": "auto"
       },
       "en": {
-        "status": "reviewed"
+        "status": "auto"
       }
     }
   },
@@ -46,7 +47,8 @@
     "type": "image",
     "position": 1,
     "file": "VV-P05_rue-batiment.jpg",
-    "note": "Rue, marche vers un bâtiment (Image 23.37.02 (1))."
+    "note": "Rue, marche vers un bâtiment (Image 23.37.02 (1)).",
+    "consent_status": "granted"
   },
   {
     "ref": "VV-V24",
@@ -55,8 +57,20 @@
     "position": 2,
     "file": "VV-V24_rue-immeubles.mp4",
     "poster": "VV-V24.jpg",
-    "duration_s": 17,
-    "note": "Rue, immeubles (Video 23.46.13, son faible)."
+    "duration_s": 16.8,
+    "note": "Rue, immeubles (Video 23.46.13, son faible).",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-P07",
@@ -64,7 +78,8 @@
     "type": "image",
     "position": 1,
     "file": "VV-P07_rue-kinshasa.jpg",
-    "note": "Rue de Kinshasa, homme en vert (Image 23.37.02)."
+    "note": "Rue de Kinshasa, homme en vert (Image 23.37.02).",
+    "consent_status": "granted"
   },
   {
     "ref": "VV-V02",
@@ -83,8 +98,20 @@
     "position": 3,
     "file": "VV-V06_moto-taxi.mp4",
     "poster": "VV-V06.jpg",
-    "duration_s": 11,
-    "note": "Moto dans la rue, taxi jaune (Video 23.37.10)."
+    "duration_s": 11.1,
+    "note": "Moto dans la rue, taxi jaune (Video 23.37.10).",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-P11",
@@ -92,7 +119,8 @@
     "type": "image",
     "position": 1,
     "file": "VV-P11_trois-membres.jpg",
-    "note": "Trois membres du groupe (Image 23.46.14). Aussi rattachée à 6."
+    "note": "Trois membres du groupe (Image 23.46.14). Aussi rattachée à 6.",
+    "consent_status": "granted"
   },
   {
     "ref": "VV-V01",
@@ -101,8 +129,20 @@
     "position": 2,
     "file": "VV-V01_femme-tshirt.mp4",
     "poster": "VV-V01.jpg",
-    "duration_s": 22,
-    "note": "Femme face caméra, t-shirt VICE VERSA (Video 23.37.03 (1)), quasi-témoignage."
+    "duration_s": 21.7,
+    "note": "Femme face caméra, t-shirt VICE VERSA (Video 23.37.03 (1)), quasi-témoignage.",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-V08",
@@ -130,7 +170,8 @@
     "type": "image",
     "position": 1,
     "file": "VV-P06_mur-peint.jpg",
-    "note": "Deux membres devant un mur peint (Image 23.37.02 (2))."
+    "note": "Deux membres devant un mur peint (Image 23.37.02 (2)).",
+    "consent_status": "granted"
   },
   {
     "ref": "VV-V15",
@@ -139,8 +180,20 @@
     "position": 2,
     "file": "VV-V15_voiture-nuit.mp4",
     "poster": "VV-V15.jpg",
-    "duration_s": 15,
-    "note": "Trajet en voiture de nuit (Video 23.37.32)."
+    "duration_s": 15.3,
+    "note": "Trajet en voiture de nuit (Video 23.37.32).",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-V18",
@@ -184,7 +237,8 @@
     "type": "image",
     "position": 3,
     "file": "VV-P04_photo-groupe-institutionnelle.jpg",
-    "note": "Photo de groupe institutionnelle (Image 23.29.29), logos partenaires visibles."
+    "note": "Photo de groupe institutionnelle (Image 23.29.29), logos partenaires visibles.",
+    "consent_status": "granted"
   },
   {
     "ref": "VV-P08",
@@ -225,8 +279,20 @@
     "position": 8,
     "file": "VV-V03_reunion-documents.mp4",
     "poster": "VV-V03.jpg",
-    "duration_s": 14,
-    "note": "Réunion, documents sur la table (Video 23.37.05), son faible."
+    "duration_s": 14.4,
+    "note": "Réunion, documents sur la table (Video 23.37.05), son faible.",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-V09",
@@ -285,8 +351,20 @@
     "position": 4,
     "file": "VV-V19_salon-festif.mp4",
     "poster": "VV-V19.jpg",
-    "duration_s": 16,
-    "note": "Salon, moment festif (Video 23.37.55)."
+    "duration_s": 15.9,
+    "note": "Salon, moment festif (Video 23.37.55).",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-V20",
@@ -316,7 +394,19 @@
     "file": "VV-V16_terrain-homme.mp4",
     "poster": "VV-V16.jpg",
     "duration_s": 15,
-    "note": "Terrain, homme qui marche (Video 23.37.34)."
+    "note": "Terrain, homme qui marche (Video 23.37.34).",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-V05",
@@ -336,7 +426,19 @@
     "file": "VV-V21_bus-ambiance.mp4",
     "poster": "VV-V21.jpg",
     "duration_s": 17,
-    "note": "Bus, ambiance (Video 23.38.12)."
+    "note": "Bus, ambiance (Video 23.38.12).",
+    "consent_status": "granted",
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
     "ref": "VV-V23",

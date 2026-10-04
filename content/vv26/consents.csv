@@ -1,4 +1,39 @@
 media_ref,personnes_reconnaissables,consentement,mineur,accord_parent,logos_partenaires,autorisation_diffusion,autorisation_reseaux,date,note
 # Une ligne par média (07 § 7). consentement : ecrit | message | aucun. mineur et accord_parent : oui | non. autorisation_diffusion : oui | non.
-# Exemple : VV-V10,1 membre du groupe,ecrit,non,,non,oui,oui,2026-10-03,formulaire signé le 3 oct.
-VV-V12,aucune (clip de test synthétique),ecrit,non,,non,oui,non,2026-10-02,CLIP DE TEST généré par pnpm media sample — à remplacer par le vrai clip et son consentement
+# Source : confirmation de Scott (4 oct. 2026) — toutes les personnes filmées ont donné un accord écrit, aucun mineur, logos des partenaires autorisés.
+VV-P01,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V12,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V13,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P05,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V24,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P07,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V02,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V06,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P11,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V01,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V08,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V10,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P06,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V15,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V18,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V22,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P02,membres du groupe / personnes rencontrées,ecrit,non,,oui,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P03,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P04,membres du groupe / personnes rencontrées,ecrit,non,,oui,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P08,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P09,membres du groupe / personnes rencontrées,ecrit,non,,oui,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P10,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-P12,aucune,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V03,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V09,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V04,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V11,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V14,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V17,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V19,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V20,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V07,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V16,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V05,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V21,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer
+VV-V23,membres du groupe / personnes rencontrées,ecrit,non,,non,oui,non,2026-10-04,accord écrit confirmé par Scott ; réseaux sociaux à confirmer

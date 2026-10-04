@@ -2,131 +2,13 @@
   "media": "VV-V12",
   "lang": "nl",
   "source": "manual",
-  "status": "reviewed",
+  "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.4,
-      "end": 4.73,
-      "text": "Dit is een testclip voor VICE VERSA.",
-      "words": [
-        {
-          "w": "Dit",
-          "start": 0.4,
-          "end": 0.881
-        },
-        {
-          "w": "is",
-          "start": 0.881,
-          "end": 1.242
-        },
-        {
-          "w": "een",
-          "start": 1.242,
-          "end": 1.723
-        },
-        {
-          "w": "testclip",
-          "start": 1.723,
-          "end": 2.806
-        },
-        {
-          "w": "voor",
-          "start": 2.806,
-          "end": 3.407
-        },
-        {
-          "w": "VICE",
-          "start": 3.407,
-          "end": 4.008
-        },
-        {
-          "w": "VERSA.",
-          "start": 4.008,
-          "end": 4.73
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "start": 5.43,
-      "end": 9.77,
-      "text": "De ondertitels verschijnen woord voor woord.",
-      "words": [
-        {
-          "w": "De",
-          "start": 5.43,
-          "end": 5.726
-        },
-        {
-          "w": "ondertitels",
-          "start": 5.726,
-          "end": 6.91
-        },
-        {
-          "w": "verschijnen",
-          "start": 6.91,
-          "end": 8.093
-        },
-        {
-          "w": "woord",
-          "start": 8.093,
-          "end": 8.685
-        },
-        {
-          "w": "voor",
-          "start": 8.685,
-          "end": 9.178
-        },
-        {
-          "w": "woord.",
-          "start": 9.178,
-          "end": 9.77
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "start": 10.47,
-      "end": 14.8,
-      "text": "Het gesproken woord wordt geel, zoals voorzien.",
-      "words": [
-        {
-          "w": "Het",
-          "start": 10.47,
-          "end": 10.847
-        },
-        {
-          "w": "gesproken",
-          "start": 10.847,
-          "end": 11.788
-        },
-        {
-          "w": "woord",
-          "start": 11.788,
-          "end": 12.353
-        },
-        {
-          "w": "wordt",
-          "start": 12.353,
-          "end": 12.917
-        },
-        {
-          "w": "geel,",
-          "start": 12.917,
-          "end": 13.388
-        },
-        {
-          "w": "zoals",
-          "start": 13.388,
-          "end": 13.953
-        },
-        {
-          "w": "voorzien.",
-          "start": 13.953,
-          "end": 14.8
-        }
-      ]
+      "start": 0.5,
+      "end": 5.0,
+      "text": "[In de bus: stemmen, muziek, gelach]"
     }
   ]
 }

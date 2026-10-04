@@ -1,0 +1,14 @@
+{
+  "media": "VV-V15",
+  "lang": "fr",
+  "source": "manual",
+  "status": "auto",
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.5,
+      "end": 5.0,
+      "text": "[Trajet en voiture, la nuit : lumières de la ville]"
+    }
+  ]
+}

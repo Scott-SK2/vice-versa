@@ -1,0 +1,14 @@
+{
+  "media": "VV-V19",
+  "lang": "fr",
+  "source": "manual",
+  "status": "auto",
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.5,
+      "end": 5.0,
+      "text": "[Dans le salon : musique, danse, moment festif]"
+    }
+  ]
+}
