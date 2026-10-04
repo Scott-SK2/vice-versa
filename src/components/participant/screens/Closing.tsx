@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useParticipant } from "@/lib/participant/client/store";
 import { useApiData } from "../hooks";
@@ -76,15 +77,28 @@ function BilanInner() {
 }
 
 export function MerciScreen() {
-  const { t, me, status } = useParticipant();
+  const { t, me, status, reset } = useParticipant();
+  const router = useRouter();
   if (status === "loading") return <Loading label={t("common.loading")} />;
   const p = me?.progress;
+  const over = status === "closed" || status === "none";
   return (
     <Screen className="justify-center text-center">
       <p className="font-display text-sm font-extrabold uppercase tracking-[0.2em] text-green-deep">{t("app.title")}</p>
       <h1 className="text-5xl">{t("merci.title")}</h1>
       <p className="text-lg leading-snug">{p ? t("merci.text", { completed: p.completed, required: p.required }) : t("home.closed.text")}</p>
-      {status === "closed" && <p className="text-sm text-muted">{t("merci.closed")}</p>}
+      {over && <p className="text-sm text-muted">{t("merci.closed")}</p>}
+      {over && (
+        <Button
+          variant="secondary"
+          onClick={() => {
+            reset();
+            router.replace("/vv26");
+          }}
+        >
+          {t("merci.leave")}
+        </Button>
+      )}
     </Screen>
   );
 }

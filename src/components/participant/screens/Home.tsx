@@ -53,7 +53,7 @@ export function NoRunScreen() {
 }
 
 export function HomeScreen() {
-  const { status, me, lang, setLang, start, t } = useParticipant();
+  const { status, me, lang, setLang, start, reset, t } = useParticipant();
   const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -66,8 +66,9 @@ export function HomeScreen() {
         <Brand t={t} />
         <Notice kind="info">
           <strong className="block">{t("home.closed.title")}</strong>
-          {t("home.closed.text")}
+          {t("merci.closed")}
         </Notice>
+        <Button variant="secondary" onClick={reset}>{t("merci.leave")}</Button>
       </Screen>
     );
   }
