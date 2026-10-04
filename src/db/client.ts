@@ -11,7 +11,10 @@ function createPool(): Pool {
   if (!connectionString) throw new Error("DATABASE_URL manquante (voir .env.example)");
   // Sur une plateforme sans état, chaque instance a son pool : on le garde petit pour ménager PostgreSQL.
   const max = Number(process.env.DB_POOL_MAX ?? (process.env.VERCEL ? 3 : 10));
-  return new Pool({ connectionString, max, idleTimeoutMillis: 30_000, connectionTimeoutMillis: 10_000 });
+  // Connexion externe à une base managée (Render depuis Vercel ou une autre région) : TLS sans vérification de CA,
+  // comme sslmode=require de libpq. L'URL interne Render (dpg-…-a) n'en a pas besoin.
+  const ssl = /sslmode=(require|prefer|verify-ca|verify-full)/.test(connectionString) || process.env.DATABASE_SSL === "true" ? { rejectUnauthorized: false } : undefined;
+  return new Pool({ connectionString, max, ssl, idleTimeoutMillis: 30_000, connectionTimeoutMillis: 10_000 });
 }
 
 /** Pool et client partagés (le rechargement à chaud de Next.js ne doit pas en recréer). */

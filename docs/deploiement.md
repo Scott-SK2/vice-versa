@@ -20,11 +20,19 @@ Trois objets à créer dans Render, dans cet ordre : **1. la base de données**,
 
 **Cas 1 : vous avez déjà une instance PostgreSQL Render** (plan payant, version 14 ou plus, affichée dans sa page).
 
-1. Ouvrir l'instance → onglet **Shell** (ou copier son *External Database URL* et utiliser `psql` sur votre poste).
-2. Exécuter : `CREATE DATABASE viceversa;`
-3. Copier l'**Internal Database URL** de l'instance (section Connections) et remplacer le nom de base à la fin par `viceversa`. Exemple : `postgresql://user:mdp@dpg-xxxx-a/autre_base` devient `postgresql://user:mdp@dpg-xxxx-a/viceversa`. Garder cette valeur : c'est votre `DATABASE_URL`.
+Une instance PostgreSQL n'a pas d'onglet Shell dans Render : la base se crée depuis votre poste, avec la commande du projet (aucun outil à installer) :
 
-Si l'instance n'est pas à Francfort, prendre l'External Database URL (même remplacement du nom de base).
+1. Ouvrir l'instance → bouton **Connect** (en haut à droite) → copier l'**External Database URL** (elle contient le mot de passe : ne pas la coller ailleurs que dans le terminal).
+2. Dans le dossier du projet :
+
+   ```bash
+   pnpm db:create --url "postgresql://…External Database URL…"
+   ```
+
+   La commande crée la base `viceversa` si elle n'existe pas et affiche la `DATABASE_URL` à saisir dans le service web (version externe, et version interne si l'instance est sur Render).
+3. Garder la version **interne** si le service web sera dans la même région que l'instance (Francfort), sinon la version externe.
+
+Équivalent avec `psql` si vous l'avez : `psql "<External Database URL>" -c 'CREATE DATABASE viceversa;'`, puis remplacer le nom de base à la fin de l'Internal Database URL par `viceversa`.
 
 **Cas 2 : vous créez une instance.** New → **PostgreSQL** → Name `vice-versa-db`, Database `viceversa`, User `viceversa`, Region **Frankfurt**, Version **16**, Plan **Basic-256mb** → Create. Quand elle est « Available », copier l'**Internal Database URL** : c'est votre `DATABASE_URL`.
 
