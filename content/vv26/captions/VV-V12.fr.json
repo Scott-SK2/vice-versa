@@ -1,0 +1,147 @@
+{
+  "media": "VV-V12",
+  "lang": "fr",
+  "source": "manual",
+  "status": "reviewed",
+  "segments": [
+    {
+      "id": 1,
+      "start": 0.4,
+      "end": 4.73,
+      "text": "Ceci est un clip de test pour VICE VERSA.",
+      "words": [
+        {
+          "w": "Ceci",
+          "start": 0.4,
+          "end": 0.928
+        },
+        {
+          "w": "est",
+          "start": 0.928,
+          "end": 1.35
+        },
+        {
+          "w": "un",
+          "start": 1.35,
+          "end": 1.667
+        },
+        {
+          "w": "clip",
+          "start": 1.667,
+          "end": 2.195
+        },
+        {
+          "w": "de",
+          "start": 2.195,
+          "end": 2.512
+        },
+        {
+          "w": "test",
+          "start": 2.512,
+          "end": 3.04
+        },
+        {
+          "w": "pour",
+          "start": 3.04,
+          "end": 3.568
+        },
+        {
+          "w": "VICE",
+          "start": 3.568,
+          "end": 4.096
+        },
+        {
+          "w": "VERSA.",
+          "start": 4.096,
+          "end": 4.73
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 5.43,
+      "end": 9.77,
+      "text": "Les sous-titres s’affichent mot après mot.",
+      "words": [
+        {
+          "w": "Les",
+          "start": 5.43,
+          "end": 5.864
+        },
+        {
+          "w": "sous-titres",
+          "start": 5.864,
+          "end": 7.058
+        },
+        {
+          "w": "s’affichent",
+          "start": 7.058,
+          "end": 8.251
+        },
+        {
+          "w": "mot",
+          "start": 8.251,
+          "end": 8.685
+        },
+        {
+          "w": "après",
+          "start": 8.685,
+          "end": 9.336
+        },
+        {
+          "w": "mot.",
+          "start": 9.336,
+          "end": 9.77
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 10.47,
+      "end": 14.8,
+      "text": "Le mot prononcé passe en jaune, comme prévu.",
+      "words": [
+        {
+          "w": "Le",
+          "start": 10.47,
+          "end": 10.772
+        },
+        {
+          "w": "mot",
+          "start": 10.772,
+          "end": 11.175
+        },
+        {
+          "w": "prononcé",
+          "start": 11.175,
+          "end": 12.081
+        },
+        {
+          "w": "passe",
+          "start": 12.081,
+          "end": 12.685
+        },
+        {
+          "w": "en",
+          "start": 12.685,
+          "end": 12.987
+        },
+        {
+          "w": "jaune,",
+          "start": 12.987,
+          "end": 13.592
+        },
+        {
+          "w": "comme",
+          "start": 13.592,
+          "end": 14.196
+        },
+        {
+          "w": "prévu.",
+          "start": 14.196,
+          "end": 14.8
+        }
+      ]
+    }
+  ]
+}

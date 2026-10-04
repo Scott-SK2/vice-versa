@@ -18,6 +18,7 @@ import { GET as runsCurrent } from "@/app/api/runs/current/route";
 import { POST as postScan } from "@/app/api/scan/route";
 import { POST as postSessions } from "@/app/api/sessions/route";
 import { GET as getStation } from "@/app/api/stations/[code]/route";
+import { POST as postMediaProgress } from "@/app/api/stations/[code]/media-progress/route";
 import { POST as postStationScan } from "@/app/api/stations/[code]/scan/route";
 
 type Handler<P> = (req: Request, ctx: { params: Promise<P> }) => Promise<Response>;
@@ -190,8 +191,12 @@ describe("API participant", () => {
     expect(r.body.progress.completed).toBe(2);
     const a = catalog.stationByCode.get("A")!;
     const scanA = await call(postScan, "POST", "/api/scan", { token, body: { token: a.qrToken } });
-    expect(scanA.body.station.state).toBe("completed");
+    // L'accueil porte un média publié (clip de test) : terminé à 80 % de lecture ; il ne compte jamais dans la progression.
+    expect(scanA.body.station.state).toBe("in_progress");
     expect(scanA.body.progress.completed).toBe(2);
+    const mp = await call(postMediaProgress, "POST", "/api/stations/A/media-progress", { token, params: { code: "A" }, body: { media_ref: "VV-V12", progress: 0.85 } });
+    expect(mp.body.station.state).toBe("completed");
+    expect(mp.body.progress.completed).toBe(2);
     const p = await call(getProgress, "GET", "/api/me/progress", { token });
     expect(p.body.last_station).toBe("A");
     expect(p.body.stations.find((s: { code: string }) => s.code === "3").state).toBe("completed");

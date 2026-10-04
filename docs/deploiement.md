@@ -12,20 +12,83 @@ Dans les trois cas, les **médias** (vidéos, posters, sous-titres, plan) sont v
 
 **Recommandation** : l'option A. L'architecture (limites de débit en mémoire, migrations et contenu au démarrage, tâche de rétention intégrée) est conçue pour une instance unique, et Render la respecte telle quelle. L'option B fonctionne aussi : le projet détecte Vercel et bascule les compteurs sensibles en base, applique migrations et contenu au build, et confie la rétention à Vercel Cron.
 
-## A. Render : application + base de données
+## A. Render, pas à pas (tout à la main, dans l'ordre)
 
-1. Pousser le dépôt sur GitHub (`main` à jour), puis sur Render : **New → Blueprint**, choisir le dépôt. Le fichier `render.yaml` crée le service web (Docker, Francfort, plan Starter) et la base PostgreSQL 16 (plan Basic 256 Mo ; le plan gratuit est supprimé après 30 jours, à éviter pour l'événement).
-2. Render demande les variables marquées `sync: false` : `APP_BASE_URL` (`https://<service>.onrender.com`, ou le domaine personnalisé une fois ajouté dans Settings → Custom Domains, avec son enregistrement DNS), `ADMIN_BOOTSTRAP_EMAIL` et `ADMIN_BOOTSTRAP_PASSWORD` (mot de passe temporaire, à changer à la première connexion). `SESSION_SECRET` et `CRON_SECRET` sont générés par Render.
-3. Au démarrage, le conteneur applique les migrations, crée le premier admin, charge `content/vv26/`, puis lance la rétention quotidienne. Vérifier `https://<service>.onrender.com/api/health`, puis `/admin/login`.
-4. Mise à jour : chaque push sur `main` redéploie (`autoDeploy`). Retour arrière : Render → Deploys → Rollback.
-5. Sauvegardes : Render → base → Backups (quotidiennes sur les plans payants) ; en plus, avant la séance Live : `pg_dump "$(render psql url)" | gzip > avant-live.sql.gz` depuis un poste, ou l'onglet Recovery.
-6. Test de charge depuis n'importe quel poste : `pnpm load --vus 80 --duration 1800 --base https://<service>.onrender.com`.
+Trois objets à créer dans Render, dans cet ordre : **1. la base de données**, **2. le service web** (l'application), puis **3. le premier compte**. Le fichier `render.yaml` du dépôt n'est pas nécessaire : il décrit la même chose pour qui préfère le bouton « Blueprint », mais la procédure manuelle ci-dessous est plus lisible et ne dépend de rien.
 
-Le plan Starter n'a pas de « mise en veille » : l'application reste réactive. Le disque du conteneur est éphémère, ce qui ne pose pas de problème car les médias sont dans l'image et les données dans PostgreSQL.
+### Étape 1 : la base de données PostgreSQL
+
+**Cas 1 : vous avez déjà une instance PostgreSQL Render** (plan payant, version 14 ou plus, affichée dans sa page).
+
+1. Ouvrir l'instance → onglet **Shell** (ou copier son *External Database URL* et utiliser `psql` sur votre poste).
+2. Exécuter : `CREATE DATABASE viceversa;`
+3. Copier l'**Internal Database URL** de l'instance (section Connections) et remplacer le nom de base à la fin par `viceversa`. Exemple : `postgresql://user:mdp@dpg-xxxx-a/autre_base` devient `postgresql://user:mdp@dpg-xxxx-a/viceversa`. Garder cette valeur : c'est votre `DATABASE_URL`.
+
+Si l'instance n'est pas à Francfort, prendre l'External Database URL (même remplacement du nom de base).
+
+**Cas 2 : vous créez une instance.** New → **PostgreSQL** → Name `vice-versa-db`, Database `viceversa`, User `viceversa`, Region **Frankfurt**, Version **16**, Plan **Basic-256mb** → Create. Quand elle est « Available », copier l'**Internal Database URL** : c'est votre `DATABASE_URL`.
+
+### Étape 2 : le service web (l'application)
+
+1. New → **Web Service** → **Build and deploy from a Git repository** → connecter GitHub si besoin → choisir `Scott-SK2/vice-versa`.
+2. Remplir :
+
+   | Champ | Valeur |
+   |---|---|
+   | Name | `vice-versa` (Render affiche aussitôt l'adresse qui en découle : `https://vice-versa.onrender.com`, ou `https://vice-versa-xxxx.onrender.com` si le nom est pris) |
+   | Region | **Frankfurt (EU Central)** |
+   | Branch | `main` |
+   | Language / Runtime | **Docker** (Render détecte le `Dockerfile`) |
+   | Instance type | **Starter** |
+
+3. Section **Environment Variables** (bouton *Add Environment Variable*) :
+
+   | Clé | Valeur |
+   |---|---|
+   | `DATABASE_URL` | la valeur gardée à l'étape 1 |
+   | `SESSION_SECRET` | bouton **Generate** (ou `openssl rand -hex 32`) |
+   | `CRON_SECRET` | bouton **Generate** |
+   | `ADMIN_BOOTSTRAP_EMAIL` | votre e-mail |
+   | `ADMIN_BOOTSTRAP_PASSWORD` | un mot de passe temporaire, 12 caractères minimum |
+   | `MEDIA_BASE_URL` | `/media` |
+   | `EVENT_SLUG` | `vv26` |
+   | `APP_BASE_URL` | l'adresse affichée sous le champ Name, par exemple `https://vice-versa.onrender.com` (facultative au démarrage : l'application déduit son adresse des requêtes ; elle devient nécessaire pour générer les QR) |
+
+4. Section **Advanced** → **Health Check Path** : `/api/health`.
+5. **Create Web Service**. Render construit l'image Docker (3 à 5 minutes la première fois), puis démarre le conteneur, qui applique les migrations, crée le compte admin de démarrage, charge `content/vv26/` et lance la rétention quotidienne. Le journal (onglet Logs) doit afficher `migrations appliquées` puis `contenu chargé`.
+6. Vérifier : `https://<adresse du service>/api/health` doit répondre `{"ok":true,"db":true,…}`.
+
+**À quoi servent `ADMIN_BOOTSTRAP_EMAIL` et `ADMIN_BOOTSTRAP_PASSWORD`** : la console `/admin` n'a aucun compte au départ et pas de formulaire d'inscription (volontairement). Ces deux variables créent le **premier compte admin** au premier démarrage, uniquement si la table des comptes est vide. Le mot de passe est marqué temporaire : à la première connexion, la console oblige à en choisir un nouveau. Ensuite les variables sont ignorées et peuvent être supprimées. Les autres comptes (animateur, modérateur, second admin) se créent dans `/admin/users`.
+
+### Étape 3 : le premier compte et une séance de test
+
+1. `https://<adresse du service>/admin/login` avec l'e-mail et le mot de passe temporaire.
+2. Choisir le mot de passe définitif (demandé d'office).
+3. `/admin/users` : créer les autres comptes. `/admin` : **Nouvelle séance** (type Test) → **Lancer**.
+4. Sur un téléphone : `https://<adresse du service>/vv26`, choisir la langue, Commencer, répondre aux trois questions, puis ouvrir la station A (code court affiché par `pnpm qr:render`, ou URL `…/vv26/s/A?k=<jeton>` du récapitulatif) : le **clip de test** doit se lire, avec les sous-titres mot à mot et le sélecteur FR / NL / EN.
+
+### Étape 4 : déposer les fichiers médias
+
+Les médias sont versionnés dans `public/media/` et servis par Render sous `/media/`. Rien à transférer : on ajoute les fichiers au dépôt et on pousse.
+
+1. `pnpm media list` : noms exacts attendus (tirés de `content/vv26/media.json`) et fichiers manquants.
+2. Pour chaque clip monté : `pnpm media encode VV-V10 --in source/VV-V10.mp4`, puis sous-titres (`pnpm captions …`, relecture, `pnpm media sync-captions`), ligne dans `content/vv26/consents.csv`, `pnpm media grant VV-V10`.
+3. Pour une photo : copier le JPEG sous le nom attendu dans `public/media/`, ligne de consentement, `pnpm media grant VV-P05`.
+4. `pnpm media check`, puis `git add public/media content && git commit -m "Médias : VV-V10" && git push`. Render redéploie `main` et recharge le contenu au démarrage.
+
+Le clip de test `VV-V12` (mire + bip, 15 s, sous-titres d'exemple, consentement marqué TEST) est déjà publié sur la station d'accueil ; le vrai clip l'écrasera avec `pnpm media encode VV-V12 --in …` et la vraie ligne de consentement.
+
+### Étape 5 : au quotidien
+
+- Chaque push sur `main` redéploie (Auto-Deploy activé par défaut). Retour arrière : service → **Deploys → Rollback**. La base n'est jamais touchée par un déploiement (migrations additives seulement).
+- Gel des déploiements à partir du vendredi 9 octobre 18 h.
+- Sauvegarde : instance PostgreSQL → **Backups** (quotidiens) ; avant la séance Live, **Create backup**, ou `pg_dump "<External Database URL>" | gzip > avant-live.sql.gz` depuis un poste.
+- Test de charge depuis un poste : `pnpm load --vus 80 --duration 1800 --base https://<adresse du service>`.
+- Domaine personnalisé : service → Settings → **Custom Domains**, suivre l'enregistrement DNS indiqué, puis mettre `APP_BASE_URL` à jour (Environment) et régénérer les QR (`APP_BASE_URL=https://<domaine> pnpm qr:render --pdf`) **avant** le gel des jetons et l'impression.
 
 ## B. Vercel (application) + Render (base de données)
 
-1. **Base** : sur Render, New → PostgreSQL (Francfort, PostgreSQL 16, plan Basic 256 Mo). Copier l'**External Database URL** (avec `?sslmode=require` si absent).
+1. **Base** : comme en A.1, mais copier l'**External Database URL** (Vercel n'est pas dans le réseau Render), avec `?sslmode=require` si absent.
 2. **Vercel** : New Project → importer le dépôt. Framework Next.js détecté ; le script `vercel-build` applique les migrations et charge le contenu avant `next build` (`scripts/predeploy.ts`). Région des fonctions : `fra1` (`vercel.json`).
 3. Variables d'environnement (Settings → Environment Variables, environnement **Production** seulement, pour qu'un aperçu ne touche pas la base) :
 
