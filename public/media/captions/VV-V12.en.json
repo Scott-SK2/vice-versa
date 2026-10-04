@@ -2,131 +2,13 @@
   "media": "VV-V12",
   "lang": "en",
   "source": "manual",
-  "status": "reviewed",
+  "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.4,
-      "end": 4.73,
-      "text": "This is a test clip for VICE VERSA.",
-      "words": [
-        {
-          "w": "This",
-          "start": 0.4,
-          "end": 1.019
-        },
-        {
-          "w": "is",
-          "start": 1.019,
-          "end": 1.39
-        },
-        {
-          "w": "a",
-          "start": 1.39,
-          "end": 1.637
-        },
-        {
-          "w": "test",
-          "start": 1.637,
-          "end": 2.256
-        },
-        {
-          "w": "clip",
-          "start": 2.256,
-          "end": 2.874
-        },
-        {
-          "w": "for",
-          "start": 2.874,
-          "end": 3.369
-        },
-        {
-          "w": "VICE",
-          "start": 3.369,
-          "end": 3.988
-        },
-        {
-          "w": "VERSA.",
-          "start": 3.988,
-          "end": 4.73
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "start": 5.43,
-      "end": 9.77,
-      "text": "Subtitles appear word by word.",
-      "words": [
-        {
-          "w": "Subtitles",
-          "start": 5.43,
-          "end": 6.877
-        },
-        {
-          "w": "appear",
-          "start": 6.877,
-          "end": 7.889
-        },
-        {
-          "w": "word",
-          "start": 7.889,
-          "end": 8.613
-        },
-        {
-          "w": "by",
-          "start": 8.613,
-          "end": 9.047
-        },
-        {
-          "w": "word.",
-          "start": 9.047,
-          "end": 9.77
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "start": 10.47,
-      "end": 14.8,
-      "text": "The spoken word turns yellow, as planned.",
-      "words": [
-        {
-          "w": "The",
-          "start": 10.47,
-          "end": 10.903
-        },
-        {
-          "w": "spoken",
-          "start": 10.903,
-          "end": 11.661
-        },
-        {
-          "w": "word",
-          "start": 11.661,
-          "end": 12.202
-        },
-        {
-          "w": "turns",
-          "start": 12.202,
-          "end": 12.852
-        },
-        {
-          "w": "yellow,",
-          "start": 12.852,
-          "end": 13.609
-        },
-        {
-          "w": "as",
-          "start": 13.609,
-          "end": 13.934
-        },
-        {
-          "w": "planned.",
-          "start": 13.934,
-          "end": 14.8
-        }
-      ]
+      "start": 0.5,
+      "end": 5.0,
+      "text": "[On the bus: voices, music, laughter]"
     }
   ]
 }
