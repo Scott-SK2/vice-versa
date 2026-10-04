@@ -19,7 +19,7 @@ services:
       - key: CRON_SECRET
         generateValue: true
       - key: APP_BASE_URL
-        sync: false # https://<service>.onrender.com, puis le domaine personnalisé
+        value: https://vice-versa.onrender.com # à corriger après création si Render attribue un autre nom ; sert aux QR
       - key: ADMIN_BOOTSTRAP_EMAIL
         sync: false
       - key: ADMIN_BOOTSTRAP_PASSWORD
