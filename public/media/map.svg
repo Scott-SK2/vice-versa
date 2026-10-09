@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-label="Plan simplifié du lieu : couloir d’exposition autour de deux blocs, salle principale à droite">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-label="Plan simplifié du lieu : salle principale à droite, par laquelle on entre, couloir d’exposition autour de deux blocs">
   <!--
-    Plan d’après le croquis des organisateurs (9 octobre) : couloir blanc autour de deux blocs
-    hachurés au centre, salle principale (SP) à droite, par laquelle on entre, zones non utilisées hachurées en haut
-    et en bas à droite. Les pastilles des stations ne sont pas dessinées ici : l’application les superpose
-    d’après x_pct / y_pct de content/vv26/stations.json (repère : ce viewBox, 1000 × 760).
+    Plan d’après le croquis des organisateurs (9 octobre) : on entre par la salle principale (SP),
+    à droite, qui accueille l’accueil, quatre stations et la clôture ; le couloir d’exposition
+    (espace blanc) entoure deux blocs hachurés et accueille les quatre autres stations ; zones
+    non utilisées hachurées en haut et en bas à droite. Les pastilles ne sont pas dessinées ici :
+    l’application les superpose d’après x_pct / y_pct de content/vv26/stations.json (repère :
+    ce viewBox, 1000 × 760).
   -->
   <defs>
     <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -19,39 +21,36 @@
   <rect width="1000" height="760" fill="#FAF6EC"/>
 
   <!-- couloir / exposition (tout l’espace blanc) -->
-  <rect x="40" y="40" width="720" height="680" fill="#F6F1E4"/>
+  <rect x="40" y="40" width="600" height="680" fill="#F6F1E4"/>
   <!-- salle principale -->
-  <rect x="760" y="170" width="200" height="420" fill="#EEF0E3"/>
+  <rect x="640" y="130" width="320" height="500" fill="#EEF0E3"/>
 
   <!-- blocs centraux et zones non utilisées -->
-  <rect x="360" y="150" width="120" height="140" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <rect x="360" y="440" width="120" height="140" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <rect x="760" y="40" width="200" height="130" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <rect x="760" y="590" width="200" height="130" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <text x="860" y="112" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#7A8580">non utilisé</text>
-  <text x="860" y="662" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#7A8580">non utilisé</text>
+  <rect x="280" y="150" width="120" height="140" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
+  <rect x="280" y="440" width="120" height="140" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
+  <rect x="640" y="40" width="320" height="90" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
+  <rect x="640" y="630" width="320" height="90" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
+  <text x="800" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#7A8580">non utilisé</text>
+  <text x="800" y="682" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#7A8580">non utilisé</text>
 
   <!-- libellés -->
-  <text x="860" y="350" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#3F4A45">Salle</text>
-  <text x="860" y="384" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#3F4A45">principale</text>
-  <text x="200" y="470" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#3F4A45">Couloir · exposition</text>
+  <text x="800" y="565" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#3F4A45">Salle principale</text>
+  <text x="340" y="372" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#3F4A45">Couloir · exposition</text>
 
   <!-- murs -->
   <g fill="none" stroke="#3F4A45" stroke-width="10" stroke-linejoin="round">
-    <!-- enceinte, ouverture d’entrée sur le mur gauche -->
+    <!-- enceinte fermée -->
     <path d="M40 40 H960 V720 H40 Z"/>
-    <!-- cloison du couloir vers la bande de droite, avec porte de la salle principale -->
-    <path d="M760 40 V330 M760 410 V720"/>
+    <!-- cloison salle / couloir, avec la porte -->
+    <path d="M640 40 V330 M640 410 V720"/>
     <!-- séparations de la salle principale -->
-    <path d="M760 170 H960 M760 590 H960"/>
+    <path d="M640 130 H960 M640 630 H960"/>
   </g>
-  <!-- battants de porte -->
-  <g fill="none" stroke="#3F4A45" stroke-width="4" stroke-dasharray="6 6">
-    <path d="M760 330 A80 80 0 0 1 840 410"/>
-  </g>
+  <!-- battant de la porte, ouvert vers le couloir -->
+  <path d="M640 330 A80 80 0 0 0 560 410" fill="none" stroke="#3F4A45" stroke-width="4" stroke-dasharray="6 6"/>
 
-  <!-- entrée -->
-  <line x1="832" y1="402" x2="750" y2="402" stroke="#2E7D4F" stroke-width="5" marker-end="url(#arrow)"/>
-  <rect x="785" y="420" width="150" height="40" rx="10" fill="#1E5C3A"/>
-  <text x="860" y="447" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Entrée</text>
+  <!-- entrée : par la salle principale, puis vers le couloir -->
+  <line x1="700" y1="400" x2="596" y2="400" stroke="#2E7D4F" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="725" y="580" width="150" height="40" rx="10" fill="#1E5C3A"/>
+  <text x="800" y="607" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Entrée</text>
 </svg>
