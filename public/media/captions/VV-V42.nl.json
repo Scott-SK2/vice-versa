@@ -1,14 +1,315 @@
 {
   "media": "VV-V42",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Getuigenis in het Frans — ondertitels in voorbereiding]"
+      "start": 0,
+      "end": 17.94,
+      "text": "Ja, ik dacht eraan om naar het buitenland te gaan, andere culturen en werkwijzen te ontdekken, nieuwe vaardigheden te leren en meer ervaring mee te nemen als ik terug naar mijn land kom.",
+      "words": [
+        {
+          "w": "Ja,",
+          "start": 0,
+          "end": 0.294
+        },
+        {
+          "w": "ik",
+          "start": 0.294,
+          "end": 0.588
+        },
+        {
+          "w": "dacht",
+          "start": 0.588,
+          "end": 1.176
+        },
+        {
+          "w": "eraan",
+          "start": 1.176,
+          "end": 1.765
+        },
+        {
+          "w": "om",
+          "start": 1.765,
+          "end": 2.059
+        },
+        {
+          "w": "naar",
+          "start": 2.059,
+          "end": 2.549
+        },
+        {
+          "w": "het",
+          "start": 2.549,
+          "end": 2.941
+        },
+        {
+          "w": "buitenland",
+          "start": 2.941,
+          "end": 4.019
+        },
+        {
+          "w": "te",
+          "start": 4.019,
+          "end": 4.313
+        },
+        {
+          "w": "gaan,",
+          "start": 4.313,
+          "end": 4.804
+        },
+        {
+          "w": "andere",
+          "start": 4.804,
+          "end": 5.49
+        },
+        {
+          "w": "culturen",
+          "start": 5.49,
+          "end": 6.372
+        },
+        {
+          "w": "en",
+          "start": 6.372,
+          "end": 6.666
+        },
+        {
+          "w": "werkwijzen",
+          "start": 6.666,
+          "end": 7.745
+        },
+        {
+          "w": "te",
+          "start": 7.745,
+          "end": 8.039
+        },
+        {
+          "w": "ontdekken,",
+          "start": 8.039,
+          "end": 9.019
+        },
+        {
+          "w": "nieuwe",
+          "start": 9.019,
+          "end": 9.705
+        },
+        {
+          "w": "vaardigheden",
+          "start": 9.705,
+          "end": 10.98
+        },
+        {
+          "w": "te",
+          "start": 10.98,
+          "end": 11.274
+        },
+        {
+          "w": "leren",
+          "start": 11.274,
+          "end": 11.862
+        },
+        {
+          "w": "en",
+          "start": 11.862,
+          "end": 12.156
+        },
+        {
+          "w": "meer",
+          "start": 12.156,
+          "end": 12.646
+        },
+        {
+          "w": "ervaring",
+          "start": 12.646,
+          "end": 13.529
+        },
+        {
+          "w": "mee",
+          "start": 13.529,
+          "end": 13.921
+        },
+        {
+          "w": "te",
+          "start": 13.921,
+          "end": 14.215
+        },
+        {
+          "w": "nemen",
+          "start": 14.215,
+          "end": 14.803
+        },
+        {
+          "w": "als",
+          "start": 14.803,
+          "end": 15.195
+        },
+        {
+          "w": "ik",
+          "start": 15.195,
+          "end": 15.489
+        },
+        {
+          "w": "terug",
+          "start": 15.489,
+          "end": 16.077
+        },
+        {
+          "w": "naar",
+          "start": 16.077,
+          "end": 16.568
+        },
+        {
+          "w": "mijn",
+          "start": 16.568,
+          "end": 17.058
+        },
+        {
+          "w": "land",
+          "start": 17.058,
+          "end": 17.548
+        },
+        {
+          "w": "kom.",
+          "start": 17.548,
+          "end": 17.94
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 19.34,
+      "end": 24.32,
+      "text": "Succes hangt niet af van een plek, want je kunt overal slagen.",
+      "words": [
+        {
+          "w": "Succes",
+          "start": 19.34,
+          "end": 19.911
+        },
+        {
+          "w": "hangt",
+          "start": 19.911,
+          "end": 20.401
+        },
+        {
+          "w": "niet",
+          "start": 20.401,
+          "end": 20.81
+        },
+        {
+          "w": "af",
+          "start": 20.81,
+          "end": 21.054
+        },
+        {
+          "w": "van",
+          "start": 21.054,
+          "end": 21.381
+        },
+        {
+          "w": "een",
+          "start": 21.381,
+          "end": 21.708
+        },
+        {
+          "w": "plek,",
+          "start": 21.708,
+          "end": 22.116
+        },
+        {
+          "w": "want",
+          "start": 22.116,
+          "end": 22.524
+        },
+        {
+          "w": "je",
+          "start": 22.524,
+          "end": 22.769
+        },
+        {
+          "w": "kunt",
+          "start": 22.769,
+          "end": 23.177
+        },
+        {
+          "w": "overal",
+          "start": 23.177,
+          "end": 23.749
+        },
+        {
+          "w": "slagen.",
+          "start": 23.749,
+          "end": 24.32
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 24.6,
+      "end": 29.82,
+      "text": "Ik ben heel vastberaden, met een drijvende kracht: geloof.",
+      "words": [
+        {
+          "w": "Ik",
+          "start": 24.6,
+          "end": 24.88
+        },
+        {
+          "w": "ben",
+          "start": 24.88,
+          "end": 25.253
+        },
+        {
+          "w": "heel",
+          "start": 25.253,
+          "end": 25.719
+        },
+        {
+          "w": "vastberaden,",
+          "start": 25.719,
+          "end": 26.837
+        },
+        {
+          "w": "met",
+          "start": 26.837,
+          "end": 27.21
+        },
+        {
+          "w": "een",
+          "start": 27.21,
+          "end": 27.583
+        },
+        {
+          "w": "drijvende",
+          "start": 27.583,
+          "end": 28.515
+        },
+        {
+          "w": "kracht:",
+          "start": 28.515,
+          "end": 29.168
+        },
+        {
+          "w": "geloof.",
+          "start": 29.168,
+          "end": 29.82
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 30,
+      "end": 30.28,
+      "text": "Bedankt.",
+      "words": [
+        {
+          "w": "Bedankt.",
+          "start": 30,
+          "end": 30.28
+        }
+      ]
     }
   ]
 }

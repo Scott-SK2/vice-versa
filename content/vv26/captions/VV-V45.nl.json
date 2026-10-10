@@ -1,14 +1,91 @@
 {
   "media": "VV-V45",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Getuigenis in het Frans — ondertitels in voorbereiding]"
+      "start": 0,
+      "end": 2,
+      "text": "Hey jongens!",
+      "words": [
+        {
+          "w": "Hey",
+          "start": 0,
+          "end": 0.667
+        },
+        {
+          "w": "jongens!",
+          "start": 0.667,
+          "end": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 2,
+      "end": 6,
+      "text": "Lachen",
+      "words": [
+        {
+          "w": "Lachen",
+          "start": 2,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 6,
+      "end": 10,
+      "text": "...",
+      "words": [
+        {
+          "w": "...",
+          "start": 6,
+          "end": 10
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 10,
+      "end": 12,
+      "text": "...",
+      "words": [
+        {
+          "w": "...",
+          "start": 10,
+          "end": 12
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 12,
+      "end": 16,
+      "text": "...",
+      "words": [
+        {
+          "w": "...",
+          "start": 12,
+          "end": 16
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 16,
+      "end": 26,
+      "text": "...",
+      "words": [
+        {
+          "w": "...",
+          "start": 16,
+          "end": 26
+        }
+      ]
     }
   ]
 }

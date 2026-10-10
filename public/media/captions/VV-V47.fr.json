@@ -1,14 +1,139 @@
 {
   "media": "VV-V47",
   "lang": "fr",
-  "source": "manual",
+  "source": "whisper-large-v3",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Témoignage en français — sous-titres en préparation]"
+      "start": 0,
+      "end": 29.98,
+      "text": "Le groupe de la ville de Mali, qui a été créé en 2010, a été créé en 2011.",
+      "words": [
+        {
+          "w": "Le",
+          "start": 29.98,
+          "end": 30
+        },
+        {
+          "w": "groupe",
+          "start": 30,
+          "end": 30.02
+        },
+        {
+          "w": "Merci.",
+          "start": 30,
+          "end": 30.26
+        },
+        {
+          "w": "de",
+          "start": 30.02,
+          "end": 30.04
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 30,
+      "end": 32,
+      "text": "Merci.",
+      "words": [
+        {
+          "w": "Le",
+          "start": 29.98,
+          "end": 30
+        },
+        {
+          "w": "groupe",
+          "start": 30,
+          "end": 30.02
+        },
+        {
+          "w": "Merci.",
+          "start": 30,
+          "end": 30.26
+        },
+        {
+          "w": "de",
+          "start": 30.02,
+          "end": 30.04
+        },
+        {
+          "w": "la",
+          "start": 30.04,
+          "end": 30.06
+        },
+        {
+          "w": "ville",
+          "start": 30.06,
+          "end": 30.08
+        },
+        {
+          "w": "de",
+          "start": 30.08,
+          "end": 30.1
+        },
+        {
+          "w": "Mali,",
+          "start": 30.1,
+          "end": 30.12
+        },
+        {
+          "w": "qui",
+          "start": 30.12,
+          "end": 30.14
+        },
+        {
+          "w": "a",
+          "start": 30.14,
+          "end": 30.16
+        },
+        {
+          "w": "été",
+          "start": 30.16,
+          "end": 30.18
+        },
+        {
+          "w": "créé",
+          "start": 30.18,
+          "end": 30.2
+        },
+        {
+          "w": "en",
+          "start": 30.2,
+          "end": 30.22
+        },
+        {
+          "w": "2010,",
+          "start": 30.22,
+          "end": 30.24
+        },
+        {
+          "w": "a",
+          "start": 30.24,
+          "end": 30.26
+        },
+        {
+          "w": "été",
+          "start": 30.26,
+          "end": 30.28
+        },
+        {
+          "w": "créé",
+          "start": 30.28,
+          "end": 30.3
+        },
+        {
+          "w": "en",
+          "start": 30.3,
+          "end": 30.32
+        },
+        {
+          "w": "2011.",
+          "start": 30.32,
+          "end": 30.34
+        }
+      ]
     }
   ]
 }

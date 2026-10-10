@@ -1,14 +1,305 @@
 {
   "media": "VV-V43",
   "lang": "en",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Testimony in French — subtitles being prepared]"
+      "start": 0,
+      "end": 8.26,
+      "text": "Imane, the lady, we invited ourselves for the déroulant, but the déroulant cancelled.",
+      "words": [
+        {
+          "w": "Imane,",
+          "start": 0,
+          "end": 0.604
+        },
+        {
+          "w": "the",
+          "start": 0.604,
+          "end": 1.007
+        },
+        {
+          "w": "lady,",
+          "start": 1.007,
+          "end": 1.511
+        },
+        {
+          "w": "we",
+          "start": 1.511,
+          "end": 1.813
+        },
+        {
+          "w": "invited",
+          "start": 1.813,
+          "end": 2.619
+        },
+        {
+          "w": "ourselves",
+          "start": 2.619,
+          "end": 3.626
+        },
+        {
+          "w": "for",
+          "start": 3.626,
+          "end": 4.029
+        },
+        {
+          "w": "the",
+          "start": 4.029,
+          "end": 4.432
+        },
+        {
+          "w": "déroulant,",
+          "start": 4.432,
+          "end": 5.44
+        },
+        {
+          "w": "but",
+          "start": 5.44,
+          "end": 5.842
+        },
+        {
+          "w": "the",
+          "start": 5.842,
+          "end": 6.245
+        },
+        {
+          "w": "déroulant",
+          "start": 6.245,
+          "end": 7.253
+        },
+        {
+          "w": "cancelled.",
+          "start": 7.253,
+          "end": 8.26
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 8.26,
+      "end": 14.3,
+      "text": "From class 1 to 2, the déroulant cancelled the déroulant that had cancelled it in advance.",
+      "words": [
+        {
+          "w": "From",
+          "start": 8.26,
+          "end": 8.599
+        },
+        {
+          "w": "class",
+          "start": 8.599,
+          "end": 9.007
+        },
+        {
+          "w": "1",
+          "start": 9.007,
+          "end": 9.142
+        },
+        {
+          "w": "to",
+          "start": 9.142,
+          "end": 9.346
+        },
+        {
+          "w": "2,",
+          "start": 9.346,
+          "end": 9.482
+        },
+        {
+          "w": "the",
+          "start": 9.482,
+          "end": 9.753
+        },
+        {
+          "w": "déroulant",
+          "start": 9.753,
+          "end": 10.432
+        },
+        {
+          "w": "cancelled",
+          "start": 10.432,
+          "end": 11.11
+        },
+        {
+          "w": "the",
+          "start": 11.11,
+          "end": 11.382
+        },
+        {
+          "w": "déroulant",
+          "start": 11.382,
+          "end": 12.06
+        },
+        {
+          "w": "that",
+          "start": 12.06,
+          "end": 12.4
+        },
+        {
+          "w": "had",
+          "start": 12.4,
+          "end": 12.671
+        },
+        {
+          "w": "cancelled",
+          "start": 12.671,
+          "end": 13.35
+        },
+        {
+          "w": "it",
+          "start": 13.35,
+          "end": 13.553
+        },
+        {
+          "w": "in",
+          "start": 13.553,
+          "end": 13.757
+        },
+        {
+          "w": "advance.",
+          "start": 13.757,
+          "end": 14.3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 14.3,
+      "end": 19.26,
+      "text": "The déroulant cancelled the déroulant and cancelled his son's life.",
+      "words": [
+        {
+          "w": "The",
+          "start": 14.3,
+          "end": 14.601
+        },
+        {
+          "w": "déroulant",
+          "start": 14.601,
+          "end": 15.352
+        },
+        {
+          "w": "cancelled",
+          "start": 15.352,
+          "end": 16.104
+        },
+        {
+          "w": "the",
+          "start": 16.104,
+          "end": 16.404
+        },
+        {
+          "w": "déroulant",
+          "start": 16.404,
+          "end": 17.156
+        },
+        {
+          "w": "and",
+          "start": 17.156,
+          "end": 17.456
+        },
+        {
+          "w": "cancelled",
+          "start": 17.456,
+          "end": 18.208
+        },
+        {
+          "w": "his",
+          "start": 18.208,
+          "end": 18.508
+        },
+        {
+          "w": "son's",
+          "start": 18.508,
+          "end": 18.884
+        },
+        {
+          "w": "life.",
+          "start": 18.884,
+          "end": 19.26
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 19.26,
+      "end": 28.6,
+      "text": "The déroulant cancelled the déroulant, which cancelled his sister's life and cancelled the trial.",
+      "words": [
+        {
+          "w": "The",
+          "start": 19.26,
+          "end": 19.653
+        },
+        {
+          "w": "déroulant",
+          "start": 19.653,
+          "end": 20.636
+        },
+        {
+          "w": "cancelled",
+          "start": 20.636,
+          "end": 21.62
+        },
+        {
+          "w": "the",
+          "start": 21.62,
+          "end": 22.013
+        },
+        {
+          "w": "déroulant,",
+          "start": 22.013,
+          "end": 22.996
+        },
+        {
+          "w": "which",
+          "start": 22.996,
+          "end": 23.586
+        },
+        {
+          "w": "cancelled",
+          "start": 23.586,
+          "end": 24.569
+        },
+        {
+          "w": "his",
+          "start": 24.569,
+          "end": 24.962
+        },
+        {
+          "w": "sister's",
+          "start": 24.962,
+          "end": 25.749
+        },
+        {
+          "w": "life",
+          "start": 25.749,
+          "end": 26.24
+        },
+        {
+          "w": "and",
+          "start": 26.24,
+          "end": 26.634
+        },
+        {
+          "w": "cancelled",
+          "start": 26.634,
+          "end": 27.617
+        },
+        {
+          "w": "the",
+          "start": 27.617,
+          "end": 28.01
+        },
+        {
+          "w": "trial.",
+          "start": 28.01,
+          "end": 28.6
+        }
+      ]
     }
   ]
 }

@@ -1,14 +1,671 @@
 {
   "media": "VV-V44",
   "lang": "en",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Testimony in French — subtitles being prepared]"
+      "start": 0,
+      "end": 7.36,
+      "text": "And we used to tell them, we think that if you want to get rich or succeed, you have to come to Kinshasa.",
+      "words": [
+        {
+          "w": "And",
+          "start": 0,
+          "end": 0.286
+        },
+        {
+          "w": "we",
+          "start": 0.286,
+          "end": 0.5
+        },
+        {
+          "w": "used",
+          "start": 0.5,
+          "end": 0.857
+        },
+        {
+          "w": "to",
+          "start": 0.857,
+          "end": 1.072
+        },
+        {
+          "w": "tell",
+          "start": 1.072,
+          "end": 1.429
+        },
+        {
+          "w": "them,",
+          "start": 1.429,
+          "end": 1.786
+        },
+        {
+          "w": "we",
+          "start": 1.786,
+          "end": 2.001
+        },
+        {
+          "w": "think",
+          "start": 2.001,
+          "end": 2.43
+        },
+        {
+          "w": "that",
+          "start": 2.43,
+          "end": 2.787
+        },
+        {
+          "w": "if",
+          "start": 2.787,
+          "end": 3.001
+        },
+        {
+          "w": "you",
+          "start": 3.001,
+          "end": 3.287
+        },
+        {
+          "w": "want",
+          "start": 3.287,
+          "end": 3.644
+        },
+        {
+          "w": "to",
+          "start": 3.644,
+          "end": 3.859
+        },
+        {
+          "w": "get",
+          "start": 3.859,
+          "end": 4.144
+        },
+        {
+          "w": "rich",
+          "start": 4.144,
+          "end": 4.502
+        },
+        {
+          "w": "or",
+          "start": 4.502,
+          "end": 4.716
+        },
+        {
+          "w": "succeed,",
+          "start": 4.716,
+          "end": 5.288
+        },
+        {
+          "w": "you",
+          "start": 5.288,
+          "end": 5.574
+        },
+        {
+          "w": "have",
+          "start": 5.574,
+          "end": 5.931
+        },
+        {
+          "w": "to",
+          "start": 5.931,
+          "end": 6.145
+        },
+        {
+          "w": "come",
+          "start": 6.145,
+          "end": 6.503
+        },
+        {
+          "w": "to",
+          "start": 6.503,
+          "end": 6.717
+        },
+        {
+          "w": "Kinshasa.",
+          "start": 6.717,
+          "end": 7.36
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 7.5,
+      "end": 9.98,
+      "text": "For us, that's how it is, we realized we didn't have the same narratives.",
+      "words": [
+        {
+          "w": "For",
+          "start": 7.5,
+          "end": 7.644
+        },
+        {
+          "w": "us,",
+          "start": 7.644,
+          "end": 7.752
+        },
+        {
+          "w": "that's",
+          "start": 7.752,
+          "end": 7.967
+        },
+        {
+          "w": "how",
+          "start": 7.967,
+          "end": 8.111
+        },
+        {
+          "w": "it",
+          "start": 8.111,
+          "end": 8.219
+        },
+        {
+          "w": "is,",
+          "start": 8.219,
+          "end": 8.327
+        },
+        {
+          "w": "we",
+          "start": 8.327,
+          "end": 8.434
+        },
+        {
+          "w": "realized",
+          "start": 8.434,
+          "end": 8.758
+        },
+        {
+          "w": "we",
+          "start": 8.758,
+          "end": 8.866
+        },
+        {
+          "w": "didn't",
+          "start": 8.866,
+          "end": 9.081
+        },
+        {
+          "w": "have",
+          "start": 9.081,
+          "end": 9.261
+        },
+        {
+          "w": "the",
+          "start": 9.261,
+          "end": 9.405
+        },
+        {
+          "w": "same",
+          "start": 9.405,
+          "end": 9.585
+        },
+        {
+          "w": "narratives.",
+          "start": 9.585,
+          "end": 9.98
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 9.98,
+      "end": 13.08,
+      "text": "We thought, actually, it'd be cool to do a project about that, you know.",
+      "words": [
+        {
+          "w": "We",
+          "start": 9.98,
+          "end": 10.117
+        },
+        {
+          "w": "thought,",
+          "start": 10.117,
+          "end": 10.481
+        },
+        {
+          "w": "actually,",
+          "start": 10.481,
+          "end": 10.892
+        },
+        {
+          "w": "it'd",
+          "start": 10.892,
+          "end": 11.074
+        },
+        {
+          "w": "be",
+          "start": 11.074,
+          "end": 11.211
+        },
+        {
+          "w": "cool",
+          "start": 11.211,
+          "end": 11.439
+        },
+        {
+          "w": "to",
+          "start": 11.439,
+          "end": 11.576
+        },
+        {
+          "w": "do",
+          "start": 11.576,
+          "end": 11.712
+        },
+        {
+          "w": "a",
+          "start": 11.712,
+          "end": 11.804
+        },
+        {
+          "w": "project",
+          "start": 11.804,
+          "end": 12.168
+        },
+        {
+          "w": "about",
+          "start": 12.168,
+          "end": 12.442
+        },
+        {
+          "w": "that,",
+          "start": 12.442,
+          "end": 12.67
+        },
+        {
+          "w": "you",
+          "start": 12.67,
+          "end": 12.852
+        },
+        {
+          "w": "know.",
+          "start": 12.852,
+          "end": 13.08
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 13.16,
+      "end": 20.3,
+      "text": "It's really about exchanging ideas, seeing what biases we might have, and that's it, just deconstructing everything.",
+      "words": [
+        {
+          "w": "It's",
+          "start": 13.16,
+          "end": 13.417
+        },
+        {
+          "w": "really",
+          "start": 13.417,
+          "end": 13.868
+        },
+        {
+          "w": "about",
+          "start": 13.868,
+          "end": 14.254
+        },
+        {
+          "w": "exchanging",
+          "start": 14.254,
+          "end": 14.961
+        },
+        {
+          "w": "ideas,",
+          "start": 14.961,
+          "end": 15.347
+        },
+        {
+          "w": "seeing",
+          "start": 15.347,
+          "end": 15.797
+        },
+        {
+          "w": "what",
+          "start": 15.797,
+          "end": 16.119
+        },
+        {
+          "w": "biases",
+          "start": 16.119,
+          "end": 16.569
+        },
+        {
+          "w": "we",
+          "start": 16.569,
+          "end": 16.762
+        },
+        {
+          "w": "might",
+          "start": 16.762,
+          "end": 17.148
+        },
+        {
+          "w": "have,",
+          "start": 17.148,
+          "end": 17.47
+        },
+        {
+          "w": "and",
+          "start": 17.47,
+          "end": 17.727
+        },
+        {
+          "w": "that's",
+          "start": 17.727,
+          "end": 18.113
+        },
+        {
+          "w": "it,",
+          "start": 18.113,
+          "end": 18.306
+        },
+        {
+          "w": "just",
+          "start": 18.306,
+          "end": 18.628
+        },
+        {
+          "w": "deconstructing",
+          "start": 18.628,
+          "end": 19.592
+        },
+        {
+          "w": "everything.",
+          "start": 19.592,
+          "end": 20.3
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 20.98,
+      "end": 22.96,
+      "text": "So, we thought, let's do it in two phases.",
+      "words": [
+        {
+          "w": "So,",
+          "start": 20.98,
+          "end": 21.132
+        },
+        {
+          "w": "we",
+          "start": 21.132,
+          "end": 21.285
+        },
+        {
+          "w": "thought,",
+          "start": 21.285,
+          "end": 21.691
+        },
+        {
+          "w": "let's",
+          "start": 21.691,
+          "end": 21.945
+        },
+        {
+          "w": "do",
+          "start": 21.945,
+          "end": 22.097
+        },
+        {
+          "w": "it",
+          "start": 22.097,
+          "end": 22.249
+        },
+        {
+          "w": "in",
+          "start": 22.249,
+          "end": 22.402
+        },
+        {
+          "w": "two",
+          "start": 22.402,
+          "end": 22.605
+        },
+        {
+          "w": "phases.",
+          "start": 22.605,
+          "end": 22.96
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 23.34,
+      "end": 27.98,
+      "text": "What you saw across Belgium, you saw the core of Kinshasa, at Kulinga?",
+      "words": [
+        {
+          "w": "What",
+          "start": 23.34,
+          "end": 23.681
+        },
+        {
+          "w": "you",
+          "start": 23.681,
+          "end": 23.954
+        },
+        {
+          "w": "saw",
+          "start": 23.954,
+          "end": 24.227
+        },
+        {
+          "w": "across",
+          "start": 24.227,
+          "end": 24.705
+        },
+        {
+          "w": "Belgium,",
+          "start": 24.705,
+          "end": 25.251
+        },
+        {
+          "w": "you",
+          "start": 25.251,
+          "end": 25.524
+        },
+        {
+          "w": "saw",
+          "start": 25.524,
+          "end": 25.796
+        },
+        {
+          "w": "the",
+          "start": 25.796,
+          "end": 26.069
+        },
+        {
+          "w": "core",
+          "start": 26.069,
+          "end": 26.411
+        },
+        {
+          "w": "of",
+          "start": 26.411,
+          "end": 26.615
+        },
+        {
+          "w": "Kinshasa,",
+          "start": 26.615,
+          "end": 27.229
+        },
+        {
+          "w": "at",
+          "start": 27.229,
+          "end": 27.434
+        },
+        {
+          "w": "Kulinga?",
+          "start": 27.434,
+          "end": 27.98
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 27.98,
+      "end": 43.36,
+      "text": "Yes, of course.",
+      "words": [
+        {
+          "w": "Yes,",
+          "start": 27.98,
+          "end": 32.374
+        },
+        {
+          "w": "of",
+          "start": 32.374,
+          "end": 35.67
+        },
+        {
+          "w": "course.",
+          "start": 35.67,
+          "end": 43.36
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 43.36,
+      "end": 45.46,
+      "text": "Of course, I always love coming back to Congo.",
+      "words": [
+        {
+          "w": "Of",
+          "start": 43.36,
+          "end": 43.5
+        },
+        {
+          "w": "course,",
+          "start": 43.5,
+          "end": 43.827
+        },
+        {
+          "w": "I",
+          "start": 43.827,
+          "end": 43.92
+        },
+        {
+          "w": "always",
+          "start": 43.92,
+          "end": 44.247
+        },
+        {
+          "w": "love",
+          "start": 44.247,
+          "end": 44.48
+        },
+        {
+          "w": "coming",
+          "start": 44.48,
+          "end": 44.807
+        },
+        {
+          "w": "back",
+          "start": 44.807,
+          "end": 45.04
+        },
+        {
+          "w": "to",
+          "start": 45.04,
+          "end": 45.18
+        },
+        {
+          "w": "Congo.",
+          "start": 45.18,
+          "end": 45.46
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 45.88,
+      "end": 47.46,
+      "text": "So yeah, yeah, I'm here.",
+      "words": [
+        {
+          "w": "So",
+          "start": 45.88,
+          "end": 46.106
+        },
+        {
+          "w": "yeah,",
+          "start": 46.106,
+          "end": 46.482
+        },
+        {
+          "w": "yeah,",
+          "start": 46.482,
+          "end": 46.858
+        },
+        {
+          "w": "I'm",
+          "start": 46.858,
+          "end": 47.084
+        },
+        {
+          "w": "here.",
+          "start": 47.084,
+          "end": 47.46
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 48.06,
+      "end": 55.36,
+      "text": "Do you speak a lot of languages?",
+      "words": [
+        {
+          "w": "Do",
+          "start": 48.06,
+          "end": 48.744
+        },
+        {
+          "w": "you",
+          "start": 48.744,
+          "end": 49.657
+        },
+        {
+          "w": "speak",
+          "start": 49.657,
+          "end": 51.026
+        },
+        {
+          "w": "a",
+          "start": 51.026,
+          "end": 51.482
+        },
+        {
+          "w": "lot",
+          "start": 51.482,
+          "end": 52.394
+        },
+        {
+          "w": "of",
+          "start": 52.394,
+          "end": 53.079
+        },
+        {
+          "w": "languages?",
+          "start": 53.079,
+          "end": 55.36
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 55.36,
+      "end": 56.26,
+      "text": "Thanks.",
+      "words": [
+        {
+          "w": "Thanks.",
+          "start": 55.36,
+          "end": 56.26
+        }
+      ]
     }
   ]
 }

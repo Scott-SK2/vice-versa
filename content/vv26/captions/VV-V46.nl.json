@@ -1,14 +1,405 @@
 {
   "media": "VV-V46",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Getuigenis in het Frans — ondertitels in voorbereiding]"
+      "start": 0,
+      "end": 9.12,
+      "text": "Voor mij is de familie de eerste plek waar je de levenswaarden leert, je krijgt affectie en toewijding.",
+      "words": [
+        {
+          "w": "Voor",
+          "start": 0,
+          "end": 0.447
+        },
+        {
+          "w": "mij",
+          "start": 0.447,
+          "end": 0.805
+        },
+        {
+          "w": "is",
+          "start": 0.805,
+          "end": 1.073
+        },
+        {
+          "w": "de",
+          "start": 1.073,
+          "end": 1.341
+        },
+        {
+          "w": "familie",
+          "start": 1.341,
+          "end": 2.056
+        },
+        {
+          "w": "de",
+          "start": 2.056,
+          "end": 2.325
+        },
+        {
+          "w": "eerste",
+          "start": 2.325,
+          "end": 2.951
+        },
+        {
+          "w": "plek",
+          "start": 2.951,
+          "end": 3.398
+        },
+        {
+          "w": "waar",
+          "start": 3.398,
+          "end": 3.845
+        },
+        {
+          "w": "je",
+          "start": 3.845,
+          "end": 4.113
+        },
+        {
+          "w": "de",
+          "start": 4.113,
+          "end": 4.381
+        },
+        {
+          "w": "levenswaarden",
+          "start": 4.381,
+          "end": 5.633
+        },
+        {
+          "w": "leert,",
+          "start": 5.633,
+          "end": 6.169
+        },
+        {
+          "w": "je",
+          "start": 6.169,
+          "end": 6.438
+        },
+        {
+          "w": "krijgt",
+          "start": 6.438,
+          "end": 7.064
+        },
+        {
+          "w": "affectie",
+          "start": 7.064,
+          "end": 7.868
+        },
+        {
+          "w": "en",
+          "start": 7.868,
+          "end": 8.136
+        },
+        {
+          "w": "toewijding.",
+          "start": 8.136,
+          "end": 9.12
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 9.92,
+      "end": 20.82,
+      "text": "Wat mijn familie betreft, als traditie of gewoonte die ik altijd zal behouden, zeg ik gebed en respect.",
+      "words": [
+        {
+          "w": "Wat",
+          "start": 9.92,
+          "end": 10.352
+        },
+        {
+          "w": "mijn",
+          "start": 10.352,
+          "end": 10.891
+        },
+        {
+          "w": "familie",
+          "start": 10.891,
+          "end": 11.755
+        },
+        {
+          "w": "betreft,",
+          "start": 11.755,
+          "end": 12.618
+        },
+        {
+          "w": "als",
+          "start": 12.618,
+          "end": 13.05
+        },
+        {
+          "w": "traditie",
+          "start": 13.05,
+          "end": 14.021
+        },
+        {
+          "w": "of",
+          "start": 14.021,
+          "end": 14.345
+        },
+        {
+          "w": "gewoonte",
+          "start": 14.345,
+          "end": 15.316
+        },
+        {
+          "w": "die",
+          "start": 15.316,
+          "end": 15.748
+        },
+        {
+          "w": "ik",
+          "start": 15.748,
+          "end": 16.071
+        },
+        {
+          "w": "altijd",
+          "start": 16.071,
+          "end": 16.827
+        },
+        {
+          "w": "zal",
+          "start": 16.827,
+          "end": 17.259
+        },
+        {
+          "w": "behouden,",
+          "start": 17.259,
+          "end": 18.23
+        },
+        {
+          "w": "zeg",
+          "start": 18.23,
+          "end": 18.662
+        },
+        {
+          "w": "ik",
+          "start": 18.662,
+          "end": 18.985
+        },
+        {
+          "w": "gebed",
+          "start": 18.985,
+          "end": 19.633
+        },
+        {
+          "w": "en",
+          "start": 19.633,
+          "end": 19.957
+        },
+        {
+          "w": "respect.",
+          "start": 19.957,
+          "end": 20.82
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 21.42,
+      "end": 29.24,
+      "text": "Omdat ik uit een christelijk gezin kom, hebben we thuis altijd geleerd te bidden en iedereen te respecteren.",
+      "words": [
+        {
+          "w": "Omdat",
+          "start": 21.42,
+          "end": 21.859
+        },
+        {
+          "w": "ik",
+          "start": 21.859,
+          "end": 22.078
+        },
+        {
+          "w": "uit",
+          "start": 22.078,
+          "end": 22.37
+        },
+        {
+          "w": "een",
+          "start": 22.37,
+          "end": 22.662
+        },
+        {
+          "w": "christelijk",
+          "start": 22.662,
+          "end": 23.539
+        },
+        {
+          "w": "gezin",
+          "start": 23.539,
+          "end": 23.978
+        },
+        {
+          "w": "kom,",
+          "start": 23.978,
+          "end": 24.27
+        },
+        {
+          "w": "hebben",
+          "start": 24.27,
+          "end": 24.782
+        },
+        {
+          "w": "we",
+          "start": 24.782,
+          "end": 25.001
+        },
+        {
+          "w": "thuis",
+          "start": 25.001,
+          "end": 25.44
+        },
+        {
+          "w": "altijd",
+          "start": 25.44,
+          "end": 25.951
+        },
+        {
+          "w": "geleerd",
+          "start": 25.951,
+          "end": 26.536
+        },
+        {
+          "w": "te",
+          "start": 26.536,
+          "end": 26.755
+        },
+        {
+          "w": "bidden",
+          "start": 26.755,
+          "end": 27.267
+        },
+        {
+          "w": "en",
+          "start": 27.267,
+          "end": 27.486
+        },
+        {
+          "w": "iedereen",
+          "start": 27.486,
+          "end": 28.144
+        },
+        {
+          "w": "te",
+          "start": 28.144,
+          "end": 28.363
+        },
+        {
+          "w": "respecteren.",
+          "start": 28.363,
+          "end": 29.24
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 29.24,
+      "end": 37.18,
+      "text": "Het is een van de tradities in mijn familie dat ik altijd gebed en respect voor iedereen behoud. Bedankt.",
+      "words": [
+        {
+          "w": "Het",
+          "start": 29.24,
+          "end": 29.545
+        },
+        {
+          "w": "is",
+          "start": 29.545,
+          "end": 29.774
+        },
+        {
+          "w": "een",
+          "start": 29.774,
+          "end": 30.08
+        },
+        {
+          "w": "van",
+          "start": 30.08,
+          "end": 30.385
+        },
+        {
+          "w": "de",
+          "start": 30.385,
+          "end": 30.614
+        },
+        {
+          "w": "tradities",
+          "start": 30.614,
+          "end": 31.378
+        },
+        {
+          "w": "in",
+          "start": 31.378,
+          "end": 31.607
+        },
+        {
+          "w": "mijn",
+          "start": 31.607,
+          "end": 31.988
+        },
+        {
+          "w": "familie",
+          "start": 31.988,
+          "end": 32.599
+        },
+        {
+          "w": "dat",
+          "start": 32.599,
+          "end": 32.905
+        },
+        {
+          "w": "ik",
+          "start": 32.905,
+          "end": 33.134
+        },
+        {
+          "w": "altijd",
+          "start": 33.134,
+          "end": 33.668
+        },
+        {
+          "w": "gebed",
+          "start": 33.668,
+          "end": 34.126
+        },
+        {
+          "w": "en",
+          "start": 34.126,
+          "end": 34.355
+        },
+        {
+          "w": "respect",
+          "start": 34.355,
+          "end": 34.966
+        },
+        {
+          "w": "voor",
+          "start": 34.966,
+          "end": 35.348
+        },
+        {
+          "w": "iedereen",
+          "start": 35.348,
+          "end": 36.035
+        },
+        {
+          "w": "behoud.",
+          "start": 36.035,
+          "end": 36.569
+        },
+        {
+          "w": "Bedankt.",
+          "start": 36.569,
+          "end": 37.18
+        }
+      ]
     }
   ]
 }

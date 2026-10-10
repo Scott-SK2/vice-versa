@@ -1,14 +1,756 @@
 {
   "media": "VV-V44",
   "lang": "fr",
-  "source": "manual",
+  "source": "whisper-large-v3",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Témoignage en français — sous-titres en préparation]"
+      "start": 0,
+      "end": 7.36,
+      "text": "Et nous, on leur disait, nous on a comme idée que si on veut devenir riche ou réussir, il faut venir à Kinshasa.",
+      "words": [
+        {
+          "w": "Et",
+          "start": 0,
+          "end": 1.04
+        },
+        {
+          "w": "nous,",
+          "start": 1.04,
+          "end": 1.62
+        },
+        {
+          "w": "on",
+          "start": 1.62,
+          "end": 1.94
+        },
+        {
+          "w": "leur",
+          "start": 1.94,
+          "end": 2.1
+        },
+        {
+          "w": "disait,",
+          "start": 2.1,
+          "end": 2.52
+        },
+        {
+          "w": "nous",
+          "start": 2.52,
+          "end": 2.88
+        },
+        {
+          "w": "on",
+          "start": 2.88,
+          "end": 3.24
+        },
+        {
+          "w": "a",
+          "start": 3.24,
+          "end": 3.38
+        },
+        {
+          "w": "comme",
+          "start": 3.38,
+          "end": 3.64
+        },
+        {
+          "w": "idée",
+          "start": 3.64,
+          "end": 3.76
+        },
+        {
+          "w": "que",
+          "start": 3.76,
+          "end": 3.96
+        },
+        {
+          "w": "si",
+          "start": 3.96,
+          "end": 4.22
+        },
+        {
+          "w": "on",
+          "start": 4.22,
+          "end": 4.38
+        },
+        {
+          "w": "veut",
+          "start": 4.38,
+          "end": 4.58
+        },
+        {
+          "w": "devenir",
+          "start": 4.58,
+          "end": 5.36
+        },
+        {
+          "w": "riche",
+          "start": 5.36,
+          "end": 5.68
+        },
+        {
+          "w": "ou",
+          "start": 5.68,
+          "end": 5.88
+        },
+        {
+          "w": "réussir,",
+          "start": 5.88,
+          "end": 6.48
+        },
+        {
+          "w": "il",
+          "start": 6.48,
+          "end": 6.5
+        },
+        {
+          "w": "faut",
+          "start": 6.5,
+          "end": 6.62
+        },
+        {
+          "w": "venir",
+          "start": 6.62,
+          "end": 7
+        },
+        {
+          "w": "à",
+          "start": 7,
+          "end": 7.2
+        },
+        {
+          "w": "Kinshasa.",
+          "start": 7.2,
+          "end": 7.3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 7.5,
+      "end": 9.98,
+      "text": "Pour nous c'est comme ça, on se rendait compte qu'on n'avait pas les mêmes discours.",
+      "words": [
+        {
+          "w": "Pour",
+          "start": 7.54,
+          "end": 7.7
+        },
+        {
+          "w": "nous",
+          "start": 7.7,
+          "end": 7.82
+        },
+        {
+          "w": "c'est",
+          "start": 7.82,
+          "end": 7.94
+        },
+        {
+          "w": "comme",
+          "start": 7.94,
+          "end": 8.14
+        },
+        {
+          "w": "ça,",
+          "start": 8.14,
+          "end": 8.34
+        },
+        {
+          "w": "on",
+          "start": 8.34,
+          "end": 8.48
+        },
+        {
+          "w": "se",
+          "start": 8.48,
+          "end": 8.58
+        },
+        {
+          "w": "rendait",
+          "start": 8.58,
+          "end": 8.8
+        },
+        {
+          "w": "compte",
+          "start": 8.8,
+          "end": 8.94
+        },
+        {
+          "w": "qu'on",
+          "start": 8.94,
+          "end": 9.08
+        },
+        {
+          "w": "n'avait",
+          "start": 9.08,
+          "end": 9.18
+        },
+        {
+          "w": "pas",
+          "start": 9.18,
+          "end": 9.3
+        },
+        {
+          "w": "les",
+          "start": 9.3,
+          "end": 9.46
+        },
+        {
+          "w": "mêmes",
+          "start": 9.46,
+          "end": 9.58
+        },
+        {
+          "w": "discours.",
+          "start": 9.58,
+          "end": 10.46
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 9.98,
+      "end": 13.08,
+      "text": "On s'est dit, mais en fait, ce serait bien de faire un projet là-dessus, en fait.",
+      "words": [
+        {
+          "w": "On",
+          "start": 10.34,
+          "end": 10.46
+        },
+        {
+          "w": "s'est",
+          "start": 10.46,
+          "end": 10.5
+        },
+        {
+          "w": "dit,",
+          "start": 10.5,
+          "end": 10.7
+        },
+        {
+          "w": "mais",
+          "start": 10.7,
+          "end": 10.72
+        },
+        {
+          "w": "en",
+          "start": 10.72,
+          "end": 10.86
+        },
+        {
+          "w": "fait,",
+          "start": 10.86,
+          "end": 11
+        },
+        {
+          "w": "ce",
+          "start": 11,
+          "end": 11.02
+        },
+        {
+          "w": "serait",
+          "start": 11.02,
+          "end": 11.1
+        },
+        {
+          "w": "bien",
+          "start": 11.1,
+          "end": 11.3
+        },
+        {
+          "w": "de",
+          "start": 11.3,
+          "end": 11.56
+        },
+        {
+          "w": "faire",
+          "start": 11.56,
+          "end": 11.58
+        },
+        {
+          "w": "un",
+          "start": 11.58,
+          "end": 11.7
+        },
+        {
+          "w": "projet",
+          "start": 11.7,
+          "end": 12.04
+        },
+        {
+          "w": "là-dessus,",
+          "start": 12.04,
+          "end": 12.98
+        },
+        {
+          "w": "en",
+          "start": 12.98,
+          "end": 13
+        },
+        {
+          "w": "fait.",
+          "start": 13,
+          "end": 13.56
+        },
+        {
+          "w": "C'est",
+          "start": 13.12,
+          "end": 13.2
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 13.16,
+      "end": 20.3,
+      "text": "C'est vraiment échanger, d'échanger les idées, de voir quels sont peut-être les préjudices qu'on a, et voilà, c'était tout déconstruire.",
+      "words": [
+        {
+          "w": "C'est",
+          "start": 13.12,
+          "end": 13.2
+        },
+        {
+          "w": "vraiment",
+          "start": 13.2,
+          "end": 13.52
+        },
+        {
+          "w": "échanger,",
+          "start": 13.52,
+          "end": 14.22
+        },
+        {
+          "w": "d'échanger",
+          "start": 14.22,
+          "end": 15.02
+        },
+        {
+          "w": "les",
+          "start": 15.02,
+          "end": 15.22
+        },
+        {
+          "w": "idées,",
+          "start": 15.22,
+          "end": 16.28
+        },
+        {
+          "w": "de",
+          "start": 16.28,
+          "end": 16.42
+        },
+        {
+          "w": "voir",
+          "start": 16.42,
+          "end": 16.62
+        },
+        {
+          "w": "quels",
+          "start": 16.62,
+          "end": 16.82
+        },
+        {
+          "w": "sont",
+          "start": 16.82,
+          "end": 17.06
+        },
+        {
+          "w": "peut-être",
+          "start": 17.06,
+          "end": 17.52
+        },
+        {
+          "w": "les",
+          "start": 17.52,
+          "end": 17.6
+        },
+        {
+          "w": "préjudices",
+          "start": 17.6,
+          "end": 18.08
+        },
+        {
+          "w": "qu'on",
+          "start": 18.08,
+          "end": 18.36
+        },
+        {
+          "w": "a,",
+          "start": 18.36,
+          "end": 18.66
+        },
+        {
+          "w": "et",
+          "start": 18.66,
+          "end": 18.8
+        },
+        {
+          "w": "voilà,",
+          "start": 18.8,
+          "end": 19.08
+        },
+        {
+          "w": "c'était",
+          "start": 19.08,
+          "end": 19.4
+        },
+        {
+          "w": "tout",
+          "start": 19.4,
+          "end": 19.74
+        },
+        {
+          "w": "déconstruire.",
+          "start": 19.74,
+          "end": 20.24
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 20.98,
+      "end": 22.96,
+      "text": "Et donc, voilà, on s'est dit, on fait ça en deux phases.",
+      "words": [
+        {
+          "w": "Et",
+          "start": 21.02,
+          "end": 21.1
+        },
+        {
+          "w": "donc,",
+          "start": 21.1,
+          "end": 21.6
+        },
+        {
+          "w": "voilà,",
+          "start": 21.6,
+          "end": 21.8
+        },
+        {
+          "w": "on",
+          "start": 21.8,
+          "end": 21.96
+        },
+        {
+          "w": "s'est",
+          "start": 21.96,
+          "end": 22.1
+        },
+        {
+          "w": "dit,",
+          "start": 22.1,
+          "end": 22.24
+        },
+        {
+          "w": "on",
+          "start": 22.24,
+          "end": 22.32
+        },
+        {
+          "w": "fait",
+          "start": 22.32,
+          "end": 22.38
+        },
+        {
+          "w": "ça",
+          "start": 22.38,
+          "end": 22.5
+        },
+        {
+          "w": "en",
+          "start": 22.5,
+          "end": 22.56
+        },
+        {
+          "w": "deux",
+          "start": 22.56,
+          "end": 22.74
+        },
+        {
+          "w": "phases.",
+          "start": 22.74,
+          "end": 23.34
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 23.34,
+      "end": 27.98,
+      "text": "Ce que vous avez vu sur le long de la Belgique, vous avez vu le fond de la Kinshasa, au Kulinga ?",
+      "words": [
+        {
+          "w": "Ce",
+          "start": 23.42,
+          "end": 23.6
+        },
+        {
+          "w": "que",
+          "start": 23.6,
+          "end": 23.66
+        },
+        {
+          "w": "vous",
+          "start": 23.66,
+          "end": 23.8
+        },
+        {
+          "w": "avez",
+          "start": 23.8,
+          "end": 23.84
+        },
+        {
+          "w": "vu",
+          "start": 23.84,
+          "end": 24
+        },
+        {
+          "w": "sur",
+          "start": 24,
+          "end": 24.14
+        },
+        {
+          "w": "le",
+          "start": 24.14,
+          "end": 24.2
+        },
+        {
+          "w": "long",
+          "start": 24.2,
+          "end": 24.32
+        },
+        {
+          "w": "de",
+          "start": 24.32,
+          "end": 24.36
+        },
+        {
+          "w": "la",
+          "start": 24.36,
+          "end": 24.44
+        },
+        {
+          "w": "Belgique,",
+          "start": 24.44,
+          "end": 25.02
+        },
+        {
+          "w": "vous",
+          "start": 25.02,
+          "end": 25.14
+        },
+        {
+          "w": "avez",
+          "start": 25.14,
+          "end": 25.18
+        },
+        {
+          "w": "vu",
+          "start": 25.18,
+          "end": 25.28
+        },
+        {
+          "w": "le",
+          "start": 25.28,
+          "end": 25.44
+        },
+        {
+          "w": "fond",
+          "start": 25.44,
+          "end": 25.46
+        },
+        {
+          "w": "de",
+          "start": 25.46,
+          "end": 25.48
+        },
+        {
+          "w": "la",
+          "start": 25.48,
+          "end": 25.62
+        },
+        {
+          "w": "Kinshasa,",
+          "start": 25.62,
+          "end": 26.66
+        },
+        {
+          "w": "au",
+          "start": 26.66,
+          "end": 26.8
+        },
+        {
+          "w": "Kulinga ?",
+          "start": 26.8,
+          "end": 27.54
+        },
+        {
+          "w": "Oui,",
+          "start": 27.98,
+          "end": 31.12
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 27.98,
+      "end": 43.36,
+      "text": "Oui, bien sûr.",
+      "words": [
+        {
+          "w": "Oui,",
+          "start": 27.98,
+          "end": 31.12
+        },
+        {
+          "w": "bien",
+          "start": 31.12,
+          "end": 31.3
+        },
+        {
+          "w": "sûr.",
+          "start": 31.3,
+          "end": 31.62
+        },
+        {
+          "w": "Bien",
+          "start": 42.86,
+          "end": 43.58
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 43.36,
+      "end": 45.46,
+      "text": "Bien sûr, j'aime toujours revenir au Congo.",
+      "words": [
+        {
+          "w": "sûr,",
+          "start": 43.58,
+          "end": 44.04
+        },
+        {
+          "w": "j'aime",
+          "start": 44.04,
+          "end": 44.42
+        },
+        {
+          "w": "toujours",
+          "start": 44.42,
+          "end": 44.64
+        },
+        {
+          "w": "revenir",
+          "start": 44.64,
+          "end": 44.96
+        },
+        {
+          "w": "au",
+          "start": 44.96,
+          "end": 45.16
+        },
+        {
+          "w": "Congo.",
+          "start": 45.16,
+          "end": 45.94
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 45.88,
+      "end": 47.46,
+      "text": "Donc, oui, oui, je suis là.",
+      "words": [
+        {
+          "w": "Donc,",
+          "start": 46.68,
+          "end": 46.7
+        },
+        {
+          "w": "oui,",
+          "start": 46.7,
+          "end": 46.9
+        },
+        {
+          "w": "oui,",
+          "start": 46.9,
+          "end": 47
+        },
+        {
+          "w": "je",
+          "start": 47,
+          "end": 47.16
+        },
+        {
+          "w": "suis",
+          "start": 47.16,
+          "end": 47.22
+        },
+        {
+          "w": "là.",
+          "start": 47.22,
+          "end": 47.38
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 48.06,
+      "end": 55.36,
+      "text": "Tu as beaucoup de langues ?",
+      "words": [
+        {
+          "w": "Tu",
+          "start": 48.22,
+          "end": 48.38
+        },
+        {
+          "w": "as",
+          "start": 48.38,
+          "end": 48.54
+        },
+        {
+          "w": "beaucoup",
+          "start": 48.54,
+          "end": 48.94
+        },
+        {
+          "w": "de",
+          "start": 48.94,
+          "end": 48.96
+        },
+        {
+          "w": "langues ?",
+          "start": 48.96,
+          "end": 50.74
+        },
+        {
+          "w": "Merci.",
+          "start": 55.36,
+          "end": 56.32
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 55.36,
+      "end": 56.26,
+      "text": "Merci.",
+      "words": [
+        {
+          "w": "Merci.",
+          "start": 55.36,
+          "end": 56.32
+        }
+      ]
     }
   ]
 }

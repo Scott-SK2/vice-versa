@@ -1,14 +1,360 @@
 {
   "media": "VV-V46",
   "lang": "en",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Testimony in French — subtitles being prepared]"
+      "start": 0,
+      "end": 9.12,
+      "text": "To me, family is the first place where you learn life's values, you get love and dedication.",
+      "words": [
+        {
+          "w": "To",
+          "start": 0,
+          "end": 0.307
+        },
+        {
+          "w": "me,",
+          "start": 0.307,
+          "end": 0.615
+        },
+        {
+          "w": "family",
+          "start": 0.615,
+          "end": 1.332
+        },
+        {
+          "w": "is",
+          "start": 1.332,
+          "end": 1.64
+        },
+        {
+          "w": "the",
+          "start": 1.64,
+          "end": 2.049
+        },
+        {
+          "w": "first",
+          "start": 2.049,
+          "end": 2.664
+        },
+        {
+          "w": "place",
+          "start": 2.664,
+          "end": 3.279
+        },
+        {
+          "w": "where",
+          "start": 3.279,
+          "end": 3.894
+        },
+        {
+          "w": "you",
+          "start": 3.894,
+          "end": 4.304
+        },
+        {
+          "w": "learn",
+          "start": 4.304,
+          "end": 4.919
+        },
+        {
+          "w": "life's",
+          "start": 4.919,
+          "end": 5.533
+        },
+        {
+          "w": "values,",
+          "start": 5.533,
+          "end": 6.251
+        },
+        {
+          "w": "you",
+          "start": 6.251,
+          "end": 6.661
+        },
+        {
+          "w": "get",
+          "start": 6.661,
+          "end": 7.071
+        },
+        {
+          "w": "love",
+          "start": 7.071,
+          "end": 7.583
+        },
+        {
+          "w": "and",
+          "start": 7.583,
+          "end": 7.993
+        },
+        {
+          "w": "dedication.",
+          "start": 7.993,
+          "end": 9.12
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 9.92,
+      "end": 20.82,
+      "text": "When it comes to my family, the tradition I'll always keep is prayer and respect.",
+      "words": [
+        {
+          "w": "When",
+          "start": 9.92,
+          "end": 10.61
+        },
+        {
+          "w": "it",
+          "start": 10.61,
+          "end": 11.024
+        },
+        {
+          "w": "comes",
+          "start": 11.024,
+          "end": 11.852
+        },
+        {
+          "w": "to",
+          "start": 11.852,
+          "end": 12.266
+        },
+        {
+          "w": "my",
+          "start": 12.266,
+          "end": 12.679
+        },
+        {
+          "w": "family,",
+          "start": 12.679,
+          "end": 13.645
+        },
+        {
+          "w": "the",
+          "start": 13.645,
+          "end": 14.197
+        },
+        {
+          "w": "tradition",
+          "start": 14.197,
+          "end": 15.577
+        },
+        {
+          "w": "I'll",
+          "start": 15.577,
+          "end": 16.129
+        },
+        {
+          "w": "always",
+          "start": 16.129,
+          "end": 17.095
+        },
+        {
+          "w": "keep",
+          "start": 17.095,
+          "end": 17.785
+        },
+        {
+          "w": "is",
+          "start": 17.785,
+          "end": 18.198
+        },
+        {
+          "w": "prayer",
+          "start": 18.198,
+          "end": 19.164
+        },
+        {
+          "w": "and",
+          "start": 19.164,
+          "end": 19.716
+        },
+        {
+          "w": "respect.",
+          "start": 19.716,
+          "end": 20.82
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 21.42,
+      "end": 29.24,
+      "text": "Since I was born into a Christian family, we always learned to pray and respect everyone.",
+      "words": [
+        {
+          "w": "Since",
+          "start": 21.42,
+          "end": 21.953
+        },
+        {
+          "w": "I",
+          "start": 21.953,
+          "end": 22.131
+        },
+        {
+          "w": "was",
+          "start": 22.131,
+          "end": 22.486
+        },
+        {
+          "w": "born",
+          "start": 22.486,
+          "end": 22.931
+        },
+        {
+          "w": "into",
+          "start": 22.931,
+          "end": 23.375
+        },
+        {
+          "w": "a",
+          "start": 23.375,
+          "end": 23.553
+        },
+        {
+          "w": "Christian",
+          "start": 23.553,
+          "end": 24.441
+        },
+        {
+          "w": "family,",
+          "start": 24.441,
+          "end": 25.063
+        },
+        {
+          "w": "we",
+          "start": 25.063,
+          "end": 25.33
+        },
+        {
+          "w": "always",
+          "start": 25.33,
+          "end": 25.952
+        },
+        {
+          "w": "learned",
+          "start": 25.952,
+          "end": 26.663
+        },
+        {
+          "w": "to",
+          "start": 26.663,
+          "end": 26.93
+        },
+        {
+          "w": "pray",
+          "start": 26.93,
+          "end": 27.374
+        },
+        {
+          "w": "and",
+          "start": 27.374,
+          "end": 27.729
+        },
+        {
+          "w": "respect",
+          "start": 27.729,
+          "end": 28.44
+        },
+        {
+          "w": "everyone.",
+          "start": 28.44,
+          "end": 29.24
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 29.24,
+      "end": 37.18,
+      "text": "One of my family's traditions that I always keep is prayer and respect for everyone. Thanks.",
+      "words": [
+        {
+          "w": "One",
+          "start": 29.24,
+          "end": 29.593
+        },
+        {
+          "w": "of",
+          "start": 29.593,
+          "end": 29.858
+        },
+        {
+          "w": "my",
+          "start": 29.858,
+          "end": 30.122
+        },
+        {
+          "w": "family's",
+          "start": 30.122,
+          "end": 30.828
+        },
+        {
+          "w": "traditions",
+          "start": 30.828,
+          "end": 31.798
+        },
+        {
+          "w": "that",
+          "start": 31.798,
+          "end": 32.24
+        },
+        {
+          "w": "I",
+          "start": 32.24,
+          "end": 32.416
+        },
+        {
+          "w": "always",
+          "start": 32.416,
+          "end": 33.034
+        },
+        {
+          "w": "keep",
+          "start": 33.034,
+          "end": 33.475
+        },
+        {
+          "w": "is",
+          "start": 33.475,
+          "end": 33.739
+        },
+        {
+          "w": "prayer",
+          "start": 33.739,
+          "end": 34.357
+        },
+        {
+          "w": "and",
+          "start": 34.357,
+          "end": 34.71
+        },
+        {
+          "w": "respect",
+          "start": 34.71,
+          "end": 35.416
+        },
+        {
+          "w": "for",
+          "start": 35.416,
+          "end": 35.768
+        },
+        {
+          "w": "everyone.",
+          "start": 35.768,
+          "end": 36.562
+        },
+        {
+          "w": "Thanks.",
+          "start": 36.562,
+          "end": 37.18
+        }
+      ]
     }
   ]
 }

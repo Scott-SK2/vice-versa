@@ -1,14 +1,991 @@
 {
   "media": "VV-V48",
   "lang": "fr",
-  "source": "manual",
+  "source": "whisper-large-v3",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Témoignage en français — sous-titres en préparation]"
+      "start": 0,
+      "end": 5.62,
+      "text": "La question par rapport à la station, c'est que nous avons l'habitude d'impliquer la jeunesse congolaise que la plupart veulent aller vivre dans les dangers.",
+      "words": [
+        {
+          "w": "La",
+          "start": 0,
+          "end": 0.34
+        },
+        {
+          "w": "question",
+          "start": 0.34,
+          "end": 0.6
+        },
+        {
+          "w": "par",
+          "start": 0.6,
+          "end": 0.76
+        },
+        {
+          "w": "rapport",
+          "start": 0.76,
+          "end": 0.92
+        },
+        {
+          "w": "à",
+          "start": 0.92,
+          "end": 1
+        },
+        {
+          "w": "la",
+          "start": 1,
+          "end": 1.12
+        },
+        {
+          "w": "station,",
+          "start": 1.12,
+          "end": 1.58
+        },
+        {
+          "w": "c'est",
+          "start": 1.58,
+          "end": 1.62
+        },
+        {
+          "w": "que",
+          "start": 1.62,
+          "end": 1.78
+        },
+        {
+          "w": "nous",
+          "start": 1.78,
+          "end": 1.9
+        },
+        {
+          "w": "avons",
+          "start": 1.9,
+          "end": 2.06
+        },
+        {
+          "w": "l'habitude",
+          "start": 2.06,
+          "end": 2.4
+        },
+        {
+          "w": "d'impliquer",
+          "start": 2.4,
+          "end": 2.94
+        },
+        {
+          "w": "la",
+          "start": 2.94,
+          "end": 3.3
+        },
+        {
+          "w": "jeunesse",
+          "start": 3.3,
+          "end": 3.56
+        },
+        {
+          "w": "congolaise",
+          "start": 3.56,
+          "end": 3.96
+        },
+        {
+          "w": "que",
+          "start": 3.96,
+          "end": 4.18
+        },
+        {
+          "w": "la",
+          "start": 4.18,
+          "end": 4.3
+        },
+        {
+          "w": "plupart",
+          "start": 4.3,
+          "end": 4.56
+        },
+        {
+          "w": "veulent",
+          "start": 4.56,
+          "end": 4.76
+        },
+        {
+          "w": "aller",
+          "start": 4.76,
+          "end": 4.92
+        },
+        {
+          "w": "vivre",
+          "start": 4.92,
+          "end": 5.18
+        },
+        {
+          "w": "dans",
+          "start": 5.18,
+          "end": 5.32
+        },
+        {
+          "w": "les",
+          "start": 5.32,
+          "end": 5.4
+        },
+        {
+          "w": "dangers.",
+          "start": 5.4,
+          "end": 6.1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 5.84,
+      "end": 10.88,
+      "text": "Au contraire, la plupart sont à la recherche des opportunités, à la recherche d'une vie meilleure.",
+      "words": [
+        {
+          "w": "contraire,",
+          "start": 5.84,
+          "end": 6.3
+        },
+        {
+          "w": "la",
+          "start": 6.3,
+          "end": 6.4
+        },
+        {
+          "w": "plupart",
+          "start": 6.4,
+          "end": 6.7
+        },
+        {
+          "w": "sont",
+          "start": 6.7,
+          "end": 6.94
+        },
+        {
+          "w": "à",
+          "start": 6.94,
+          "end": 7.24
+        },
+        {
+          "w": "la",
+          "start": 7.24,
+          "end": 7.32
+        },
+        {
+          "w": "recherche",
+          "start": 7.32,
+          "end": 7.54
+        },
+        {
+          "w": "des",
+          "start": 7.54,
+          "end": 7.72
+        },
+        {
+          "w": "opportunités,",
+          "start": 7.72,
+          "end": 8.96
+        },
+        {
+          "w": "à",
+          "start": 8.96,
+          "end": 9.04
+        },
+        {
+          "w": "la",
+          "start": 9.04,
+          "end": 9.14
+        },
+        {
+          "w": "recherche",
+          "start": 9.14,
+          "end": 9.32
+        },
+        {
+          "w": "d'une",
+          "start": 9.32,
+          "end": 10.02
+        },
+        {
+          "w": "vie",
+          "start": 10.02,
+          "end": 10.4
+        },
+        {
+          "w": "meilleure.",
+          "start": 10.4,
+          "end": 10.82
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 11.48,
+      "end": 13.24,
+      "text": "Et la plupart veulent juste réussir leur vie.",
+      "words": [
+        {
+          "w": "Et",
+          "start": 11.46,
+          "end": 11.54
+        },
+        {
+          "w": "la",
+          "start": 11.54,
+          "end": 11.68
+        },
+        {
+          "w": "plupart",
+          "start": 11.68,
+          "end": 11.96
+        },
+        {
+          "w": "veulent",
+          "start": 11.96,
+          "end": 12.18
+        },
+        {
+          "w": "juste",
+          "start": 12.18,
+          "end": 12.46
+        },
+        {
+          "w": "réussir",
+          "start": 12.46,
+          "end": 12.84
+        },
+        {
+          "w": "leur",
+          "start": 12.84,
+          "end": 13.06
+        },
+        {
+          "w": "vie.",
+          "start": 13.06,
+          "end": 13.5
+        },
+        {
+          "w": "Alors,",
+          "start": 13.26,
+          "end": 13.54
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 13.38,
+      "end": 17.56,
+      "text": "Alors, ils veulent avoir un environnement qui leur garantit cette vie meilleure, cette vie des rêves.",
+      "words": [
+        {
+          "w": "ils",
+          "start": 13.54,
+          "end": 13.74
+        },
+        {
+          "w": "veulent",
+          "start": 13.74,
+          "end": 13.82
+        },
+        {
+          "w": "avoir",
+          "start": 13.82,
+          "end": 14.12
+        },
+        {
+          "w": "un",
+          "start": 14.12,
+          "end": 14.7
+        },
+        {
+          "w": "environnement",
+          "start": 14.7,
+          "end": 15.14
+        },
+        {
+          "w": "qui",
+          "start": 15.14,
+          "end": 15.3
+        },
+        {
+          "w": "leur",
+          "start": 15.3,
+          "end": 15.42
+        },
+        {
+          "w": "garantit",
+          "start": 15.42,
+          "end": 15.88
+        },
+        {
+          "w": "cette",
+          "start": 15.88,
+          "end": 16.12
+        },
+        {
+          "w": "vie",
+          "start": 16.12,
+          "end": 16.26
+        },
+        {
+          "w": "meilleure,",
+          "start": 16.26,
+          "end": 16.9
+        },
+        {
+          "w": "cette",
+          "start": 16.9,
+          "end": 17.06
+        },
+        {
+          "w": "vie",
+          "start": 17.06,
+          "end": 17.2
+        },
+        {
+          "w": "des",
+          "start": 17.2,
+          "end": 17.36
+        },
+        {
+          "w": "rêves.",
+          "start": 17.36,
+          "end": 18.04
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 17.98,
+      "end": 22.96,
+      "text": "Moi, généralement, j'ai déjà vécu des préjugés quand j'étais au secondaire.",
+      "words": [
+        {
+          "w": "Moi,",
+          "start": 18.02,
+          "end": 18.14
+        },
+        {
+          "w": "généralement,",
+          "start": 18.14,
+          "end": 18.56
+        },
+        {
+          "w": "j'ai",
+          "start": 18.56,
+          "end": 18.66
+        },
+        {
+          "w": "déjà",
+          "start": 18.66,
+          "end": 18.88
+        },
+        {
+          "w": "vécu",
+          "start": 18.88,
+          "end": 19.24
+        },
+        {
+          "w": "des",
+          "start": 19.24,
+          "end": 21.6
+        },
+        {
+          "w": "préjugés",
+          "start": 21.6,
+          "end": 22.02
+        },
+        {
+          "w": "quand",
+          "start": 22.02,
+          "end": 22.22
+        },
+        {
+          "w": "j'étais",
+          "start": 22.22,
+          "end": 22.42
+        },
+        {
+          "w": "au",
+          "start": 22.42,
+          "end": 22.62
+        },
+        {
+          "w": "secondaire.",
+          "start": 22.62,
+          "end": 23.44
+        },
+        {
+          "w": "On",
+          "start": 22.96,
+          "end": 23.04
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 23.04,
+      "end": 26.24,
+      "text": "On m'appelait Ikeike, donc ça veut dire « nous, on s'en moquait » et tout ça.",
+      "words": [
+        {
+          "w": "m'appelait",
+          "start": 23.04,
+          "end": 23.32
+        },
+        {
+          "w": "Ikeike,",
+          "start": 23.32,
+          "end": 23.88
+        },
+        {
+          "w": "donc",
+          "start": 23.88,
+          "end": 24.02
+        },
+        {
+          "w": "ça",
+          "start": 24.02,
+          "end": 24.16
+        },
+        {
+          "w": "veut",
+          "start": 24.16,
+          "end": 24.3
+        },
+        {
+          "w": "dire",
+          "start": 24.3,
+          "end": 24.56
+        },
+        {
+          "w": "«",
+          "start": 24.56,
+          "end": 25.16
+        },
+        {
+          "w": "nous,",
+          "start": 25.16,
+          "end": 25.3
+        },
+        {
+          "w": "on",
+          "start": 25.3,
+          "end": 25.34
+        },
+        {
+          "w": "s'en",
+          "start": 25.34,
+          "end": 25.48
+        },
+        {
+          "w": "moquait",
+          "start": 25.48,
+          "end": 25.74
+        },
+        {
+          "w": "»",
+          "start": 25.74,
+          "end": 25.82
+        },
+        {
+          "w": "et",
+          "start": 25.82,
+          "end": 25.96
+        },
+        {
+          "w": "tout",
+          "start": 25.96,
+          "end": 26.1
+        },
+        {
+          "w": "ça.",
+          "start": 26.1,
+          "end": 26.72
+        },
+        {
+          "w": "Les",
+          "start": 26.24,
+          "end": 26.54
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 26.24,
+      "end": 30.8,
+      "text": "Les gens me disaient que je ne devais pas devenir ce que je suis, que je suis tout petit comme toute ta taille.",
+      "words": [
+        {
+          "w": "Les",
+          "start": 26.24,
+          "end": 26.54
+        },
+        {
+          "w": "gens",
+          "start": 26.54,
+          "end": 26.68
+        },
+        {
+          "w": "me",
+          "start": 26.68,
+          "end": 26.92
+        },
+        {
+          "w": "disaient",
+          "start": 26.92,
+          "end": 26.94
+        },
+        {
+          "w": "que",
+          "start": 26.94,
+          "end": 27.14
+        },
+        {
+          "w": "je",
+          "start": 27.14,
+          "end": 27.24
+        },
+        {
+          "w": "ne",
+          "start": 27.24,
+          "end": 27.36
+        },
+        {
+          "w": "devais",
+          "start": 27.36,
+          "end": 27.38
+        },
+        {
+          "w": "pas",
+          "start": 27.38,
+          "end": 27.52
+        },
+        {
+          "w": "devenir",
+          "start": 27.52,
+          "end": 27.8
+        },
+        {
+          "w": "ce",
+          "start": 27.8,
+          "end": 28
+        },
+        {
+          "w": "que",
+          "start": 28,
+          "end": 28.14
+        },
+        {
+          "w": "je",
+          "start": 28.14,
+          "end": 28.24
+        },
+        {
+          "w": "suis,",
+          "start": 28.24,
+          "end": 28.58
+        },
+        {
+          "w": "que",
+          "start": 28.58,
+          "end": 28.72
+        },
+        {
+          "w": "je",
+          "start": 28.72,
+          "end": 28.74
+        },
+        {
+          "w": "suis",
+          "start": 28.74,
+          "end": 28.86
+        },
+        {
+          "w": "tout",
+          "start": 28.86,
+          "end": 29.1
+        },
+        {
+          "w": "petit",
+          "start": 29.1,
+          "end": 29.36
+        },
+        {
+          "w": "comme",
+          "start": 29.36,
+          "end": 29.64
+        },
+        {
+          "w": "toute",
+          "start": 29.64,
+          "end": 30.04
+        },
+        {
+          "w": "ta",
+          "start": 30.04,
+          "end": 30.62
+        },
+        {
+          "w": "taille.",
+          "start": 30.62,
+          "end": 31.02
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 31,
+      "end": 34.46,
+      "text": "Parce que j'avais une toute petite tête, j'étais court de taille et tout.",
+      "words": [
+        {
+          "w": "Parce",
+          "start": 31.1,
+          "end": 31.24
+        },
+        {
+          "w": "que",
+          "start": 31.24,
+          "end": 31.38
+        },
+        {
+          "w": "j'avais",
+          "start": 31.38,
+          "end": 31.54
+        },
+        {
+          "w": "une",
+          "start": 31.54,
+          "end": 31.72
+        },
+        {
+          "w": "toute",
+          "start": 31.72,
+          "end": 31.86
+        },
+        {
+          "w": "petite",
+          "start": 31.86,
+          "end": 32.14
+        },
+        {
+          "w": "tête,",
+          "start": 32.14,
+          "end": 33.04
+        },
+        {
+          "w": "j'étais",
+          "start": 33.04,
+          "end": 33.32
+        },
+        {
+          "w": "court",
+          "start": 33.32,
+          "end": 33.68
+        },
+        {
+          "w": "de",
+          "start": 33.68,
+          "end": 33.88
+        },
+        {
+          "w": "taille",
+          "start": 33.88,
+          "end": 34.16
+        },
+        {
+          "w": "et",
+          "start": 34.16,
+          "end": 34.32
+        },
+        {
+          "w": "tout.",
+          "start": 34.32,
+          "end": 34.94
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 35.18,
+      "end": 38.4,
+      "text": "Alors du coup, au fil du temps, je ne suis plus à la même taille que je suis.",
+      "words": [
+        {
+          "w": "Alors",
+          "start": 35.26,
+          "end": 35.42
+        },
+        {
+          "w": "du",
+          "start": 35.42,
+          "end": 35.6
+        },
+        {
+          "w": "coup,",
+          "start": 35.6,
+          "end": 35.92
+        },
+        {
+          "w": "au",
+          "start": 35.92,
+          "end": 36.18
+        },
+        {
+          "w": "fil",
+          "start": 36.18,
+          "end": 36.32
+        },
+        {
+          "w": "du",
+          "start": 36.32,
+          "end": 36.5
+        },
+        {
+          "w": "temps,",
+          "start": 36.5,
+          "end": 36.86
+        },
+        {
+          "w": "je",
+          "start": 36.86,
+          "end": 36.98
+        },
+        {
+          "w": "ne",
+          "start": 36.98,
+          "end": 37.14
+        },
+        {
+          "w": "suis",
+          "start": 37.14,
+          "end": 37.16
+        },
+        {
+          "w": "plus",
+          "start": 37.16,
+          "end": 37.28
+        },
+        {
+          "w": "à",
+          "start": 37.28,
+          "end": 37.42
+        },
+        {
+          "w": "la",
+          "start": 37.42,
+          "end": 37.56
+        },
+        {
+          "w": "même",
+          "start": 37.56,
+          "end": 37.68
+        },
+        {
+          "w": "taille",
+          "start": 37.68,
+          "end": 37.86
+        },
+        {
+          "w": "que",
+          "start": 37.86,
+          "end": 38.02
+        },
+        {
+          "w": "je",
+          "start": 38.02,
+          "end": 38.22
+        },
+        {
+          "w": "suis.",
+          "start": 38.22,
+          "end": 38.38
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 39.18,
+      "end": 44.68,
+      "text": "Et j'ai gardé la petite tête, mais c'est peut-être aujourd'hui qu'il y a beaucoup de connaissances,",
+      "words": [
+        {
+          "w": "Et",
+          "start": 39.48,
+          "end": 39.54
+        },
+        {
+          "w": "j'ai",
+          "start": 39.54,
+          "end": 39.68
+        },
+        {
+          "w": "gardé",
+          "start": 39.68,
+          "end": 39.9
+        },
+        {
+          "w": "la",
+          "start": 39.9,
+          "end": 40.08
+        },
+        {
+          "w": "petite",
+          "start": 40.08,
+          "end": 40.38
+        },
+        {
+          "w": "tête,",
+          "start": 40.38,
+          "end": 41.7
+        },
+        {
+          "w": "mais",
+          "start": 41.7,
+          "end": 42
+        },
+        {
+          "w": "c'est",
+          "start": 42,
+          "end": 42.4
+        },
+        {
+          "w": "peut-être",
+          "start": 42.4,
+          "end": 42.76
+        },
+        {
+          "w": "aujourd'hui",
+          "start": 42.76,
+          "end": 43.34
+        },
+        {
+          "w": "qu'il",
+          "start": 43.34,
+          "end": 43.56
+        },
+        {
+          "w": "y",
+          "start": 43.56,
+          "end": 43.64
+        },
+        {
+          "w": "a",
+          "start": 43.64,
+          "end": 43.7
+        },
+        {
+          "w": "beaucoup",
+          "start": 43.7,
+          "end": 43.96
+        },
+        {
+          "w": "de",
+          "start": 43.96,
+          "end": 44.12
+        },
+        {
+          "w": "connaissances,",
+          "start": 44.12,
+          "end": 45.16
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 44.84,
+      "end": 49.24,
+      "text": "des compétences directes que je peux même les transmettre et qui me permettent de m'affirmer dans la société.",
+      "words": [
+        {
+          "w": "compétences",
+          "start": 44.94,
+          "end": 45.44
+        },
+        {
+          "w": "directes",
+          "start": 45.44,
+          "end": 45.84
+        },
+        {
+          "w": "que",
+          "start": 45.84,
+          "end": 45.98
+        },
+        {
+          "w": "je",
+          "start": 45.98,
+          "end": 46.12
+        },
+        {
+          "w": "peux",
+          "start": 46.12,
+          "end": 46.24
+        },
+        {
+          "w": "même",
+          "start": 46.24,
+          "end": 46.46
+        },
+        {
+          "w": "les",
+          "start": 46.46,
+          "end": 46.6
+        },
+        {
+          "w": "transmettre",
+          "start": 46.6,
+          "end": 47.02
+        },
+        {
+          "w": "et",
+          "start": 47.02,
+          "end": 47.56
+        },
+        {
+          "w": "qui",
+          "start": 47.56,
+          "end": 47.7
+        },
+        {
+          "w": "me",
+          "start": 47.7,
+          "end": 47.8
+        },
+        {
+          "w": "permettent",
+          "start": 47.8,
+          "end": 48.02
+        },
+        {
+          "w": "de",
+          "start": 48.02,
+          "end": 48.16
+        },
+        {
+          "w": "m'affirmer",
+          "start": 48.16,
+          "end": 48.56
+        },
+        {
+          "w": "dans",
+          "start": 48.56,
+          "end": 48.74
+        },
+        {
+          "w": "la",
+          "start": 48.74,
+          "end": 48.86
+        },
+        {
+          "w": "société.",
+          "start": 48.86,
+          "end": 49.72
+        }
+      ]
     }
   ]
 }

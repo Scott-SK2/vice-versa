@@ -1,14 +1,365 @@
 {
   "media": "VV-V43",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Getuigenis in het Frans — ondertitels in voorbereiding]"
+      "start": 0,
+      "end": 8.26,
+      "text": "Imane, de dame, we hebben onszelf uitgenodigd voor het déroulant, maar het déroulant heeft geannuleerd.",
+      "words": [
+        {
+          "w": "Imane,",
+          "start": 0,
+          "end": 0.496
+        },
+        {
+          "w": "de",
+          "start": 0.496,
+          "end": 0.743
+        },
+        {
+          "w": "dame,",
+          "start": 0.743,
+          "end": 1.156
+        },
+        {
+          "w": "we",
+          "start": 1.156,
+          "end": 1.404
+        },
+        {
+          "w": "hebben",
+          "start": 1.404,
+          "end": 1.982
+        },
+        {
+          "w": "onszelf",
+          "start": 1.982,
+          "end": 2.643
+        },
+        {
+          "w": "uitgenodigd",
+          "start": 2.643,
+          "end": 3.634
+        },
+        {
+          "w": "voor",
+          "start": 3.634,
+          "end": 4.047
+        },
+        {
+          "w": "het",
+          "start": 4.047,
+          "end": 4.378
+        },
+        {
+          "w": "déroulant,",
+          "start": 4.378,
+          "end": 5.204
+        },
+        {
+          "w": "maar",
+          "start": 5.204,
+          "end": 5.617
+        },
+        {
+          "w": "het",
+          "start": 5.617,
+          "end": 5.947
+        },
+        {
+          "w": "déroulant",
+          "start": 5.947,
+          "end": 6.773
+        },
+        {
+          "w": "heeft",
+          "start": 6.773,
+          "end": 7.269
+        },
+        {
+          "w": "geannuleerd.",
+          "start": 7.269,
+          "end": 8.26
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 8.26,
+      "end": 14.3,
+      "text": "van klas 1 tot 2, het déroulant heeft het déroulant geannuleerd dat hij van tevoren had geannuleerd.",
+      "words": [
+        {
+          "w": "van",
+          "start": 8.26,
+          "end": 8.504
+        },
+        {
+          "w": "klas",
+          "start": 8.504,
+          "end": 8.809
+        },
+        {
+          "w": "1",
+          "start": 8.809,
+          "end": 8.931
+        },
+        {
+          "w": "tot",
+          "start": 8.931,
+          "end": 9.175
+        },
+        {
+          "w": "2,",
+          "start": 9.175,
+          "end": 9.297
+        },
+        {
+          "w": "het",
+          "start": 9.297,
+          "end": 9.541
+        },
+        {
+          "w": "déroulant",
+          "start": 9.541,
+          "end": 10.151
+        },
+        {
+          "w": "heeft",
+          "start": 10.151,
+          "end": 10.517
+        },
+        {
+          "w": "het",
+          "start": 10.517,
+          "end": 10.761
+        },
+        {
+          "w": "déroulant",
+          "start": 10.761,
+          "end": 11.372
+        },
+        {
+          "w": "geannuleerd",
+          "start": 11.372,
+          "end": 12.104
+        },
+        {
+          "w": "dat",
+          "start": 12.104,
+          "end": 12.348
+        },
+        {
+          "w": "hij",
+          "start": 12.348,
+          "end": 12.592
+        },
+        {
+          "w": "van",
+          "start": 12.592,
+          "end": 12.836
+        },
+        {
+          "w": "tevoren",
+          "start": 12.836,
+          "end": 13.324
+        },
+        {
+          "w": "had",
+          "start": 13.324,
+          "end": 13.568
+        },
+        {
+          "w": "geannuleerd.",
+          "start": 13.568,
+          "end": 14.3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 14.3,
+      "end": 19.26,
+      "text": "het déroulant heeft het déroulant geannuleerd en het leven van zijn zoon geannuleerd.",
+      "words": [
+        {
+          "w": "het",
+          "start": 14.3,
+          "end": 14.533
+        },
+        {
+          "w": "déroulant",
+          "start": 14.533,
+          "end": 15.117
+        },
+        {
+          "w": "heeft",
+          "start": 15.117,
+          "end": 15.467
+        },
+        {
+          "w": "het",
+          "start": 15.467,
+          "end": 15.7
+        },
+        {
+          "w": "déroulant",
+          "start": 15.7,
+          "end": 16.284
+        },
+        {
+          "w": "geannuleerd",
+          "start": 16.284,
+          "end": 16.984
+        },
+        {
+          "w": "en",
+          "start": 16.984,
+          "end": 17.159
+        },
+        {
+          "w": "het",
+          "start": 17.159,
+          "end": 17.393
+        },
+        {
+          "w": "leven",
+          "start": 17.393,
+          "end": 17.743
+        },
+        {
+          "w": "van",
+          "start": 17.743,
+          "end": 17.976
+        },
+        {
+          "w": "zijn",
+          "start": 17.976,
+          "end": 18.268
+        },
+        {
+          "w": "zoon",
+          "start": 18.268,
+          "end": 18.56
+        },
+        {
+          "w": "geannuleerd.",
+          "start": 18.56,
+          "end": 19.26
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 19.26,
+      "end": 28.6,
+      "text": "het déroulant heeft het déroulant geannuleerd, wat hem het leven van zijn zus heeft geannuleerd en de rechtszaak heeft geannuleerd.",
+      "words": [
+        {
+          "w": "het",
+          "start": 19.26,
+          "end": 19.547
+        },
+        {
+          "w": "déroulant",
+          "start": 19.547,
+          "end": 20.266
+        },
+        {
+          "w": "heeft",
+          "start": 20.266,
+          "end": 20.697
+        },
+        {
+          "w": "het",
+          "start": 20.697,
+          "end": 20.984
+        },
+        {
+          "w": "déroulant",
+          "start": 20.984,
+          "end": 21.703
+        },
+        {
+          "w": "geannuleerd,",
+          "start": 21.703,
+          "end": 22.565
+        },
+        {
+          "w": "wat",
+          "start": 22.565,
+          "end": 22.852
+        },
+        {
+          "w": "hem",
+          "start": 22.852,
+          "end": 23.14
+        },
+        {
+          "w": "het",
+          "start": 23.14,
+          "end": 23.427
+        },
+        {
+          "w": "leven",
+          "start": 23.427,
+          "end": 23.858
+        },
+        {
+          "w": "van",
+          "start": 23.858,
+          "end": 24.146
+        },
+        {
+          "w": "zijn",
+          "start": 24.146,
+          "end": 24.505
+        },
+        {
+          "w": "zus",
+          "start": 24.505,
+          "end": 24.792
+        },
+        {
+          "w": "heeft",
+          "start": 24.792,
+          "end": 25.223
+        },
+        {
+          "w": "geannuleerd",
+          "start": 25.223,
+          "end": 26.085
+        },
+        {
+          "w": "en",
+          "start": 26.085,
+          "end": 26.301
+        },
+        {
+          "w": "de",
+          "start": 26.301,
+          "end": 26.516
+        },
+        {
+          "w": "rechtszaak",
+          "start": 26.516,
+          "end": 27.307
+        },
+        {
+          "w": "heeft",
+          "start": 27.307,
+          "end": 27.738
+        },
+        {
+          "w": "geannuleerd.",
+          "start": 27.738,
+          "end": 28.6
+        }
+      ]
     }
   ]
 }

@@ -1,14 +1,736 @@
 {
   "media": "VV-V41",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[In de bus: gezang, muziek, sfeer van de groep]"
+      "start": 0,
+      "end": 1,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 0,
+          "end": 0.273
+        },
+        {
+          "w": "zijn",
+          "start": 0.273,
+          "end": 0.727
+        },
+        {
+          "w": "er!",
+          "start": 0.727,
+          "end": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 1,
+      "end": 4,
+      "text": "Beste dames, kom dichterbij!",
+      "words": [
+        {
+          "w": "Beste",
+          "start": 1,
+          "end": 1.667
+        },
+        {
+          "w": "dames,",
+          "start": 1.667,
+          "end": 2.333
+        },
+        {
+          "w": "kom",
+          "start": 2.333,
+          "end": 2.778
+        },
+        {
+          "w": "dichterbij!",
+          "start": 2.778,
+          "end": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 4,
+      "end": 5,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 4,
+          "end": 4.273
+        },
+        {
+          "w": "zijn",
+          "start": 4.273,
+          "end": 4.727
+        },
+        {
+          "w": "er!",
+          "start": 4.727,
+          "end": 5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 5,
+      "end": 6,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 5,
+          "end": 5.273
+        },
+        {
+          "w": "zijn",
+          "start": 5.273,
+          "end": 5.727
+        },
+        {
+          "w": "er!",
+          "start": 5.727,
+          "end": 6
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 6,
+      "end": 7,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 6,
+          "end": 6.273
+        },
+        {
+          "w": "zijn",
+          "start": 6.273,
+          "end": 6.727
+        },
+        {
+          "w": "er!",
+          "start": 6.727,
+          "end": 7
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 7,
+      "end": 8,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 7,
+          "end": 7.273
+        },
+        {
+          "w": "zijn",
+          "start": 7.273,
+          "end": 7.727
+        },
+        {
+          "w": "er!",
+          "start": 7.727,
+          "end": 8
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 8,
+      "end": 9,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 8,
+          "end": 8.273
+        },
+        {
+          "w": "zijn",
+          "start": 8.273,
+          "end": 8.727
+        },
+        {
+          "w": "er!",
+          "start": 8.727,
+          "end": 9
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 9,
+      "end": 10,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 9,
+          "end": 9.273
+        },
+        {
+          "w": "zijn",
+          "start": 9.273,
+          "end": 9.727
+        },
+        {
+          "w": "er!",
+          "start": 9.727,
+          "end": 10
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 10,
+      "end": 11,
+      "text": "We zijn er!",
+      "words": [
+        {
+          "w": "We",
+          "start": 10,
+          "end": 10.273
+        },
+        {
+          "w": "zijn",
+          "start": 10.273,
+          "end": 10.727
+        },
+        {
+          "w": "er!",
+          "start": 10.727,
+          "end": 11
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 11,
+      "end": 12,
+      "text": "Mijn maan.",
+      "words": [
+        {
+          "w": "Mijn",
+          "start": 11,
+          "end": 11.5
+        },
+        {
+          "w": "maan.",
+          "start": 11.5,
+          "end": 12
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 12,
+      "end": 13,
+      "text": "Mijn leeuwin.",
+      "words": [
+        {
+          "w": "Mijn",
+          "start": 12,
+          "end": 12.385
+        },
+        {
+          "w": "leeuwin.",
+          "start": 12.385,
+          "end": 13
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "start": 13,
+      "end": 14,
+      "text": "Mijn heldin.",
+      "words": [
+        {
+          "w": "Mijn",
+          "start": 13,
+          "end": 13.417
+        },
+        {
+          "w": "heldin.",
+          "start": 13.417,
+          "end": 14
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "start": 14,
+      "end": 23,
+      "text": "Ik wil elk deel van jouw...",
+      "words": [
+        {
+          "w": "Ik",
+          "start": 14,
+          "end": 15.08
+        },
+        {
+          "w": "wil",
+          "start": 15.08,
+          "end": 16.52
+        },
+        {
+          "w": "elk",
+          "start": 16.52,
+          "end": 17.96
+        },
+        {
+          "w": "deel",
+          "start": 17.96,
+          "end": 19.76
+        },
+        {
+          "w": "van",
+          "start": 19.76,
+          "end": 21.2
+        },
+        {
+          "w": "jouw...",
+          "start": 21.2,
+          "end": 23
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "start": 23,
+      "end": 25,
+      "text": "Elk boek?",
+      "words": [
+        {
+          "w": "Elk",
+          "start": 23,
+          "end": 23.889
+        },
+        {
+          "w": "boek?",
+          "start": 23.889,
+          "end": 25
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "start": 25,
+      "end": 29,
+      "text": "Ik wil elke noot van jouw glimlach lezen en er een gedicht van maken.",
+      "words": [
+        {
+          "w": "Ik",
+          "start": 25,
+          "end": 25.174
+        },
+        {
+          "w": "wil",
+          "start": 25.174,
+          "end": 25.406
+        },
+        {
+          "w": "elke",
+          "start": 25.406,
+          "end": 25.696
+        },
+        {
+          "w": "noot",
+          "start": 25.696,
+          "end": 25.986
+        },
+        {
+          "w": "van",
+          "start": 25.986,
+          "end": 26.217
+        },
+        {
+          "w": "jouw",
+          "start": 26.217,
+          "end": 26.507
+        },
+        {
+          "w": "glimlach",
+          "start": 26.507,
+          "end": 27.029
+        },
+        {
+          "w": "lezen",
+          "start": 27.029,
+          "end": 27.377
+        },
+        {
+          "w": "en",
+          "start": 27.377,
+          "end": 27.551
+        },
+        {
+          "w": "er",
+          "start": 27.551,
+          "end": 27.725
+        },
+        {
+          "w": "een",
+          "start": 27.725,
+          "end": 27.957
+        },
+        {
+          "w": "gedicht",
+          "start": 27.957,
+          "end": 28.42
+        },
+        {
+          "w": "van",
+          "start": 28.42,
+          "end": 28.652
+        },
+        {
+          "w": "maken.",
+          "start": 28.652,
+          "end": 29
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "start": 29,
+      "end": 29.72,
+      "text": "Het is een gedicht.",
+      "words": [
+        {
+          "w": "Het",
+          "start": 29,
+          "end": 29.152
+        },
+        {
+          "w": "is",
+          "start": 29.152,
+          "end": 29.265
+        },
+        {
+          "w": "een",
+          "start": 29.265,
+          "end": 29.417
+        },
+        {
+          "w": "gedicht.",
+          "start": 29.417,
+          "end": 29.72
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "start": 31.86,
+      "end": 34.98,
+      "text": "Met een muziekinstrument met een authentiek ritme.",
+      "words": [
+        {
+          "w": "Met",
+          "start": 31.86,
+          "end": 32.11
+        },
+        {
+          "w": "een",
+          "start": 32.11,
+          "end": 32.359
+        },
+        {
+          "w": "muziekinstrument",
+          "start": 32.359,
+          "end": 33.42
+        },
+        {
+          "w": "met",
+          "start": 33.42,
+          "end": 33.67
+        },
+        {
+          "w": "een",
+          "start": 33.67,
+          "end": 33.919
+        },
+        {
+          "w": "authentiek",
+          "start": 33.919,
+          "end": 34.606
+        },
+        {
+          "w": "ritme.",
+          "start": 34.606,
+          "end": 34.98
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "start": 37.04,
+      "end": 42.36,
+      "text": "In plaats van de blauwe lucht heb ik een oceaan gecreëerd, geadopteerd voor de kleur van de tapots.",
+      "words": [
+        {
+          "w": "In",
+          "start": 37.04,
+          "end": 37.203
+        },
+        {
+          "w": "plaats",
+          "start": 37.203,
+          "end": 37.583
+        },
+        {
+          "w": "van",
+          "start": 37.583,
+          "end": 37.8
+        },
+        {
+          "w": "de",
+          "start": 37.8,
+          "end": 37.963
+        },
+        {
+          "w": "blauwe",
+          "start": 37.963,
+          "end": 38.343
+        },
+        {
+          "w": "lucht",
+          "start": 38.343,
+          "end": 38.669
+        },
+        {
+          "w": "heb",
+          "start": 38.669,
+          "end": 38.886
+        },
+        {
+          "w": "ik",
+          "start": 38.886,
+          "end": 39.049
+        },
+        {
+          "w": "een",
+          "start": 39.049,
+          "end": 39.266
+        },
+        {
+          "w": "oceaan",
+          "start": 39.266,
+          "end": 39.646
+        },
+        {
+          "w": "gecreëerd,",
+          "start": 39.646,
+          "end": 40.189
+        },
+        {
+          "w": "geadopteerd",
+          "start": 40.189,
+          "end": 40.84
+        },
+        {
+          "w": "voor",
+          "start": 40.84,
+          "end": 41.111
+        },
+        {
+          "w": "de",
+          "start": 41.111,
+          "end": 41.274
+        },
+        {
+          "w": "kleur",
+          "start": 41.274,
+          "end": 41.6
+        },
+        {
+          "w": "van",
+          "start": 41.6,
+          "end": 41.817
+        },
+        {
+          "w": "de",
+          "start": 41.817,
+          "end": 41.98
+        },
+        {
+          "w": "tapots.",
+          "start": 41.98,
+          "end": 42.36
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "start": 46.42,
+      "end": 47.44,
+      "text": "Het is sterk, het is sterk.",
+      "words": [
+        {
+          "w": "Het",
+          "start": 46.42,
+          "end": 46.577
+        },
+        {
+          "w": "is",
+          "start": 46.577,
+          "end": 46.695
+        },
+        {
+          "w": "sterk,",
+          "start": 46.695,
+          "end": 46.93
+        },
+        {
+          "w": "het",
+          "start": 46.93,
+          "end": 47.087
+        },
+        {
+          "w": "is",
+          "start": 47.087,
+          "end": 47.205
+        },
+        {
+          "w": "sterk.",
+          "start": 47.205,
+          "end": 47.44
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "start": 48.68,
+      "end": 54.9,
+      "text": "Om het decoupeer‑deel van het podium op te bouwen, gebruik ik de ladder in plaats van de lift.",
+      "words": [
+        {
+          "w": "Om",
+          "start": 48.68,
+          "end": 48.883
+        },
+        {
+          "w": "het",
+          "start": 48.883,
+          "end": 49.153
+        },
+        {
+          "w": "decoupeer‑deel",
+          "start": 49.153,
+          "end": 50.1
+        },
+        {
+          "w": "van",
+          "start": 50.1,
+          "end": 50.37
+        },
+        {
+          "w": "het",
+          "start": 50.37,
+          "end": 50.641
+        },
+        {
+          "w": "podium",
+          "start": 50.641,
+          "end": 51.114
+        },
+        {
+          "w": "op",
+          "start": 51.114,
+          "end": 51.317
+        },
+        {
+          "w": "te",
+          "start": 51.317,
+          "end": 51.52
+        },
+        {
+          "w": "bouwen,",
+          "start": 51.52,
+          "end": 51.993
+        },
+        {
+          "w": "gebruik",
+          "start": 51.993,
+          "end": 52.534
+        },
+        {
+          "w": "ik",
+          "start": 52.534,
+          "end": 52.737
+        },
+        {
+          "w": "de",
+          "start": 52.737,
+          "end": 52.939
+        },
+        {
+          "w": "ladder",
+          "start": 52.939,
+          "end": 53.413
+        },
+        {
+          "w": "in",
+          "start": 53.413,
+          "end": 53.615
+        },
+        {
+          "w": "plaats",
+          "start": 53.615,
+          "end": 54.089
+        },
+        {
+          "w": "van",
+          "start": 54.089,
+          "end": 54.359
+        },
+        {
+          "w": "de",
+          "start": 54.359,
+          "end": 54.562
+        },
+        {
+          "w": "lift.",
+          "start": 54.562,
+          "end": 54.9
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "start": 54.9,
+      "end": 70.42,
+      "text": "Ondertiteling Société Radio-Canada",
+      "words": [
+        {
+          "w": "Ondertiteling",
+          "start": 54.9,
+          "end": 61.291
+        },
+        {
+          "w": "Société",
+          "start": 61.291,
+          "end": 64.942
+        },
+        {
+          "w": "Radio-Canada",
+          "start": 64.942,
+          "end": 70.42
+        }
+      ]
     }
   ]
 }

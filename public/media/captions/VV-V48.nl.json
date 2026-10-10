@@ -1,14 +1,891 @@
 {
   "media": "VV-V48",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Getuigenis in het Frans — ondertitels in voorbereiding]"
+      "start": 0,
+      "end": 5.62,
+      "text": "De vraag rond het station is dat we gewend zijn om de Congolese jeugd erbij te betrekken, die meestal naar gevaar wil gaan wonen.",
+      "words": [
+        {
+          "w": "De",
+          "start": 0,
+          "end": 0.132
+        },
+        {
+          "w": "vraag",
+          "start": 0.132,
+          "end": 0.395
+        },
+        {
+          "w": "rond",
+          "start": 0.395,
+          "end": 0.615
+        },
+        {
+          "w": "het",
+          "start": 0.615,
+          "end": 0.79
+        },
+        {
+          "w": "station",
+          "start": 0.79,
+          "end": 1.142
+        },
+        {
+          "w": "is",
+          "start": 1.142,
+          "end": 1.273
+        },
+        {
+          "w": "dat",
+          "start": 1.273,
+          "end": 1.449
+        },
+        {
+          "w": "we",
+          "start": 1.449,
+          "end": 1.581
+        },
+        {
+          "w": "gewend",
+          "start": 1.581,
+          "end": 1.888
+        },
+        {
+          "w": "zijn",
+          "start": 1.888,
+          "end": 2.108
+        },
+        {
+          "w": "om",
+          "start": 2.108,
+          "end": 2.239
+        },
+        {
+          "w": "de",
+          "start": 2.239,
+          "end": 2.371
+        },
+        {
+          "w": "Congolese",
+          "start": 2.371,
+          "end": 2.81
+        },
+        {
+          "w": "jeugd",
+          "start": 2.81,
+          "end": 3.073
+        },
+        {
+          "w": "erbij",
+          "start": 3.073,
+          "end": 3.337
+        },
+        {
+          "w": "te",
+          "start": 3.337,
+          "end": 3.469
+        },
+        {
+          "w": "betrekken,",
+          "start": 3.469,
+          "end": 3.908
+        },
+        {
+          "w": "die",
+          "start": 3.908,
+          "end": 4.083
+        },
+        {
+          "w": "meestal",
+          "start": 4.083,
+          "end": 4.435
+        },
+        {
+          "w": "naar",
+          "start": 4.435,
+          "end": 4.654
+        },
+        {
+          "w": "gevaar",
+          "start": 4.654,
+          "end": 4.961
+        },
+        {
+          "w": "wil",
+          "start": 4.961,
+          "end": 5.137
+        },
+        {
+          "w": "gaan",
+          "start": 5.137,
+          "end": 5.357
+        },
+        {
+          "w": "wonen.",
+          "start": 5.357,
+          "end": 5.62
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 5.84,
+      "end": 10.88,
+      "text": "Integendeel, de meesten zoeken kansen, een beter leven.",
+      "words": [
+        {
+          "w": "Integendeel,",
+          "start": 5.84,
+          "end": 6.981
+        },
+        {
+          "w": "de",
+          "start": 6.981,
+          "end": 7.266
+        },
+        {
+          "w": "meesten",
+          "start": 7.266,
+          "end": 8.027
+        },
+        {
+          "w": "zoeken",
+          "start": 8.027,
+          "end": 8.693
+        },
+        {
+          "w": "kansen,",
+          "start": 8.693,
+          "end": 9.358
+        },
+        {
+          "w": "een",
+          "start": 9.358,
+          "end": 9.739
+        },
+        {
+          "w": "beter",
+          "start": 9.739,
+          "end": 10.309
+        },
+        {
+          "w": "leven.",
+          "start": 10.309,
+          "end": 10.88
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 11.48,
+      "end": 13.24,
+      "text": "En de meesten willen gewoon hun leven laten slagen.",
+      "words": [
+        {
+          "w": "En",
+          "start": 11.48,
+          "end": 11.584
+        },
+        {
+          "w": "de",
+          "start": 11.584,
+          "end": 11.687
+        },
+        {
+          "w": "meesten",
+          "start": 11.687,
+          "end": 11.963
+        },
+        {
+          "w": "willen",
+          "start": 11.963,
+          "end": 12.205
+        },
+        {
+          "w": "gewoon",
+          "start": 12.205,
+          "end": 12.446
+        },
+        {
+          "w": "hun",
+          "start": 12.446,
+          "end": 12.584
+        },
+        {
+          "w": "leven",
+          "start": 12.584,
+          "end": 12.791
+        },
+        {
+          "w": "laten",
+          "start": 12.791,
+          "end": 12.998
+        },
+        {
+          "w": "slagen.",
+          "start": 12.998,
+          "end": 13.24
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 13.38,
+      "end": 17.56,
+      "text": "Dus ze willen een omgeving die hen dat betere, droomleven garandeert.",
+      "words": [
+        {
+          "w": "Dus",
+          "start": 13.38,
+          "end": 13.626
+        },
+        {
+          "w": "ze",
+          "start": 13.626,
+          "end": 13.81
+        },
+        {
+          "w": "willen",
+          "start": 13.81,
+          "end": 14.241
+        },
+        {
+          "w": "een",
+          "start": 14.241,
+          "end": 14.486
+        },
+        {
+          "w": "omgeving",
+          "start": 14.486,
+          "end": 15.04
+        },
+        {
+          "w": "die",
+          "start": 15.04,
+          "end": 15.286
+        },
+        {
+          "w": "hen",
+          "start": 15.286,
+          "end": 15.531
+        },
+        {
+          "w": "dat",
+          "start": 15.531,
+          "end": 15.777
+        },
+        {
+          "w": "betere,",
+          "start": 15.777,
+          "end": 16.208
+        },
+        {
+          "w": "droomleven",
+          "start": 16.208,
+          "end": 16.884
+        },
+        {
+          "w": "garandeert.",
+          "start": 16.884,
+          "end": 17.56
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 17.98,
+      "end": 22.96,
+      "text": "Ik heb meestal al vooroordelen ervaren toen ik op de middelbare school zat.",
+      "words": [
+        {
+          "w": "Ik",
+          "start": 17.98,
+          "end": 18.179
+        },
+        {
+          "w": "heb",
+          "start": 18.179,
+          "end": 18.445
+        },
+        {
+          "w": "meestal",
+          "start": 18.445,
+          "end": 18.976
+        },
+        {
+          "w": "al",
+          "start": 18.976,
+          "end": 19.175
+        },
+        {
+          "w": "vooroordelen",
+          "start": 19.175,
+          "end": 20.038
+        },
+        {
+          "w": "ervaren",
+          "start": 20.038,
+          "end": 20.57
+        },
+        {
+          "w": "toen",
+          "start": 20.57,
+          "end": 20.902
+        },
+        {
+          "w": "ik",
+          "start": 20.902,
+          "end": 21.101
+        },
+        {
+          "w": "op",
+          "start": 21.101,
+          "end": 21.3
+        },
+        {
+          "w": "de",
+          "start": 21.3,
+          "end": 21.499
+        },
+        {
+          "w": "middelbare",
+          "start": 21.499,
+          "end": 22.23
+        },
+        {
+          "w": "school",
+          "start": 22.23,
+          "end": 22.694
+        },
+        {
+          "w": "zat.",
+          "start": 22.694,
+          "end": 22.96
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 23.04,
+      "end": 26.24,
+      "text": "Ze noemden me Ikeike, dat betekent ‘wij, we maakten er geen moeite om’ en zo.",
+      "words": [
+        {
+          "w": "Ze",
+          "start": 23.04,
+          "end": 23.172
+        },
+        {
+          "w": "noemden",
+          "start": 23.172,
+          "end": 23.522
+        },
+        {
+          "w": "me",
+          "start": 23.522,
+          "end": 23.654
+        },
+        {
+          "w": "Ikeike,",
+          "start": 23.654,
+          "end": 23.961
+        },
+        {
+          "w": "dat",
+          "start": 23.961,
+          "end": 24.136
+        },
+        {
+          "w": "betekent",
+          "start": 24.136,
+          "end": 24.53
+        },
+        {
+          "w": "‘wij,",
+          "start": 24.53,
+          "end": 24.706
+        },
+        {
+          "w": "we",
+          "start": 24.706,
+          "end": 24.837
+        },
+        {
+          "w": "maakten",
+          "start": 24.837,
+          "end": 25.188
+        },
+        {
+          "w": "er",
+          "start": 25.188,
+          "end": 25.319
+        },
+        {
+          "w": "geen",
+          "start": 25.319,
+          "end": 25.539
+        },
+        {
+          "w": "moeite",
+          "start": 25.539,
+          "end": 25.845
+        },
+        {
+          "w": "om’",
+          "start": 25.845,
+          "end": 25.977
+        },
+        {
+          "w": "en",
+          "start": 25.977,
+          "end": 26.108
+        },
+        {
+          "w": "zo.",
+          "start": 26.108,
+          "end": 26.24
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 26.24,
+      "end": 30.8,
+      "text": "Mensen zeiden tegen me dat ik niet kon worden wat ik ben, dat ik heel klein ben, net zo klein als jij.",
+      "words": [
+        {
+          "w": "Mensen",
+          "start": 26.24,
+          "end": 26.559
+        },
+        {
+          "w": "zeiden",
+          "start": 26.559,
+          "end": 26.878
+        },
+        {
+          "w": "tegen",
+          "start": 26.878,
+          "end": 27.152
+        },
+        {
+          "w": "me",
+          "start": 27.152,
+          "end": 27.289
+        },
+        {
+          "w": "dat",
+          "start": 27.289,
+          "end": 27.471
+        },
+        {
+          "w": "ik",
+          "start": 27.471,
+          "end": 27.608
+        },
+        {
+          "w": "niet",
+          "start": 27.608,
+          "end": 27.836
+        },
+        {
+          "w": "kon",
+          "start": 27.836,
+          "end": 28.018
+        },
+        {
+          "w": "worden",
+          "start": 28.018,
+          "end": 28.338
+        },
+        {
+          "w": "wat",
+          "start": 28.338,
+          "end": 28.52
+        },
+        {
+          "w": "ik",
+          "start": 28.52,
+          "end": 28.657
+        },
+        {
+          "w": "ben,",
+          "start": 28.657,
+          "end": 28.839
+        },
+        {
+          "w": "dat",
+          "start": 28.839,
+          "end": 29.022
+        },
+        {
+          "w": "ik",
+          "start": 29.022,
+          "end": 29.158
+        },
+        {
+          "w": "heel",
+          "start": 29.158,
+          "end": 29.386
+        },
+        {
+          "w": "klein",
+          "start": 29.386,
+          "end": 29.66
+        },
+        {
+          "w": "ben,",
+          "start": 29.66,
+          "end": 29.842
+        },
+        {
+          "w": "net",
+          "start": 29.842,
+          "end": 30.025
+        },
+        {
+          "w": "zo",
+          "start": 30.025,
+          "end": 30.162
+        },
+        {
+          "w": "klein",
+          "start": 30.162,
+          "end": 30.435
+        },
+        {
+          "w": "als",
+          "start": 30.435,
+          "end": 30.618
+        },
+        {
+          "w": "jij.",
+          "start": 30.618,
+          "end": 30.8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 31,
+      "end": 34.46,
+      "text": "Omdat ik een piepklein hoofd had, was ik klein van stuk en zo.",
+      "words": [
+        {
+          "w": "Omdat",
+          "start": 31,
+          "end": 31.34
+        },
+        {
+          "w": "ik",
+          "start": 31.34,
+          "end": 31.51
+        },
+        {
+          "w": "een",
+          "start": 31.51,
+          "end": 31.737
+        },
+        {
+          "w": "piepklein",
+          "start": 31.737,
+          "end": 32.305
+        },
+        {
+          "w": "hoofd",
+          "start": 32.305,
+          "end": 32.645
+        },
+        {
+          "w": "had,",
+          "start": 32.645,
+          "end": 32.872
+        },
+        {
+          "w": "was",
+          "start": 32.872,
+          "end": 33.099
+        },
+        {
+          "w": "ik",
+          "start": 33.099,
+          "end": 33.269
+        },
+        {
+          "w": "klein",
+          "start": 33.269,
+          "end": 33.609
+        },
+        {
+          "w": "van",
+          "start": 33.609,
+          "end": 33.836
+        },
+        {
+          "w": "stuk",
+          "start": 33.836,
+          "end": 34.12
+        },
+        {
+          "w": "en",
+          "start": 34.12,
+          "end": 34.29
+        },
+        {
+          "w": "zo.",
+          "start": 34.29,
+          "end": 34.46
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 35.18,
+      "end": 38.4,
+      "text": "Dus na verloop van tijd ben ik niet meer dezelfde grootte als toen.",
+      "words": [
+        {
+          "w": "Dus",
+          "start": 35.18,
+          "end": 35.372
+        },
+        {
+          "w": "na",
+          "start": 35.372,
+          "end": 35.516
+        },
+        {
+          "w": "verloop",
+          "start": 35.516,
+          "end": 35.901
+        },
+        {
+          "w": "van",
+          "start": 35.901,
+          "end": 36.093
+        },
+        {
+          "w": "tijd",
+          "start": 36.093,
+          "end": 36.333
+        },
+        {
+          "w": "ben",
+          "start": 36.333,
+          "end": 36.526
+        },
+        {
+          "w": "ik",
+          "start": 36.526,
+          "end": 36.67
+        },
+        {
+          "w": "niet",
+          "start": 36.67,
+          "end": 36.91
+        },
+        {
+          "w": "meer",
+          "start": 36.91,
+          "end": 37.15
+        },
+        {
+          "w": "dezelfde",
+          "start": 37.15,
+          "end": 37.583
+        },
+        {
+          "w": "grootte",
+          "start": 37.583,
+          "end": 37.967
+        },
+        {
+          "w": "als",
+          "start": 37.967,
+          "end": 38.16
+        },
+        {
+          "w": "toen.",
+          "start": 38.16,
+          "end": 38.4
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 39.18,
+      "end": 44.68,
+      "text": "En ik heb het kleine hoofd behouden, maar misschien heb ik nu veel kennis,",
+      "words": [
+        {
+          "w": "En",
+          "start": 39.18,
+          "end": 39.406
+        },
+        {
+          "w": "ik",
+          "start": 39.406,
+          "end": 39.632
+        },
+        {
+          "w": "heb",
+          "start": 39.632,
+          "end": 39.933
+        },
+        {
+          "w": "het",
+          "start": 39.933,
+          "end": 40.235
+        },
+        {
+          "w": "kleine",
+          "start": 40.235,
+          "end": 40.762
+        },
+        {
+          "w": "hoofd",
+          "start": 40.762,
+          "end": 41.214
+        },
+        {
+          "w": "behouden,",
+          "start": 41.214,
+          "end": 41.892
+        },
+        {
+          "w": "maar",
+          "start": 41.892,
+          "end": 42.269
+        },
+        {
+          "w": "misschien",
+          "start": 42.269,
+          "end": 43.022
+        },
+        {
+          "w": "heb",
+          "start": 43.022,
+          "end": 43.324
+        },
+        {
+          "w": "ik",
+          "start": 43.324,
+          "end": 43.55
+        },
+        {
+          "w": "nu",
+          "start": 43.55,
+          "end": 43.776
+        },
+        {
+          "w": "veel",
+          "start": 43.776,
+          "end": 44.153
+        },
+        {
+          "w": "kennis,",
+          "start": 44.153,
+          "end": 44.68
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 44.84,
+      "end": 49.24,
+      "text": "directe vaardigheden die ik zelfs kan doorgeven en die me helpen me te bevestigen in de maatschappij.",
+      "words": [
+        {
+          "w": "directe",
+          "start": 44.84,
+          "end": 45.189
+        },
+        {
+          "w": "vaardigheden",
+          "start": 45.189,
+          "end": 45.755
+        },
+        {
+          "w": "die",
+          "start": 45.755,
+          "end": 45.929
+        },
+        {
+          "w": "ik",
+          "start": 45.929,
+          "end": 46.06
+        },
+        {
+          "w": "zelfs",
+          "start": 46.06,
+          "end": 46.321
+        },
+        {
+          "w": "kan",
+          "start": 46.321,
+          "end": 46.495
+        },
+        {
+          "w": "doorgeven",
+          "start": 46.495,
+          "end": 46.931
+        },
+        {
+          "w": "en",
+          "start": 46.931,
+          "end": 47.062
+        },
+        {
+          "w": "die",
+          "start": 47.062,
+          "end": 47.236
+        },
+        {
+          "w": "me",
+          "start": 47.236,
+          "end": 47.367
+        },
+        {
+          "w": "helpen",
+          "start": 47.367,
+          "end": 47.672
+        },
+        {
+          "w": "me",
+          "start": 47.672,
+          "end": 47.802
+        },
+        {
+          "w": "te",
+          "start": 47.802,
+          "end": 47.933
+        },
+        {
+          "w": "bevestigen",
+          "start": 47.933,
+          "end": 48.412
+        },
+        {
+          "w": "in",
+          "start": 48.412,
+          "end": 48.543
+        },
+        {
+          "w": "de",
+          "start": 48.543,
+          "end": 48.674
+        },
+        {
+          "w": "maatschappij.",
+          "start": 48.674,
+          "end": 49.24
+        }
+      ]
     }
   ]
 }

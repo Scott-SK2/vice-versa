@@ -1,14 +1,681 @@
 {
   "media": "VV-V44",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Getuigenis in het Frans — ondertitels in voorbereiding]"
+      "start": 0,
+      "end": 7.36,
+      "text": "En wij zeiden tegen hen, wij denken dat als je rijk wilt worden of succes wilt hebben, je naar Kinshasa moet komen.",
+      "words": [
+        {
+          "w": "En",
+          "start": 0,
+          "end": 0.195
+        },
+        {
+          "w": "wij",
+          "start": 0.195,
+          "end": 0.456
+        },
+        {
+          "w": "zeiden",
+          "start": 0.456,
+          "end": 0.912
+        },
+        {
+          "w": "tegen",
+          "start": 0.912,
+          "end": 1.303
+        },
+        {
+          "w": "hen,",
+          "start": 1.303,
+          "end": 1.563
+        },
+        {
+          "w": "wij",
+          "start": 1.563,
+          "end": 1.824
+        },
+        {
+          "w": "denken",
+          "start": 1.824,
+          "end": 2.28
+        },
+        {
+          "w": "dat",
+          "start": 2.28,
+          "end": 2.54
+        },
+        {
+          "w": "als",
+          "start": 2.54,
+          "end": 2.801
+        },
+        {
+          "w": "je",
+          "start": 2.801,
+          "end": 2.996
+        },
+        {
+          "w": "rijk",
+          "start": 2.996,
+          "end": 3.322
+        },
+        {
+          "w": "wilt",
+          "start": 3.322,
+          "end": 3.647
+        },
+        {
+          "w": "worden",
+          "start": 3.647,
+          "end": 4.103
+        },
+        {
+          "w": "of",
+          "start": 4.103,
+          "end": 4.299
+        },
+        {
+          "w": "succes",
+          "start": 4.299,
+          "end": 4.755
+        },
+        {
+          "w": "wilt",
+          "start": 4.755,
+          "end": 5.08
+        },
+        {
+          "w": "hebben,",
+          "start": 5.08,
+          "end": 5.536
+        },
+        {
+          "w": "je",
+          "start": 5.536,
+          "end": 5.732
+        },
+        {
+          "w": "naar",
+          "start": 5.732,
+          "end": 6.057
+        },
+        {
+          "w": "Kinshasa",
+          "start": 6.057,
+          "end": 6.644
+        },
+        {
+          "w": "moet",
+          "start": 6.644,
+          "end": 6.969
+        },
+        {
+          "w": "komen.",
+          "start": 6.969,
+          "end": 7.36
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 7.5,
+      "end": 9.98,
+      "text": "Voor ons is dat zo, we merkten dat we niet dezelfde gesprekken hadden.",
+      "words": [
+        {
+          "w": "Voor",
+          "start": 7.5,
+          "end": 7.68
+        },
+        {
+          "w": "ons",
+          "start": 7.68,
+          "end": 7.823
+        },
+        {
+          "w": "is",
+          "start": 7.823,
+          "end": 7.931
+        },
+        {
+          "w": "dat",
+          "start": 7.931,
+          "end": 8.075
+        },
+        {
+          "w": "zo,",
+          "start": 8.075,
+          "end": 8.183
+        },
+        {
+          "w": "we",
+          "start": 8.183,
+          "end": 8.291
+        },
+        {
+          "w": "merkten",
+          "start": 8.291,
+          "end": 8.578
+        },
+        {
+          "w": "dat",
+          "start": 8.578,
+          "end": 8.722
+        },
+        {
+          "w": "we",
+          "start": 8.722,
+          "end": 8.83
+        },
+        {
+          "w": "niet",
+          "start": 8.83,
+          "end": 9.01
+        },
+        {
+          "w": "dezelfde",
+          "start": 9.01,
+          "end": 9.333
+        },
+        {
+          "w": "gesprekken",
+          "start": 9.333,
+          "end": 9.728
+        },
+        {
+          "w": "hadden.",
+          "start": 9.728,
+          "end": 9.98
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 9.98,
+      "end": 13.08,
+      "text": "We zeiden, maar eigenlijk zou het wel leuk zijn om er een project over te doen.",
+      "words": [
+        {
+          "w": "We",
+          "start": 9.98,
+          "end": 10.099
+        },
+        {
+          "w": "zeiden,",
+          "start": 10.099,
+          "end": 10.377
+        },
+        {
+          "w": "maar",
+          "start": 10.377,
+          "end": 10.576
+        },
+        {
+          "w": "eigenlijk",
+          "start": 10.576,
+          "end": 10.974
+        },
+        {
+          "w": "zou",
+          "start": 10.974,
+          "end": 11.133
+        },
+        {
+          "w": "het",
+          "start": 11.133,
+          "end": 11.292
+        },
+        {
+          "w": "wel",
+          "start": 11.292,
+          "end": 11.451
+        },
+        {
+          "w": "leuk",
+          "start": 11.451,
+          "end": 11.649
+        },
+        {
+          "w": "zijn",
+          "start": 11.649,
+          "end": 11.848
+        },
+        {
+          "w": "om",
+          "start": 11.848,
+          "end": 11.967
+        },
+        {
+          "w": "er",
+          "start": 11.967,
+          "end": 12.086
+        },
+        {
+          "w": "een",
+          "start": 12.086,
+          "end": 12.245
+        },
+        {
+          "w": "project",
+          "start": 12.245,
+          "end": 12.563
+        },
+        {
+          "w": "over",
+          "start": 12.563,
+          "end": 12.762
+        },
+        {
+          "w": "te",
+          "start": 12.762,
+          "end": 12.881
+        },
+        {
+          "w": "doen.",
+          "start": 12.881,
+          "end": 13.08
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 13.16,
+      "end": 20.3,
+      "text": "Het gaat echt om uitwisselen, ideeën uitwisselen, kijken welke vooroordelen we hebben, en dan alles deconstrueren.",
+      "words": [
+        {
+          "w": "Het",
+          "start": 13.16,
+          "end": 13.417
+        },
+        {
+          "w": "gaat",
+          "start": 13.417,
+          "end": 13.739
+        },
+        {
+          "w": "echt",
+          "start": 13.739,
+          "end": 14.061
+        },
+        {
+          "w": "om",
+          "start": 14.061,
+          "end": 14.254
+        },
+        {
+          "w": "uitwisselen,",
+          "start": 14.254,
+          "end": 15.025
+        },
+        {
+          "w": "ideeën",
+          "start": 15.025,
+          "end": 15.476
+        },
+        {
+          "w": "uitwisselen,",
+          "start": 15.476,
+          "end": 16.248
+        },
+        {
+          "w": "kijken",
+          "start": 16.248,
+          "end": 16.698
+        },
+        {
+          "w": "welke",
+          "start": 16.698,
+          "end": 17.084
+        },
+        {
+          "w": "vooroordelen",
+          "start": 17.084,
+          "end": 17.92
+        },
+        {
+          "w": "we",
+          "start": 17.92,
+          "end": 18.113
+        },
+        {
+          "w": "hebben,",
+          "start": 18.113,
+          "end": 18.563
+        },
+        {
+          "w": "en",
+          "start": 18.563,
+          "end": 18.756
+        },
+        {
+          "w": "dan",
+          "start": 18.756,
+          "end": 19.014
+        },
+        {
+          "w": "alles",
+          "start": 19.014,
+          "end": 19.399
+        },
+        {
+          "w": "deconstrueren.",
+          "start": 19.399,
+          "end": 20.3
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 20.98,
+      "end": 22.96,
+      "text": "Dus, we zeiden, we doen het in twee fases.",
+      "words": [
+        {
+          "w": "Dus,",
+          "start": 20.98,
+          "end": 21.178
+        },
+        {
+          "w": "we",
+          "start": 21.178,
+          "end": 21.327
+        },
+        {
+          "w": "zeiden,",
+          "start": 21.327,
+          "end": 21.673
+        },
+        {
+          "w": "we",
+          "start": 21.673,
+          "end": 21.821
+        },
+        {
+          "w": "doen",
+          "start": 21.821,
+          "end": 22.069
+        },
+        {
+          "w": "het",
+          "start": 22.069,
+          "end": 22.267
+        },
+        {
+          "w": "in",
+          "start": 22.267,
+          "end": 22.415
+        },
+        {
+          "w": "twee",
+          "start": 22.415,
+          "end": 22.663
+        },
+        {
+          "w": "fases.",
+          "start": 22.663,
+          "end": 22.96
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 23.34,
+      "end": 27.98,
+      "text": "Wat je over de lange tijd in België hebt gezien, heb je de kern van Kinshasa gezien, in Kulinga?",
+      "words": [
+        {
+          "w": "Wat",
+          "start": 23.34,
+          "end": 23.537
+        },
+        {
+          "w": "je",
+          "start": 23.537,
+          "end": 23.686
+        },
+        {
+          "w": "over",
+          "start": 23.686,
+          "end": 23.932
+        },
+        {
+          "w": "de",
+          "start": 23.932,
+          "end": 24.08
+        },
+        {
+          "w": "lange",
+          "start": 24.08,
+          "end": 24.377
+        },
+        {
+          "w": "tijd",
+          "start": 24.377,
+          "end": 24.623
+        },
+        {
+          "w": "in",
+          "start": 24.623,
+          "end": 24.771
+        },
+        {
+          "w": "België",
+          "start": 24.771,
+          "end": 25.117
+        },
+        {
+          "w": "hebt",
+          "start": 25.117,
+          "end": 25.364
+        },
+        {
+          "w": "gezien,",
+          "start": 25.364,
+          "end": 25.709
+        },
+        {
+          "w": "heb",
+          "start": 25.709,
+          "end": 25.907
+        },
+        {
+          "w": "je",
+          "start": 25.907,
+          "end": 26.055
+        },
+        {
+          "w": "de",
+          "start": 26.055,
+          "end": 26.203
+        },
+        {
+          "w": "kern",
+          "start": 26.203,
+          "end": 26.45
+        },
+        {
+          "w": "van",
+          "start": 26.45,
+          "end": 26.647
+        },
+        {
+          "w": "Kinshasa",
+          "start": 26.647,
+          "end": 27.091
+        },
+        {
+          "w": "gezien,",
+          "start": 27.091,
+          "end": 27.437
+        },
+        {
+          "w": "in",
+          "start": 27.437,
+          "end": 27.585
+        },
+        {
+          "w": "Kulinga?",
+          "start": 27.585,
+          "end": 27.98
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 27.98,
+      "end": 43.36,
+      "text": "Ja, natuurlijk.",
+      "words": [
+        {
+          "w": "Ja,",
+          "start": 27.98,
+          "end": 31.276
+        },
+        {
+          "w": "natuurlijk.",
+          "start": 31.276,
+          "end": 43.36
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 43.36,
+      "end": 45.46,
+      "text": "Natuurlijk, ik kom altijd graag terug naar Congo.",
+      "words": [
+        {
+          "w": "Natuurlijk,",
+          "start": 43.36,
+          "end": 43.841
+        },
+        {
+          "w": "ik",
+          "start": 43.841,
+          "end": 43.973
+        },
+        {
+          "w": "kom",
+          "start": 43.973,
+          "end": 44.148
+        },
+        {
+          "w": "altijd",
+          "start": 44.148,
+          "end": 44.454
+        },
+        {
+          "w": "graag",
+          "start": 44.454,
+          "end": 44.716
+        },
+        {
+          "w": "terug",
+          "start": 44.716,
+          "end": 44.979
+        },
+        {
+          "w": "naar",
+          "start": 44.979,
+          "end": 45.198
+        },
+        {
+          "w": "Congo.",
+          "start": 45.198,
+          "end": 45.46
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 45.88,
+      "end": 47.46,
+      "text": "Dus, ja, ja, ik ben hier.",
+      "words": [
+        {
+          "w": "Dus,",
+          "start": 45.88,
+          "end": 46.167
+        },
+        {
+          "w": "ja,",
+          "start": 46.167,
+          "end": 46.383
+        },
+        {
+          "w": "ja,",
+          "start": 46.383,
+          "end": 46.598
+        },
+        {
+          "w": "ik",
+          "start": 46.598,
+          "end": 46.814
+        },
+        {
+          "w": "ben",
+          "start": 46.814,
+          "end": 47.101
+        },
+        {
+          "w": "hier.",
+          "start": 47.101,
+          "end": 47.46
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 48.06,
+      "end": 55.36,
+      "text": "Heb je veel talen?",
+      "words": [
+        {
+          "w": "Heb",
+          "start": 48.06,
+          "end": 49.682
+        },
+        {
+          "w": "je",
+          "start": 49.682,
+          "end": 50.899
+        },
+        {
+          "w": "veel",
+          "start": 50.899,
+          "end": 52.927
+        },
+        {
+          "w": "talen?",
+          "start": 52.927,
+          "end": 55.36
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 55.36,
+      "end": 56.26,
+      "text": "Dank je.",
+      "words": [
+        {
+          "w": "Dank",
+          "start": 55.36,
+          "end": 55.923
+        },
+        {
+          "w": "je.",
+          "start": 55.923,
+          "end": 56.26
+        }
+      ]
     }
   ]
 }

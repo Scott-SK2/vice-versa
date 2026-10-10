@@ -1,14 +1,375 @@
 {
   "media": "VV-V43",
   "lang": "fr",
-  "source": "manual",
+  "source": "whisper-large-v3",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Témoignage en français — sous-titres en préparation]"
+      "start": 0,
+      "end": 8.26,
+      "text": "Imane, la dame, nous nous sommes invités pour le déroulant , mais le déroulant a annulé.",
+      "words": [
+        {
+          "w": "Imane,",
+          "start": 0,
+          "end": 0.56
+        },
+        {
+          "w": "la",
+          "start": 0.56,
+          "end": 1.58
+        },
+        {
+          "w": "dame,",
+          "start": 1.58,
+          "end": 1.6
+        },
+        {
+          "w": "nous",
+          "start": 1.6,
+          "end": 1.62
+        },
+        {
+          "w": "nous",
+          "start": 1.62,
+          "end": 1.9
+        },
+        {
+          "w": "sommes",
+          "start": 1.9,
+          "end": 1.92
+        },
+        {
+          "w": "invités",
+          "start": 1.92,
+          "end": 1.94
+        },
+        {
+          "w": "pour",
+          "start": 1.94,
+          "end": 2.74
+        },
+        {
+          "w": "le",
+          "start": 2.74,
+          "end": 2.76
+        },
+        {
+          "w": "déroulant ,",
+          "start": 2.76,
+          "end": 2.78
+        },
+        {
+          "w": "mais",
+          "start": 2.78,
+          "end": 6.06
+        },
+        {
+          "w": "le",
+          "start": 6.06,
+          "end": 6.08
+        },
+        {
+          "w": "déroulant",
+          "start": 6.08,
+          "end": 6.82
+        },
+        {
+          "w": "a",
+          "start": 6.82,
+          "end": 6.84
+        },
+        {
+          "w": "annulé.",
+          "start": 6.84,
+          "end": 7.02
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 8.26,
+      "end": 14.3,
+      "text": "de la classe 1 à 2 , le déroulant a annulé le déroulant que lui avait annulé en avance.",
+      "words": [
+        {
+          "w": "de",
+          "start": 9.5,
+          "end": 9.7
+        },
+        {
+          "w": "la",
+          "start": 9.7,
+          "end": 9.72
+        },
+        {
+          "w": "classe",
+          "start": 9.72,
+          "end": 9.82
+        },
+        {
+          "w": "1",
+          "start": 9.82,
+          "end": 9.86
+        },
+        {
+          "w": "à",
+          "start": 9.86,
+          "end": 13.84
+        },
+        {
+          "w": "2 ,",
+          "start": 13.84,
+          "end": 13.86
+        },
+        {
+          "w": "le",
+          "start": 13.86,
+          "end": 13.88
+        },
+        {
+          "w": "déroulant",
+          "start": 13.88,
+          "end": 13.9
+        },
+        {
+          "w": "a",
+          "start": 13.9,
+          "end": 13.92
+        },
+        {
+          "w": "annulé",
+          "start": 13.92,
+          "end": 14.22
+        },
+        {
+          "w": "le",
+          "start": 14.22,
+          "end": 14.5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 14.3,
+      "end": 19.26,
+      "text": "le déroulant a annulé le déroulant et a annulé la vie de son fils.",
+      "words": [
+        {
+          "w": "déroulant",
+          "start": 14.5,
+          "end": 14.6
+        },
+        {
+          "w": "que",
+          "start": 14.6,
+          "end": 14.62
+        },
+        {
+          "w": "lui",
+          "start": 14.62,
+          "end": 14.64
+        },
+        {
+          "w": "avait",
+          "start": 14.64,
+          "end": 14.66
+        },
+        {
+          "w": "annulé",
+          "start": 14.66,
+          "end": 14.68
+        },
+        {
+          "w": "en",
+          "start": 14.68,
+          "end": 14.78
+        },
+        {
+          "w": "avance.",
+          "start": 14.78,
+          "end": 14.8
+        },
+        {
+          "w": "le",
+          "start": 16.96,
+          "end": 17.2
+        },
+        {
+          "w": "déroulant",
+          "start": 17.2,
+          "end": 17.64
+        },
+        {
+          "w": "a",
+          "start": 17.64,
+          "end": 17.66
+        },
+        {
+          "w": "annulé",
+          "start": 17.66,
+          "end": 17.68
+        },
+        {
+          "w": "le",
+          "start": 17.68,
+          "end": 17.9
+        },
+        {
+          "w": "déroulant",
+          "start": 17.9,
+          "end": 18.3
+        },
+        {
+          "w": "et",
+          "start": 18.3,
+          "end": 18.32
+        },
+        {
+          "w": "a",
+          "start": 18.32,
+          "end": 18.66
+        },
+        {
+          "w": "annulé",
+          "start": 18.66,
+          "end": 18.72
+        },
+        {
+          "w": "la",
+          "start": 18.72,
+          "end": 18.74
+        },
+        {
+          "w": "vie",
+          "start": 18.74,
+          "end": 18.76
+        },
+        {
+          "w": "de",
+          "start": 18.76,
+          "end": 19.1
+        },
+        {
+          "w": "son",
+          "start": 19.1,
+          "end": 19.12
+        },
+        {
+          "w": "fils.",
+          "start": 19.12,
+          "end": 19.58
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 19.26,
+      "end": 28.6,
+      "text": "le déroulant a annulé le déroulant, ce qui lui a annulé la vie de sœur et a annulé le procès.",
+      "words": [
+        {
+          "w": "le",
+          "start": 19.66,
+          "end": 19.68
+        },
+        {
+          "w": "déroulant",
+          "start": 19.68,
+          "end": 19.7
+        },
+        {
+          "w": "a",
+          "start": 19.7,
+          "end": 19.72
+        },
+        {
+          "w": "annulé",
+          "start": 19.72,
+          "end": 19.74
+        },
+        {
+          "w": "le",
+          "start": 19.74,
+          "end": 19.76
+        },
+        {
+          "w": "déroulant,",
+          "start": 19.76,
+          "end": 19.78
+        },
+        {
+          "w": "ce",
+          "start": 19.78,
+          "end": 19.88
+        },
+        {
+          "w": "qui",
+          "start": 19.88,
+          "end": 19.9
+        },
+        {
+          "w": "lui",
+          "start": 19.9,
+          "end": 19.92
+        },
+        {
+          "w": "a",
+          "start": 19.92,
+          "end": 19.94
+        },
+        {
+          "w": "annulé",
+          "start": 19.94,
+          "end": 19.96
+        },
+        {
+          "w": "la",
+          "start": 19.96,
+          "end": 19.98
+        },
+        {
+          "w": "vie",
+          "start": 19.98,
+          "end": 20
+        },
+        {
+          "w": "de",
+          "start": 20,
+          "end": 20.02
+        },
+        {
+          "w": "sœur",
+          "start": 20.02,
+          "end": 20.04
+        },
+        {
+          "w": "et",
+          "start": 20.04,
+          "end": 20.06
+        },
+        {
+          "w": "a",
+          "start": 20.06,
+          "end": 20.4
+        },
+        {
+          "w": "annulé",
+          "start": 20.4,
+          "end": 20.42
+        },
+        {
+          "w": "le",
+          "start": 20.42,
+          "end": 20.5
+        },
+        {
+          "w": "procès.",
+          "start": 20.5,
+          "end": 21.78
+        }
+      ]
     }
   ]
 }

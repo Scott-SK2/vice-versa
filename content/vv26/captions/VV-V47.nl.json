@@ -1,14 +1,104 @@
 {
   "media": "VV-V47",
   "lang": "nl",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Getuigenis in het Frans — ondertitels in voorbereiding]"
+      "start": 0,
+      "end": 29.98,
+      "text": "De groep van de stad Mali, die in 2010 is opgericht, is in 2011 opgericht.",
+      "words": [
+        {
+          "w": "De",
+          "start": 0,
+          "end": 1.249
+        },
+        {
+          "w": "groep",
+          "start": 1.249,
+          "end": 3.747
+        },
+        {
+          "w": "van",
+          "start": 3.747,
+          "end": 5.413
+        },
+        {
+          "w": "de",
+          "start": 5.413,
+          "end": 6.662
+        },
+        {
+          "w": "stad",
+          "start": 6.662,
+          "end": 8.744
+        },
+        {
+          "w": "Mali,",
+          "start": 8.744,
+          "end": 10.826
+        },
+        {
+          "w": "die",
+          "start": 10.826,
+          "end": 12.492
+        },
+        {
+          "w": "in",
+          "start": 12.492,
+          "end": 13.741
+        },
+        {
+          "w": "2010",
+          "start": 13.741,
+          "end": 15.823
+        },
+        {
+          "w": "is",
+          "start": 15.823,
+          "end": 17.072
+        },
+        {
+          "w": "opgericht,",
+          "start": 17.072,
+          "end": 21.236
+        },
+        {
+          "w": "is",
+          "start": 21.236,
+          "end": 22.485
+        },
+        {
+          "w": "in",
+          "start": 22.485,
+          "end": 23.734
+        },
+        {
+          "w": "2011",
+          "start": 23.734,
+          "end": 25.816
+        },
+        {
+          "w": "opgericht.",
+          "start": 25.816,
+          "end": 29.98
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 30,
+      "end": 32,
+      "text": "Dankjewel.",
+      "words": [
+        {
+          "w": "Dankjewel.",
+          "start": 30,
+          "end": 32
+        }
+      ]
     }
   ]
 }

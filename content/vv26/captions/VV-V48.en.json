@@ -1,14 +1,856 @@
 {
   "media": "VV-V48",
   "lang": "en",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Testimony in French — subtitles being prepared]"
+      "start": 0,
+      "end": 5.62,
+      "text": "The thing about the station is that we're used to involving Congolese youth, most of whom want to go live in danger.",
+      "words": [
+        {
+          "w": "The",
+          "start": 0,
+          "end": 0.197
+        },
+        {
+          "w": "thing",
+          "start": 0.197,
+          "end": 0.493
+        },
+        {
+          "w": "about",
+          "start": 0.493,
+          "end": 0.789
+        },
+        {
+          "w": "the",
+          "start": 0.789,
+          "end": 0.986
+        },
+        {
+          "w": "station",
+          "start": 0.986,
+          "end": 1.38
+        },
+        {
+          "w": "is",
+          "start": 1.38,
+          "end": 1.528
+        },
+        {
+          "w": "that",
+          "start": 1.528,
+          "end": 1.775
+        },
+        {
+          "w": "we're",
+          "start": 1.775,
+          "end": 2.021
+        },
+        {
+          "w": "used",
+          "start": 2.021,
+          "end": 2.268
+        },
+        {
+          "w": "to",
+          "start": 2.268,
+          "end": 2.416
+        },
+        {
+          "w": "involving",
+          "start": 2.416,
+          "end": 2.909
+        },
+        {
+          "w": "Congolese",
+          "start": 2.909,
+          "end": 3.402
+        },
+        {
+          "w": "youth,",
+          "start": 3.402,
+          "end": 3.697
+        },
+        {
+          "w": "most",
+          "start": 3.697,
+          "end": 3.944
+        },
+        {
+          "w": "of",
+          "start": 3.944,
+          "end": 4.092
+        },
+        {
+          "w": "whom",
+          "start": 4.092,
+          "end": 4.338
+        },
+        {
+          "w": "want",
+          "start": 4.338,
+          "end": 4.585
+        },
+        {
+          "w": "to",
+          "start": 4.585,
+          "end": 4.733
+        },
+        {
+          "w": "go",
+          "start": 4.733,
+          "end": 4.881
+        },
+        {
+          "w": "live",
+          "start": 4.881,
+          "end": 5.127
+        },
+        {
+          "w": "in",
+          "start": 5.127,
+          "end": 5.275
+        },
+        {
+          "w": "danger.",
+          "start": 5.275,
+          "end": 5.62
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 5.84,
+      "end": 10.88,
+      "text": "On the contrary, most are looking for opportunities, looking for a better life.",
+      "words": [
+        {
+          "w": "On",
+          "start": 5.84,
+          "end": 6.036
+        },
+        {
+          "w": "the",
+          "start": 6.036,
+          "end": 6.298
+        },
+        {
+          "w": "contrary,",
+          "start": 6.298,
+          "end": 6.887
+        },
+        {
+          "w": "most",
+          "start": 6.887,
+          "end": 7.215
+        },
+        {
+          "w": "are",
+          "start": 7.215,
+          "end": 7.476
+        },
+        {
+          "w": "looking",
+          "start": 7.476,
+          "end": 8
+        },
+        {
+          "w": "for",
+          "start": 8,
+          "end": 8.262
+        },
+        {
+          "w": "opportunities,",
+          "start": 8.262,
+          "end": 9.178
+        },
+        {
+          "w": "looking",
+          "start": 9.178,
+          "end": 9.702
+        },
+        {
+          "w": "for",
+          "start": 9.702,
+          "end": 9.964
+        },
+        {
+          "w": "a",
+          "start": 9.964,
+          "end": 10.095
+        },
+        {
+          "w": "better",
+          "start": 10.095,
+          "end": 10.553
+        },
+        {
+          "w": "life.",
+          "start": 10.553,
+          "end": 10.88
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 11.48,
+      "end": 13.24,
+      "text": "And most just want to succeed in their lives.",
+      "words": [
+        {
+          "w": "And",
+          "start": 11.48,
+          "end": 11.636
+        },
+        {
+          "w": "most",
+          "start": 11.636,
+          "end": 11.832
+        },
+        {
+          "w": "just",
+          "start": 11.832,
+          "end": 12.028
+        },
+        {
+          "w": "want",
+          "start": 12.028,
+          "end": 12.223
+        },
+        {
+          "w": "to",
+          "start": 12.223,
+          "end": 12.34
+        },
+        {
+          "w": "succeed",
+          "start": 12.34,
+          "end": 12.653
+        },
+        {
+          "w": "in",
+          "start": 12.653,
+          "end": 12.771
+        },
+        {
+          "w": "their",
+          "start": 12.771,
+          "end": 13.005
+        },
+        {
+          "w": "lives.",
+          "start": 13.005,
+          "end": 13.24
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 13.38,
+      "end": 17.56,
+      "text": "So they want an environment that guarantees them that better, dream life.",
+      "words": [
+        {
+          "w": "So",
+          "start": 13.38,
+          "end": 13.554
+        },
+        {
+          "w": "they",
+          "start": 13.554,
+          "end": 13.844
+        },
+        {
+          "w": "want",
+          "start": 13.844,
+          "end": 14.135
+        },
+        {
+          "w": "an",
+          "start": 14.135,
+          "end": 14.309
+        },
+        {
+          "w": "environment",
+          "start": 14.309,
+          "end": 15.006
+        },
+        {
+          "w": "that",
+          "start": 15.006,
+          "end": 15.296
+        },
+        {
+          "w": "guarantees",
+          "start": 15.296,
+          "end": 15.934
+        },
+        {
+          "w": "them",
+          "start": 15.934,
+          "end": 16.225
+        },
+        {
+          "w": "that",
+          "start": 16.225,
+          "end": 16.515
+        },
+        {
+          "w": "better,",
+          "start": 16.515,
+          "end": 16.921
+        },
+        {
+          "w": "dream",
+          "start": 16.921,
+          "end": 17.27
+        },
+        {
+          "w": "life.",
+          "start": 17.27,
+          "end": 17.56
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 17.98,
+      "end": 22.96,
+      "text": "I, generally, have already faced prejudice when I was in high school.",
+      "words": [
+        {
+          "w": "I,",
+          "start": 17.98,
+          "end": 18.129
+        },
+        {
+          "w": "generally,",
+          "start": 18.129,
+          "end": 18.872
+        },
+        {
+          "w": "have",
+          "start": 18.872,
+          "end": 19.244
+        },
+        {
+          "w": "already",
+          "start": 19.244,
+          "end": 19.838
+        },
+        {
+          "w": "faced",
+          "start": 19.838,
+          "end": 20.284
+        },
+        {
+          "w": "prejudice",
+          "start": 20.284,
+          "end": 21.027
+        },
+        {
+          "w": "when",
+          "start": 21.027,
+          "end": 21.399
+        },
+        {
+          "w": "I",
+          "start": 21.399,
+          "end": 21.548
+        },
+        {
+          "w": "was",
+          "start": 21.548,
+          "end": 21.845
+        },
+        {
+          "w": "in",
+          "start": 21.845,
+          "end": 22.068
+        },
+        {
+          "w": "high",
+          "start": 22.068,
+          "end": 22.44
+        },
+        {
+          "w": "school.",
+          "start": 22.44,
+          "end": 22.96
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 23.04,
+      "end": 26.24,
+      "text": "They called me Ikeike, which means \"we didn't care\" and all that.",
+      "words": [
+        {
+          "w": "They",
+          "start": 23.04,
+          "end": 23.302
+        },
+        {
+          "w": "called",
+          "start": 23.302,
+          "end": 23.67
+        },
+        {
+          "w": "me",
+          "start": 23.67,
+          "end": 23.827
+        },
+        {
+          "w": "Ikeike,",
+          "start": 23.827,
+          "end": 24.194
+        },
+        {
+          "w": "which",
+          "start": 24.194,
+          "end": 24.509
+        },
+        {
+          "w": "means",
+          "start": 24.509,
+          "end": 24.824
+        },
+        {
+          "w": "\"we",
+          "start": 24.824,
+          "end": 24.981
+        },
+        {
+          "w": "didn't",
+          "start": 24.981,
+          "end": 25.296
+        },
+        {
+          "w": "care\"",
+          "start": 25.296,
+          "end": 25.558
+        },
+        {
+          "w": "and",
+          "start": 25.558,
+          "end": 25.768
+        },
+        {
+          "w": "all",
+          "start": 25.768,
+          "end": 25.978
+        },
+        {
+          "w": "that.",
+          "start": 25.978,
+          "end": 26.24
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "start": 26.24,
+      "end": 30.8,
+      "text": "People told me I shouldn't become who I am, that I'm really short, like your height.",
+      "words": [
+        {
+          "w": "People",
+          "start": 26.24,
+          "end": 26.639
+        },
+        {
+          "w": "told",
+          "start": 26.639,
+          "end": 26.924
+        },
+        {
+          "w": "me",
+          "start": 26.924,
+          "end": 27.095
+        },
+        {
+          "w": "I",
+          "start": 27.095,
+          "end": 27.209
+        },
+        {
+          "w": "shouldn't",
+          "start": 27.209,
+          "end": 27.722
+        },
+        {
+          "w": "become",
+          "start": 27.722,
+          "end": 28.121
+        },
+        {
+          "w": "who",
+          "start": 28.121,
+          "end": 28.349
+        },
+        {
+          "w": "I",
+          "start": 28.349,
+          "end": 28.463
+        },
+        {
+          "w": "am,",
+          "start": 28.463,
+          "end": 28.634
+        },
+        {
+          "w": "that",
+          "start": 28.634,
+          "end": 28.919
+        },
+        {
+          "w": "I'm",
+          "start": 28.919,
+          "end": 29.09
+        },
+        {
+          "w": "really",
+          "start": 29.09,
+          "end": 29.489
+        },
+        {
+          "w": "short,",
+          "start": 29.489,
+          "end": 29.831
+        },
+        {
+          "w": "like",
+          "start": 29.831,
+          "end": 30.116
+        },
+        {
+          "w": "your",
+          "start": 30.116,
+          "end": 30.401
+        },
+        {
+          "w": "height.",
+          "start": 30.401,
+          "end": 30.8
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "start": 31,
+      "end": 34.46,
+      "text": "Because I had a tiny head, I was short in stature and all that.",
+      "words": [
+        {
+          "w": "Because",
+          "start": 31,
+          "end": 31.446
+        },
+        {
+          "w": "I",
+          "start": 31.446,
+          "end": 31.558
+        },
+        {
+          "w": "had",
+          "start": 31.558,
+          "end": 31.781
+        },
+        {
+          "w": "a",
+          "start": 31.781,
+          "end": 31.893
+        },
+        {
+          "w": "tiny",
+          "start": 31.893,
+          "end": 32.172
+        },
+        {
+          "w": "head,",
+          "start": 32.172,
+          "end": 32.451
+        },
+        {
+          "w": "I",
+          "start": 32.451,
+          "end": 32.563
+        },
+        {
+          "w": "was",
+          "start": 32.563,
+          "end": 32.786
+        },
+        {
+          "w": "short",
+          "start": 32.786,
+          "end": 33.121
+        },
+        {
+          "w": "in",
+          "start": 33.121,
+          "end": 33.288
+        },
+        {
+          "w": "stature",
+          "start": 33.288,
+          "end": 33.735
+        },
+        {
+          "w": "and",
+          "start": 33.735,
+          "end": 33.958
+        },
+        {
+          "w": "all",
+          "start": 33.958,
+          "end": 34.181
+        },
+        {
+          "w": "that.",
+          "start": 34.181,
+          "end": 34.46
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "start": 35.18,
+      "end": 38.4,
+      "text": "So over time, I'm not the same size I used to be.",
+      "words": [
+        {
+          "w": "So",
+          "start": 35.18,
+          "end": 35.386
+        },
+        {
+          "w": "over",
+          "start": 35.386,
+          "end": 35.728
+        },
+        {
+          "w": "time,",
+          "start": 35.728,
+          "end": 36.071
+        },
+        {
+          "w": "I'm",
+          "start": 36.071,
+          "end": 36.276
+        },
+        {
+          "w": "not",
+          "start": 36.276,
+          "end": 36.55
+        },
+        {
+          "w": "the",
+          "start": 36.55,
+          "end": 36.824
+        },
+        {
+          "w": "same",
+          "start": 36.824,
+          "end": 37.167
+        },
+        {
+          "w": "size",
+          "start": 37.167,
+          "end": 37.509
+        },
+        {
+          "w": "I",
+          "start": 37.509,
+          "end": 37.646
+        },
+        {
+          "w": "used",
+          "start": 37.646,
+          "end": 37.989
+        },
+        {
+          "w": "to",
+          "start": 37.989,
+          "end": 38.194
+        },
+        {
+          "w": "be.",
+          "start": 38.194,
+          "end": 38.4
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "start": 39.18,
+      "end": 44.68,
+      "text": "And I kept the small head, but maybe today there's a lot of knowledge,",
+      "words": [
+        {
+          "w": "And",
+          "start": 39.18,
+          "end": 39.504
+        },
+        {
+          "w": "I",
+          "start": 39.504,
+          "end": 39.665
+        },
+        {
+          "w": "kept",
+          "start": 39.665,
+          "end": 40.07
+        },
+        {
+          "w": "the",
+          "start": 40.07,
+          "end": 40.393
+        },
+        {
+          "w": "small",
+          "start": 40.393,
+          "end": 40.879
+        },
+        {
+          "w": "head,",
+          "start": 40.879,
+          "end": 41.283
+        },
+        {
+          "w": "but",
+          "start": 41.283,
+          "end": 41.606
+        },
+        {
+          "w": "maybe",
+          "start": 41.606,
+          "end": 42.092
+        },
+        {
+          "w": "today",
+          "start": 42.092,
+          "end": 42.577
+        },
+        {
+          "w": "there's",
+          "start": 42.577,
+          "end": 43.143
+        },
+        {
+          "w": "a",
+          "start": 43.143,
+          "end": 43.305
+        },
+        {
+          "w": "lot",
+          "start": 43.305,
+          "end": 43.629
+        },
+        {
+          "w": "of",
+          "start": 43.629,
+          "end": 43.871
+        },
+        {
+          "w": "knowledge,",
+          "start": 43.871,
+          "end": 44.68
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "start": 44.84,
+      "end": 49.24,
+      "text": "direct skills that I can even pass on, and that let me assert myself in society.",
+      "words": [
+        {
+          "w": "direct",
+          "start": 44.84,
+          "end": 45.23
+        },
+        {
+          "w": "skills",
+          "start": 45.23,
+          "end": 45.62
+        },
+        {
+          "w": "that",
+          "start": 45.62,
+          "end": 45.898
+        },
+        {
+          "w": "I",
+          "start": 45.898,
+          "end": 46.01
+        },
+        {
+          "w": "can",
+          "start": 46.01,
+          "end": 46.232
+        },
+        {
+          "w": "even",
+          "start": 46.232,
+          "end": 46.511
+        },
+        {
+          "w": "pass",
+          "start": 46.511,
+          "end": 46.789
+        },
+        {
+          "w": "on,",
+          "start": 46.789,
+          "end": 46.956
+        },
+        {
+          "w": "and",
+          "start": 46.956,
+          "end": 47.179
+        },
+        {
+          "w": "that",
+          "start": 47.179,
+          "end": 47.458
+        },
+        {
+          "w": "let",
+          "start": 47.458,
+          "end": 47.681
+        },
+        {
+          "w": "me",
+          "start": 47.681,
+          "end": 47.848
+        },
+        {
+          "w": "assert",
+          "start": 47.848,
+          "end": 48.237
+        },
+        {
+          "w": "myself",
+          "start": 48.237,
+          "end": 48.627
+        },
+        {
+          "w": "in",
+          "start": 48.627,
+          "end": 48.794
+        },
+        {
+          "w": "society.",
+          "start": 48.794,
+          "end": 49.24
+        }
+      ]
     }
   ]
 }

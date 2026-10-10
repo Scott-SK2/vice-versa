@@ -1,14 +1,255 @@
 {
   "media": "VV-V42",
   "lang": "en",
-  "source": "manual",
+  "source": "translation:openai/gpt-oss-120b",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Testimony in French — subtitles being prepared]"
+      "start": 0,
+      "end": 17.94,
+      "text": "Yeah, I thought about going abroad to discover other cultures, see different ways of working, learn new skills and bring more experience back home.",
+      "words": [
+        {
+          "w": "Yeah,",
+          "start": 0,
+          "end": 0.623
+        },
+        {
+          "w": "I",
+          "start": 0.623,
+          "end": 0.872
+        },
+        {
+          "w": "thought",
+          "start": 0.872,
+          "end": 1.869
+        },
+        {
+          "w": "about",
+          "start": 1.869,
+          "end": 2.616
+        },
+        {
+          "w": "going",
+          "start": 2.616,
+          "end": 3.364
+        },
+        {
+          "w": "abroad",
+          "start": 3.364,
+          "end": 4.236
+        },
+        {
+          "w": "to",
+          "start": 4.236,
+          "end": 4.61
+        },
+        {
+          "w": "discover",
+          "start": 4.61,
+          "end": 5.731
+        },
+        {
+          "w": "other",
+          "start": 5.731,
+          "end": 6.478
+        },
+        {
+          "w": "cultures,",
+          "start": 6.478,
+          "end": 7.6
+        },
+        {
+          "w": "see",
+          "start": 7.6,
+          "end": 8.098
+        },
+        {
+          "w": "different",
+          "start": 8.098,
+          "end": 9.344
+        },
+        {
+          "w": "ways",
+          "start": 9.344,
+          "end": 9.967
+        },
+        {
+          "w": "of",
+          "start": 9.967,
+          "end": 10.34
+        },
+        {
+          "w": "working,",
+          "start": 10.34,
+          "end": 11.337
+        },
+        {
+          "w": "learn",
+          "start": 11.337,
+          "end": 12.085
+        },
+        {
+          "w": "new",
+          "start": 12.085,
+          "end": 12.583
+        },
+        {
+          "w": "skills",
+          "start": 12.583,
+          "end": 13.455
+        },
+        {
+          "w": "and",
+          "start": 13.455,
+          "end": 13.953
+        },
+        {
+          "w": "bring",
+          "start": 13.953,
+          "end": 14.701
+        },
+        {
+          "w": "more",
+          "start": 14.701,
+          "end": 15.324
+        },
+        {
+          "w": "experience",
+          "start": 15.324,
+          "end": 16.694
+        },
+        {
+          "w": "back",
+          "start": 16.694,
+          "end": 17.317
+        },
+        {
+          "w": "home.",
+          "start": 17.317,
+          "end": 17.94
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 19.34,
+      "end": 24.32,
+      "text": "Success doesn't depend on a place, you can succeed anywhere.",
+      "words": [
+        {
+          "w": "Success",
+          "start": 19.34,
+          "end": 20.027
+        },
+        {
+          "w": "doesn't",
+          "start": 20.027,
+          "end": 20.628
+        },
+        {
+          "w": "depend",
+          "start": 20.628,
+          "end": 21.229
+        },
+        {
+          "w": "on",
+          "start": 21.229,
+          "end": 21.487
+        },
+        {
+          "w": "a",
+          "start": 21.487,
+          "end": 21.658
+        },
+        {
+          "w": "place,",
+          "start": 21.658,
+          "end": 22.173
+        },
+        {
+          "w": "you",
+          "start": 22.173,
+          "end": 22.517
+        },
+        {
+          "w": "can",
+          "start": 22.517,
+          "end": 22.86
+        },
+        {
+          "w": "succeed",
+          "start": 22.86,
+          "end": 23.547
+        },
+        {
+          "w": "anywhere.",
+          "start": 23.547,
+          "end": 24.32
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 24.6,
+      "end": 29.82,
+      "text": "I'm a really determined person, driven by faith.",
+      "words": [
+        {
+          "w": "I'm",
+          "start": 24.6,
+          "end": 24.94
+        },
+        {
+          "w": "a",
+          "start": 24.94,
+          "end": 25.167
+        },
+        {
+          "w": "really",
+          "start": 25.167,
+          "end": 25.962
+        },
+        {
+          "w": "determined",
+          "start": 25.962,
+          "end": 27.21
+        },
+        {
+          "w": "person,",
+          "start": 27.21,
+          "end": 28.004
+        },
+        {
+          "w": "driven",
+          "start": 28.004,
+          "end": 28.799
+        },
+        {
+          "w": "by",
+          "start": 28.799,
+          "end": 29.139
+        },
+        {
+          "w": "faith.",
+          "start": 29.139,
+          "end": 29.82
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "start": 30,
+      "end": 30.28,
+      "text": "Thanks.",
+      "words": [
+        {
+          "w": "Thanks.",
+          "start": 30,
+          "end": 30.28
+        }
+      ]
     }
   ]
 }

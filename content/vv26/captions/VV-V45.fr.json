@@ -1,14 +1,92 @@
 {
   "media": "VV-V45",
   "lang": "fr",
-  "source": "manual",
+  "source": "whisper-large-v3",
   "status": "auto",
   "segments": [
     {
       "id": 1,
-      "start": 0.5,
-      "end": 5.0,
-      "text": "[Témoignage en français — sous-titres en préparation]"
+      "start": 0,
+      "end": 2,
+      "text": "Salut les gars !",
+      "words": [
+        {
+          "w": "Salut",
+          "start": 0,
+          "end": 0.92
+        },
+        {
+          "w": "les",
+          "start": 0.92,
+          "end": 1.32
+        },
+        {
+          "w": "gars !",
+          "start": 1.32,
+          "end": 1.6
+        },
+        {
+          "w": "Rires",
+          "start": 1.5,
+          "end": 2.64
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "start": 2,
+      "end": 6,
+      "text": "Rires",
+      "words": [
+        {
+          "w": "...",
+          "start": 5.5,
+          "end": 7.5
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "start": 6,
+      "end": 10,
+      "text": "..."
+    },
+    {
+      "id": 4,
+      "start": 10,
+      "end": 12,
+      "text": "...",
+      "words": [
+        {
+          "w": "...",
+          "start": 10.38,
+          "end": 11.7
+        },
+        {
+          "w": "...",
+          "start": 11.5,
+          "end": 12.5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "start": 12,
+      "end": 16,
+      "text": "...",
+      "words": [
+        {
+          "w": "...",
+          "start": 15.82,
+          "end": 17.88
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "start": 16,
+      "end": 26,
+      "text": "..."
     }
   ]
 }
