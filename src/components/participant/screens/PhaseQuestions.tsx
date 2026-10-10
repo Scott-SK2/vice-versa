@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { storage } from "@/lib/participant/client/storage";
 import { useParticipant } from "@/lib/participant/client/store";
 import { useApiData, useSubmitAnswer } from "../hooks";
 import { type QuestionDto, QuestionForm } from "../QuestionForm";
@@ -38,6 +39,11 @@ function Inner({ phase }: { phase: "avant" | "apres" | "trace" }) {
 
   async function finish() {
     const m = await refreshMe();
+    const pending = phase === "avant" ? storage.getPendingScan() : null;
+    if (pending && (!m || m.suggested_route === "/vv26/parcours")) {
+      router.push(`/vv26/s/${pending.code}?k=${pending.k}`);
+      return;
+    }
     router.push(m?.suggested_route ?? nextRoute);
   }
 

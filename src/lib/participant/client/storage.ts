@@ -2,6 +2,7 @@
 const TOKEN_KEY = "vv.session";
 const LANG_KEY = "vv.lang";
 const COOKIE = "vv_session";
+const PENDING_KEY = "vv.pendingScan";
 
 function safeGet(key: string): string | null {
   try {
@@ -38,6 +39,20 @@ export const storage = {
   },
   setLang(lang: string) {
     safeSet(LANG_KEY, lang);
+  },
+  /** Station scannée avant d'avoir une session : on y revient après l'accueil et les questions « Avant ». */
+  getPendingScan(): { code: string; k: string } | null {
+    const raw = safeGet(PENDING_KEY);
+    if (!raw) return null;
+    try {
+      const v = JSON.parse(raw) as { code?: string; k?: string };
+      return v.code && v.k ? { code: v.code, k: v.k } : null;
+    } catch {
+      return null;
+    }
+  },
+  setPendingScan(v: { code: string; k: string } | null) {
+    safeSet(PENDING_KEY, v ? JSON.stringify(v) : null);
   },
   getJson<T>(key: string, fallback: T): T {
     const raw = safeGet(key);

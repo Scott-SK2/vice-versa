@@ -9,7 +9,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { arg } from "./_env";
 import { ContentError, contentDir, loadContent } from "@/lib/content/load";
-import { qrPng, qrSvg, sheetHtml, type SheetStation, shortUrl, stationUrl } from "@/lib/qr/render";
+import { entryUrl, qrPng, qrSvg, sheetHtml, type SheetStation, shortUrl, stationUrl } from "@/lib/qr/render";
 
 const slug = arg("slug") ?? "vv26";
 const outDir = path.resolve(arg("out") ?? "qr");
@@ -41,6 +41,14 @@ async function main() {
 
   mkdirSync(outDir, { recursive: true });
   const sheet: SheetStation[] = [];
+  {
+    const url = entryUrl(baseUrl, slug);
+    const [png, svg] = await Promise.all([qrPng(url), qrSvg(url)]);
+    writeFileSync(path.join(outDir, "ENTREE.png"), png);
+    writeFileSync(path.join(outDir, "ENTREE.svg"), svg);
+    sheet.push({ code: "ENTRÉE", title: { fr: "Entrée · ouvre l’application", nl: "Ingang · opent de app", en: "Entry · opens the app" }, shortCode: "", url, svg });
+    console.log(`  ENTRÉE   ${url}`);
+  }
   for (const s of bundle.stations) {
     const url = stationUrl(baseUrl, slug, s);
     const [png, svg] = await Promise.all([qrPng(url), qrSvg(url)]);
