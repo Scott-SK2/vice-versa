@@ -40,6 +40,9 @@ function StationInner({ code, qrToken }: { code: string; qrToken: string | null 
   const submit = useSubmitAnswer();
   const [scanState, setScanState] = useState<"pending" | "done" | "failed">(qrToken ? "pending" : "done");
   const [needsBefore, setNeedsBefore] = useState(false);
+  const [draft, setDraft] = useState<Record<string, Record<string, unknown> | null>>({});
+  const [groupBusy, setGroupBusy] = useState(false);
+  const [groupError, setGroupError] = useState<string | null>(null);
   const [readOnly, setReadOnly] = useState(false);
   const scanned = useRef(false);
 
@@ -110,6 +113,39 @@ function StationInner({ code, qrToken }: { code: string; qrToken: string | null 
   const mediaOnly = requiredQs.length === 0 && data.media.length > 0;
   const nothingToDo = requiredQs.length === 0 && data.media.length === 0;
   const langs = ["fr", "nl", "en"];
+  // Plusieurs questions (station 7) : un seul bouton envoie toutes les réponses à la fin.
+  const grouped = data.questions.length > 1 && data.questions.every((q) => q.type !== "guess_reveal");
+  const groupReady = grouped && data.questions.every((q) => draft[q.key]);
+
+  async function submitAll() {
+    if (!data || !groupReady) return;
+    setGroupBusy(true);
+    setGroupError(null);
+    let completed = false;
+    let queued = false;
+    const updated = data.questions.map((x) => ({ ...x }));
+    for (const q of data.questions) {
+      const value = draft[q.key];
+      if (!value) continue;
+      const r = await submit(q.key, value);
+      if (!r.ok) {
+        setGroupError(`${q.text} : ${r.message}`);
+        setGroupBusy(false);
+        setData({ ...data, questions: updated });
+        return;
+      }
+      const i = updated.findIndex((x) => x.key === q.key);
+      updated[i] = { ...updated[i], answer: value };
+      if (r.response?.station?.state === "completed") completed = true;
+      if (r.queued) queued = true;
+    }
+    setData({ ...data, questions: updated });
+    setGroupBusy(false);
+    if (completed || (queued && updated.filter((x) => x.required).every((x) => x.answer))) {
+      await refreshMe();
+      router.push(`/vv26/s/${code}/ok`);
+    }
+  }
 
   async function onMediaProgress(ratio: number, ref: string) {
     if (!mediaOnly || s.state === "completed") return;
@@ -156,6 +192,9 @@ function StationInner({ code, qrToken }: { code: string; qrToken: string | null 
           <QuestionForm
             question={{ ...q, locked: q.locked || isReadOnly }}
             t={t}
+            hideSubmit={grouped}
+            showAnonymous={!grouped}
+            onChange={grouped ? (v) => setDraft((d) => (d[q.key] === v || JSON.stringify(d[q.key]) === JSON.stringify(v) ? d : { ...d, [q.key]: v })) : undefined}
             onSubmit={async (value) => {
               const r = await submit(q.key, value);
               if (!r.ok) return r;
@@ -174,6 +213,16 @@ function StationInner({ code, qrToken }: { code: string; qrToken: string | null 
           )}
         </section>
       ))}
+
+      {grouped && !isReadOnly && s.state !== "completed" && (
+        <div className="flex flex-col gap-3">
+          {groupError && <Notice kind="error">{groupError}</Notice>}
+          <Button onClick={submitAll} disabled={groupBusy || !groupReady}>
+            {groupBusy ? t("common.sending") : t("common.sendAll")}
+          </Button>
+          <p className="text-center text-xs text-muted">{t("common.anonymous")}</p>
+        </div>
+      )}
 
       {(nothingToDo || s.state === "completed") && (
         <LinkButton href={phase === "apres" && s.code === "Z" ? "/vv26/apres" : "/vv26/parcours"} variant="secondary">

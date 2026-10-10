@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { TFn } from "@/lib/participant/client/i18n";
 import { Button, Notice } from "./ui";
 
@@ -31,12 +31,18 @@ export function QuestionForm({
   onSubmit,
   submitLabel,
   showAnonymous = true,
+  onChange,
+  hideSubmit = false,
 }: {
   question: QuestionDto;
   t: TFn;
   onSubmit: (value: Record<string, unknown>) => Promise<SubmitResult>;
   submitLabel?: string;
   showAnonymous?: boolean;
+  /** Mode groupé : la valeur courante (ou null si incomplète) est remontée à chaque changement. */
+  onChange?: (value: Record<string, unknown> | null) => void;
+  /** Mode groupé : pas de bouton propre, l'envoi est fait par le parent. */
+  hideSubmit?: boolean;
 }) {
   const q = question;
   const prev = q.answer;
@@ -72,6 +78,14 @@ export function QuestionForm({
     }
   };
   const ready = value() !== null;
+  const onChangeRef = useRef(onChange);
+  useEffect(() => {
+    onChangeRef.current = onChange;
+  }, [onChange]);
+  const currentJson = JSON.stringify(value());
+  useEffect(() => {
+    onChangeRef.current?.(currentJson === "null" ? null : (JSON.parse(currentJson) as Record<string, unknown>));
+  }, [currentJson]);
 
   async function submit() {
     const v = value();
@@ -207,7 +221,7 @@ export function QuestionForm({
       {notice && <Notice kind="warning">{notice}</Notice>}
       {q.locked && <Notice kind="info">{t("common.phaseLocked")}</Notice>}
 
-      {!q.locked && !reveal && (
+      {!q.locked && !reveal && !hideSubmit && (
         <Button onClick={submit} disabled={busy || !ready}>
           {busy ? t("common.sending") : (submitLabel ?? t("common.send"))}
         </Button>
