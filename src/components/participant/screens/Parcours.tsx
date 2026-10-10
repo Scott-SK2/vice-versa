@@ -8,6 +8,7 @@ import { useParticipant } from "@/lib/participant/client/store";
 import { useApiData } from "../hooks";
 import { Button, LinkButton, Loading, Notice, Pill, Screen, type StationState, Title } from "../ui";
 import { type MapStation, VenueMap } from "../VenueMap";
+import { QrScanner } from "../QrScanner";
 import { Guard } from "./Guard";
 
 export type ProgressPayload = {
@@ -189,6 +190,13 @@ function ScannerInner() {
   return (
     <Screen>
       <Title>{t("scanner.title")}</Title>
+      <QrScanner
+        t={t}
+        onDetect={(target) => {
+          if (target.kind === "station") router.push(`/vv26/s/${target.code}?k=${encodeURIComponent(target.token)}`);
+          else router.push("/vv26");
+        }}
+      />
       <p className="text-muted">{t("scanner.instruction")}</p>
       <form onSubmit={submit} className="flex flex-col gap-3">
         <input
