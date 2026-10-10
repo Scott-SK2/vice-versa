@@ -8,7 +8,8 @@ import { useParticipant } from "@/lib/participant/client/store";
 import { useApiData, useSubmitAnswer } from "../hooks";
 import { type QuestionDto, QuestionForm } from "../QuestionForm";
 import { Button, LinkButton, Loading, Notice, Pill, Screen, type StationState, Title } from "../ui";
-import { type MediaDto, VideoPlayer } from "../VideoPlayer";
+import { MediaCarousel } from "../MediaCarousel";
+import type { MediaDto } from "../VideoPlayer";
 import { Guard } from "./Guard";
 
 type StationPayload = {
@@ -103,12 +104,12 @@ function StationInner({ code, qrToken }: { code: string; qrToken: string | null 
   const nothingToDo = requiredQs.length === 0 && data.media.length === 0;
   const langs = ["fr", "nl", "en"];
 
-  async function onMediaProgress(ratio: number) {
+  async function onMediaProgress(ratio: number, ref: string) {
     if (!mediaOnly || s.state === "completed") return;
     try {
       const r = await api<{ station: { code: string; state: StationState }; progress: StationPayload["progress"] }>(`/api/stations/${code}/media-progress`, {
         method: "POST",
-        body: { media_ref: data!.media[0].ref, progress: ratio },
+        body: { media_ref: ref, progress: ratio },
       });
       setProgress(r.progress);
       if (r.station.state === "completed") {
@@ -140,9 +141,7 @@ function StationInner({ code, qrToken }: { code: string; qrToken: string | null 
       )}
 
       {data.media.length === 0 && !nothingToDo && <Notice kind="info">{t("station.noMedia")}</Notice>}
-      {data.media.map((m) => (
-        <VideoPlayer key={m.ref} media={m} lang={lang} langs={langs} t={t} onProgress={onMediaProgress} />
-      ))}
+      {data.media.length > 0 && <MediaCarousel media={data.media} lang={lang} langs={langs} t={t} onProgress={onMediaProgress} />}
       {mediaOnly && s.state !== "completed" && !isReadOnly && <p className="text-center text-sm text-muted">{t("station.watchToContinue")}</p>}
 
       {data.questions.map((q) => (

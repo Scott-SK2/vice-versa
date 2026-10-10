@@ -27,9 +27,13 @@ describe("contenu vv26", () => {
     expect(bundle.questions.find((q) => q.phase === "trace")?.type).toBe("short_text");
   });
 
-  it("référence les 12 photos et 24 vidéos du catalogue", () => {
-    expect(bundle.media.filter((m) => m.type === "image")).toHaveLength(12);
-    expect(bundle.media.filter((m) => m.type === "video")).toHaveLength(24);
+  it("référence les 9 photos et 8 vidéos du lot du 10 octobre, chaque station dans l'ordre", () => {
+    expect(bundle.media.filter((m) => m.type === "image")).toHaveLength(9);
+    expect(bundle.media.filter((m) => m.type === "video")).toHaveLength(8);
+    for (const code of ["A", "1", "4"]) {
+      const positions = bundle.media.filter((m) => m.station === code).map((m) => m.position);
+      expect(positions).toEqual(positions.map((_, i) => i + 1));
+    }
   });
 
   it("détecte une incohérence", () => {
