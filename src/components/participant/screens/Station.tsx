@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api, ParticipantApiError } from "@/lib/participant/client/api";
+import { storage } from "@/lib/participant/client/storage";
 import { useParticipant } from "@/lib/participant/client/store";
 import { useApiData, useSubmitAnswer } from "../hooks";
 import { type QuestionDto, QuestionForm } from "../QuestionForm";
@@ -21,6 +22,11 @@ type StationPayload = {
 };
 
 export function StationScreen({ code, qrToken }: { code: string; qrToken: string | null }) {
+  const { status } = useParticipant();
+  useEffect(() => {
+    // Scan d'une station sans session : on mémorise pour y revenir après Commencer et les questions « Avant ».
+    if (qrToken && (status === "anonymous" || status === "none")) storage.setPendingScan({ code, k: qrToken });
+  }, [qrToken, code, status]);
   return (
     <Guard>
       <StationInner code={code} qrToken={qrToken} />
@@ -44,6 +50,7 @@ function StationInner({ code, qrToken }: { code: string; qrToken: string | null 
         method: "POST",
         body: { token: qrToken },
       });
+      storage.setPendingScan(null);
       setProgress(r.progress);
       setNeedsBefore(r.needs_before_questions);
       setReadOnly(r.station.read_only);

@@ -2,7 +2,7 @@ import jsQR from "jsqr";
 import { PNG } from "pngjs";
 import { describe, expect, it } from "vitest";
 import { contentDir, loadContent } from "@/lib/content/load";
-import { qrPng, qrSvg, sheetHtml, shortUrl, stationUrl } from "@/lib/qr/render";
+import { qrPng, qrSvg, sheetHtml, shortUrl, stationUrl, entryUrl } from "@/lib/qr/render";
 
 const bundle = loadContent(contentDir("vv26"));
 const base = "https://viceversa.example.be";
@@ -13,10 +13,11 @@ function decode(png: Buffer): string | null {
 }
 
 describe("QR codes", () => {
-  it("construit les URL du cahier : accueil sans jeton, stations avec jeton", () => {
+  it("construit les URL : entrée sans jeton, chaque station (A comprise) avec son jeton", () => {
     const a = bundle.stations.find((s) => s.code === "A")!;
     const s3 = bundle.stations.find((s) => s.code === "3")!;
-    expect(stationUrl(base, "vv26", a)).toBe(`${base}/vv26`);
+    expect(stationUrl(base, "vv26", a)).toBe(`${base}/vv26/s/A?k=${a.qr_token}`);
+    expect(entryUrl(base, "vv26")).toBe(`${base}/vv26`);
     expect(stationUrl(base, "vv26", s3)).toBe(`${base}/vv26/s/3?k=${s3.qr_token}`);
     expect(shortUrl(base, "vv26")).toBe("viceversa.example.be/vv26");
   });

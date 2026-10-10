@@ -165,6 +165,11 @@ export function ParticipantProvider({ children }: { children: React.ReactNode })
       setRun(r.run);
       lastPhase.current = r.run.phase;
       const m = await refreshMe();
+      const pending = storage.getPendingScan();
+      if (pending && m && m.suggested_route === "/vv26/parcours") {
+        router.push(`/vv26/s/${pending.code}?k=${pending.k}`);
+        return;
+      }
       router.push(m?.suggested_route ?? "/vv26/avant");
     },
     [refreshMe, router],
@@ -178,6 +183,7 @@ export function ParticipantProvider({ children }: { children: React.ReactNode })
 
   const reset = useCallback(() => {
     clearSession();
+    storage.setPendingScan(null);
     storage.setJson("vv.outbox", []);
     setStatus(run ? "anonymous" : "none");
   }, [clearSession, run]);

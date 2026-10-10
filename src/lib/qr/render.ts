@@ -7,12 +7,16 @@ import type { EventFile, StationFile } from "@/lib/content/schema";
 
 export const QR_OPTIONS = { errorCorrectionLevel: "H" as const, margin: 4 };
 
-/** URL portée par le QR. Le repère A ouvre l'accueil (règle 6 du cahier) ; les autres ouvrent la station avec son jeton. */
+/** URL portée par le QR d'une station, A comprise : la station s'ouvre avec son jeton. */
 export function stationUrl(baseUrl: string, eventSlug: string, station: Pick<StationFile, "code" | "qr_token">): string {
   const base = baseUrl.replace(/\/$/, "");
-  if (station.code === "A") return `${base}/${eventSlug}`;
   if (!station.qr_token) throw new Error(`Station ${station.code} sans jeton QR`);
   return `${base}/${eventSlug}/s/${station.code}?k=${station.qr_token}`;
+}
+
+/** URL du QR « Entrée » : ouvre l'application (choix de la langue, questions « Avant », parcours). */
+export function entryUrl(baseUrl: string, eventSlug: string): string {
+  return `${baseUrl.replace(/\/$/, "")}/${eventSlug}`;
 }
 
 /** URL courte imprimée sous le QR (sans jeton) ; le code court suffit pour déverrouiller. */
@@ -58,8 +62,8 @@ export function sheetHtml(event: EventFile, stations: SheetStation[], short: str
     <p class="scan">Scanne-moi avec l’appareil photo · Scan me met je camera · Scan me with your camera</p>
     <div class="fallback">
       <p class="url">${esc(short)}</p>
-      <p class="label">Sans QR, saisis le code · Zonder QR, voer de code in · Without QR, enter the code</p>
-      <p class="short">${esc(s.shortCode)}</p>
+      ${s.shortCode ? `<p class="label">Sans QR, saisis le code · Zonder QR, voer de code in · Without QR, enter the code</p>
+      <p class="short">${esc(s.shortCode)}</p>` : `<p class="label">Sans QR, tape cette adresse · Zonder QR, typ dit adres · Without QR, type this address</p>`}
     </div>
   </section>`,
     )
