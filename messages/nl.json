@@ -7,6 +7,7 @@
   "common.continue": "Doorgaan",
   "common.back": "Terug",
   "common.send": "Mijn antwoord versturen",
+  "common.sendAll": "Mijn antwoorden versturen",
   "common.sending": "Versturen…",
   "common.saved": "Antwoord opgeslagen",
   "common.queued": "Geen netwerk: je antwoord wordt automatisch verstuurd.",
