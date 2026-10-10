@@ -72,9 +72,9 @@ export function VideoPlayer({ media, lang, langs, t, onProgress }: { media: Medi
 
   if (media.type === "image") {
     return (
-      <figure className="overflow-hidden rounded-card bg-ink">
+      <figure className="relative mx-auto aspect-[9/16] w-full max-w-[360px] overflow-hidden rounded-card bg-ink">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={media.url} alt="" className="mx-auto max-h-[70vh] w-auto" onLoad={() => report(1)} />
+        <img src={media.url} alt="" className="h-full w-full object-contain" onLoad={() => report(1)} />
       </figure>
     );
   }

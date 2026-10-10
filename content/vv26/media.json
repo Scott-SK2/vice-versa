@@ -1,24 +1,25 @@
 [
   {
-    "ref": "VV-P01",
+    "ref": "VV-P41",
     "station": "A",
     "type": "image",
     "position": 1,
-    "file": "VV-P01_groupe-aeroport.jpg",
+    "file": "VV-P41_A-1.jpg",
     "orientation": "landscape",
-    "note": "Groupe à l’aéroport avec valises (Image 23.25.46, paysage 2048×1536). Aussi rattachée à 3 et 8 dans le cahier : une seule station porteuse ici, les autres la réutiliseront par référence.",
+    "note": "Fichier A.1.jpeg du dossier vv-sources (10 octobre), station A.",
     "consent_status": "granted"
   },
   {
-    "ref": "VV-V12",
+    "ref": "VV-V41",
     "station": "A",
     "type": "video",
     "position": 2,
-    "file": "VV-V12_ambiance-bus.mp4",
-    "poster": "VV-V12.jpg",
-    "duration_s": 28.4,
-    "note": "Ambiance dans le bus (Video 23.37.22).",
+    "file": "VV-V41_A-2.mp4",
+    "orientation": "portrait",
+    "note": "Fichier A.2.mp4 du dossier vv-sources (10 octobre), station A.",
     "consent_status": "granted",
+    "poster": "VV-V41.jpg",
+    "duration_s": 70.5,
     "captions": {
       "fr": {
         "status": "auto"
@@ -32,34 +33,16 @@
     }
   },
   {
-    "ref": "VV-V13",
-    "station": "A",
-    "type": "video",
-    "position": 3,
-    "file": "VV-V13_bus-chants.mp4",
-    "poster": "VV-V13.jpg",
-    "duration_s": 70,
-    "note": "Bus, chants et ambiance (Video 23.37.27, fichier le plus lourd, 13 Mo avant encodage)."
-  },
-  {
-    "ref": "VV-P05",
-    "station": "1",
-    "type": "image",
-    "position": 1,
-    "file": "VV-P05_rue-batiment.jpg",
-    "note": "Rue, marche vers un bâtiment (Image 23.37.02 (1)).",
-    "consent_status": "granted"
-  },
-  {
-    "ref": "VV-V24",
+    "ref": "VV-V42",
     "station": "1",
     "type": "video",
-    "position": 2,
-    "file": "VV-V24_rue-immeubles.mp4",
-    "poster": "VV-V24.jpg",
-    "duration_s": 16.8,
-    "note": "Rue, immeubles (Video 23.46.13, son faible).",
+    "position": 1,
+    "file": "VV-V42_1-1.mp4",
+    "orientation": "portrait",
+    "note": "Fichier 1.1.mp4 du dossier vv-sources (10 octobre), station 1.",
     "consent_status": "granted",
+    "poster": "VV-V42.jpg",
+    "duration_s": 30.4,
     "captions": {
       "fr": {
         "status": "auto"
@@ -73,287 +56,145 @@
     }
   },
   {
-    "ref": "VV-P07",
+    "ref": "VV-P42",
+    "station": "1",
+    "type": "image",
+    "position": 2,
+    "file": "VV-P42_1-2.jpg",
+    "orientation": "portrait",
+    "note": "Fichier 1.2.jpeg du dossier vv-sources (10 octobre), station 1.",
+    "consent_status": "granted"
+  },
+  {
+    "ref": "VV-P43",
+    "station": "1",
+    "type": "image",
+    "position": 3,
+    "file": "VV-P43_1-3.jpg",
+    "orientation": "portrait",
+    "note": "Fichier 1.3.jpeg du dossier vv-sources (10 octobre), station 1.",
+    "consent_status": "granted"
+  },
+  {
+    "ref": "VV-V43",
     "station": "2",
-    "type": "image",
+    "type": "video",
     "position": 1,
-    "file": "VV-P07_rue-kinshasa.jpg",
-    "note": "Rue de Kinshasa, homme en vert (Image 23.37.02).",
+    "file": "VV-V43_2-1.mp4",
+    "orientation": "portrait",
+    "note": "Fichier 2.1.mp4 du dossier vv-sources (10 octobre), station 2.",
+    "consent_status": "granted",
+    "poster": "VV-V43.jpg",
+    "duration_s": 28.7,
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
+  },
+  {
+    "ref": "VV-V44",
+    "station": "3",
+    "type": "video",
+    "position": 1,
+    "file": "VV-V44_3-1.mp4",
+    "orientation": "portrait",
+    "note": "Fichier 3.1.mp4 du dossier vv-sources (10 octobre), station 3.",
+    "consent_status": "granted",
+    "poster": "VV-V44.jpg",
+    "duration_s": 58.5,
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
+  },
+  {
+    "ref": "VV-V45",
+    "station": "4",
+    "type": "video",
+    "position": 1,
+    "file": "VV-V45_4-1.mp4",
+    "orientation": "portrait",
+    "note": "Fichier 4.1.mp4 du dossier vv-sources (10 octobre), station 4.",
+    "consent_status": "granted",
+    "poster": "VV-V45.jpg",
+    "duration_s": 26,
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
+  },
+  {
+    "ref": "VV-P44",
+    "station": "4",
+    "type": "image",
+    "position": 2,
+    "file": "VV-P44_4-2.jpg",
+    "orientation": "landscape",
+    "note": "Fichier 4.2.jpeg du dossier vv-sources (10 octobre), station 4.",
     "consent_status": "granted"
   },
   {
-    "ref": "VV-V02",
-    "station": "2",
-    "type": "video",
-    "position": 2,
-    "file": "VV-V02_moto-ville.mp4",
-    "poster": "VV-V02.jpg",
-    "duration_s": 6,
-    "note": "Groupe à moto en ville (Video 23.37.03)."
-  },
-  {
-    "ref": "VV-V06",
-    "station": "2",
-    "type": "video",
-    "position": 3,
-    "file": "VV-V06_moto-taxi.mp4",
-    "poster": "VV-V06.jpg",
-    "duration_s": 11.1,
-    "note": "Moto dans la rue, taxi jaune (Video 23.37.10).",
-    "consent_status": "granted",
-    "captions": {
-      "fr": {
-        "status": "auto"
-      },
-      "nl": {
-        "status": "auto"
-      },
-      "en": {
-        "status": "auto"
-      }
-    }
-  },
-  {
-    "ref": "VV-P11",
-    "station": "3",
+    "ref": "VV-P45",
+    "station": "4",
     "type": "image",
-    "position": 1,
-    "file": "VV-P11_trois-membres.jpg",
-    "note": "Trois membres du groupe (Image 23.46.14). Aussi rattachée à 6.",
+    "position": 3,
+    "file": "VV-P45_4-3.jpg",
+    "orientation": "portrait",
+    "note": "Fichier 4.3.jpeg du dossier vv-sources (10 octobre), station 4.",
     "consent_status": "granted"
   },
   {
-    "ref": "VV-V01",
-    "station": "3",
-    "type": "video",
-    "position": 2,
-    "file": "VV-V01_femme-tshirt.mp4",
-    "poster": "VV-V01.jpg",
-    "duration_s": 21.7,
-    "note": "Femme face caméra, t-shirt VICE VERSA (Video 23.37.03 (1)), quasi-témoignage.",
-    "consent_status": "granted",
-    "captions": {
-      "fr": {
-        "status": "auto"
-      },
-      "nl": {
-        "status": "auto"
-      },
-      "en": {
-        "status": "auto"
-      }
-    }
-  },
-  {
-    "ref": "VV-V08",
-    "station": "3",
-    "type": "video",
-    "position": 3,
-    "file": "VV-V08_groupe-tshirts.mp4",
-    "poster": "VV-V08.jpg",
-    "duration_s": 29,
-    "note": "Groupe en t-shirts, drapeau RDC (Video 23.37.15 (1)), son saturé : ambiance sous voix off uniquement."
-  },
-  {
-    "ref": "VV-V10",
-    "station": "3",
-    "type": "video",
-    "position": 4,
-    "file": "VV-V10_appartement-membre.mp4",
-    "poster": "VV-V10.jpg",
-    "duration_s": 56,
-    "note": "Appartement, membre du groupe (Video 23.37.17)."
-  },
-  {
-    "ref": "VV-P06",
+    "ref": "VV-P46",
     "station": "4",
     "type": "image",
-    "position": 1,
-    "file": "VV-P06_mur-peint.jpg",
-    "note": "Deux membres devant un mur peint (Image 23.37.02 (2)).",
+    "position": 4,
+    "file": "VV-P46_4-5.jpg",
+    "orientation": "portrait",
+    "note": "Fichier 4.5.jpeg du dossier vv-sources (10 octobre), station 4.",
     "consent_status": "granted"
   },
   {
-    "ref": "VV-V15",
-    "station": "4",
-    "type": "video",
-    "position": 2,
-    "file": "VV-V15_voiture-nuit.mp4",
-    "poster": "VV-V15.jpg",
-    "duration_s": 15.3,
-    "note": "Trajet en voiture de nuit (Video 23.37.32).",
-    "consent_status": "granted",
-    "captions": {
-      "fr": {
-        "status": "auto"
-      },
-      "nl": {
-        "status": "auto"
-      },
-      "en": {
-        "status": "auto"
-      }
-    }
-  },
-  {
-    "ref": "VV-V18",
-    "station": "4",
-    "type": "video",
-    "position": 3,
-    "file": "VV-V18_quartier-tole.mp4",
-    "poster": "VV-V18.jpg",
-    "duration_s": 17,
-    "note": "Quartier, abri en tôle (Video 23.37.52)."
-  },
-  {
-    "ref": "VV-V22",
-    "station": "4",
-    "type": "video",
-    "position": 4,
-    "file": "VV-V22_grand-hall.mp4",
-    "poster": "VV-V22.jpg",
-    "duration_s": 13,
-    "note": "Grand hall, groupe qui marche (Video 23.38.14), aucune piste audio : ambiance sous voix off uniquement."
-  },
-  {
-    "ref": "VV-P02",
+    "ref": "VV-P47",
     "station": "5",
     "type": "image",
     "position": 1,
-    "file": "VV-P02_rencontre-institutionnelle.jpg",
-    "note": "Rencontre institutionnelle, 4 personnes (Image 23.29.29 (1)), logos partenaires visibles."
-  },
-  {
-    "ref": "VV-P03",
-    "station": "5",
-    "type": "image",
-    "position": 2,
-    "file": "VV-P03_reunion.jpg",
-    "note": "Réunion, échange en cours (Image 23.29.29 (2))."
-  },
-  {
-    "ref": "VV-P04",
-    "station": "5",
-    "type": "image",
-    "position": 3,
-    "file": "VV-P04_photo-groupe-institutionnelle.jpg",
-    "note": "Photo de groupe institutionnelle (Image 23.29.29), logos partenaires visibles.",
+    "file": "VV-P47_5-1.jpg",
+    "orientation": "portrait",
+    "note": "Fichier 5.1.jpeg du dossier vv-sources (10 octobre), station 5.",
     "consent_status": "granted"
   },
   {
-    "ref": "VV-P08",
-    "station": "5",
-    "type": "image",
-    "position": 4,
-    "file": "VV-P08_intervenant-micro.jpg",
-    "note": "Intervenant au micro (Image 23.46.14 (1))."
-  },
-  {
-    "ref": "VV-P09",
-    "station": "5",
-    "type": "image",
-    "position": 5,
-    "file": "VV-P09_intervenant-micro-ont.jpg",
-    "note": "Intervenant au micro, logo Office National du Tourisme (Image 23.46.14 (2))."
-  },
-  {
-    "ref": "VV-P10",
-    "station": "5",
-    "type": "image",
-    "position": 6,
-    "file": "VV-P10_stand-produits.jpg",
-    "note": "Stand de produits, deux femmes (Image 23.46.14 (3))."
-  },
-  {
-    "ref": "VV-P12",
-    "station": "5",
-    "type": "image",
-    "position": 7,
-    "file": "VV-P12_stand-produits-naturels.jpg",
-    "note": "Stand de produits naturels, chaussures (Image 23.46.15)."
-  },
-  {
-    "ref": "VV-V03",
-    "station": "5",
-    "type": "video",
-    "position": 8,
-    "file": "VV-V03_reunion-documents.mp4",
-    "poster": "VV-V03.jpg",
-    "duration_s": 14.4,
-    "note": "Réunion, documents sur la table (Video 23.37.05), son faible.",
-    "consent_status": "granted",
-    "captions": {
-      "fr": {
-        "status": "auto"
-      },
-      "nl": {
-        "status": "auto"
-      },
-      "en": {
-        "status": "auto"
-      }
-    }
-  },
-  {
-    "ref": "VV-V09",
-    "station": "5",
-    "type": "video",
-    "position": 9,
-    "file": "VV-V09_reunion-robe-verte.mp4",
-    "poster": "VV-V09.jpg",
-    "duration_s": 12,
-    "note": "Réunion, femme en robe verte (Video 23.37.15), son faible."
-  },
-  {
-    "ref": "VV-V04",
-    "station": "5",
-    "type": "video",
-    "position": 10,
-    "file": "VV-V04_studio.mp4",
-    "poster": "VV-V04.jpg",
-    "duration_s": 12,
-    "note": "Pièce avec matériel de studio (Video 23.37.08)."
-  },
-  {
-    "ref": "VV-V11",
+    "ref": "VV-V46",
     "station": "6",
     "type": "video",
     "position": 1,
-    "file": "VV-V11_plage.mp4",
-    "poster": "VV-V11.jpg",
-    "duration_s": 8,
-    "note": "Plage, groupe (Video 23.37.19)."
-  },
-  {
-    "ref": "VV-V14",
-    "station": "6",
-    "type": "video",
-    "position": 2,
-    "file": "VV-V14_fleuve.mp4",
-    "poster": "VV-V14.jpg",
-    "duration_s": 16,
-    "note": "Bord du fleuve (Video 23.37.29)."
-  },
-  {
-    "ref": "VV-V17",
-    "station": "6",
-    "type": "video",
-    "position": 3,
-    "file": "VV-V17_salon.mp4",
-    "poster": "VV-V17.jpg",
-    "duration_s": 13,
-    "note": "Groupe réuni dans un salon (Video 23.37.47)."
-  },
-  {
-    "ref": "VV-V19",
-    "station": "6",
-    "type": "video",
-    "position": 4,
-    "file": "VV-V19_salon-festif.mp4",
-    "poster": "VV-V19.jpg",
-    "duration_s": 15.9,
-    "note": "Salon, moment festif (Video 23.37.55).",
+    "file": "VV-V46_6-1.mp4",
+    "orientation": "portrait",
+    "note": "Fichier 6.1.mp4 du dossier vv-sources (10 octobre), station 6.",
     "consent_status": "granted",
+    "poster": "VV-V46.jpg",
+    "duration_s": 37.4,
     "captions": {
       "fr": {
         "status": "auto"
@@ -367,87 +208,69 @@
     }
   },
   {
-    "ref": "VV-V20",
+    "ref": "VV-V47",
     "station": "6",
     "type": "video",
-    "position": 5,
-    "file": "VV-V20_xylophone.mp4",
-    "poster": "VV-V20.jpg",
-    "duration_s": 53,
-    "note": "Atelier d’instruments, xylophone (Video 23.38.08)."
+    "position": 2,
+    "file": "VV-V47_6-2.mp4",
+    "orientation": "portrait",
+    "note": "Fichier 6.2.mp4 du dossier vv-sources (10 octobre), station 6.",
+    "consent_status": "granted",
+    "poster": "VV-V47.jpg",
+    "duration_s": 38.7,
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
-    "ref": "VV-V07",
+    "ref": "VV-V48",
     "station": "7",
     "type": "video",
     "position": 1,
-    "file": "VV-V07_terrain-groupe.mp4",
-    "poster": "VV-V07.jpg",
-    "duration_s": 10,
-    "note": "Terrain dégagé, groupe qui marche (Video 23.37.12), son faible."
+    "file": "VV-V48_7-1.mp4",
+    "orientation": "portrait",
+    "note": "Fichier 7.1.mp4 du dossier vv-sources (10 octobre), station 7.",
+    "consent_status": "granted",
+    "poster": "VV-V48.jpg",
+    "duration_s": 49.9,
+    "captions": {
+      "fr": {
+        "status": "auto"
+      },
+      "nl": {
+        "status": "auto"
+      },
+      "en": {
+        "status": "auto"
+      }
+    }
   },
   {
-    "ref": "VV-V16",
+    "ref": "VV-P48",
     "station": "7",
-    "type": "video",
+    "type": "image",
     "position": 2,
-    "file": "VV-V16_terrain-homme.mp4",
-    "poster": "VV-V16.jpg",
-    "duration_s": 15,
-    "note": "Terrain, homme qui marche (Video 23.37.34).",
-    "consent_status": "granted",
-    "captions": {
-      "fr": {
-        "status": "auto"
-      },
-      "nl": {
-        "status": "auto"
-      },
-      "en": {
-        "status": "auto"
-      }
-    }
+    "file": "VV-P48_7-2.jpg",
+    "orientation": "portrait",
+    "note": "Fichier 7.2.jpeg du dossier vv-sources (10 octobre), station 7.",
+    "consent_status": "granted"
   },
   {
-    "ref": "VV-V05",
+    "ref": "VV-P49",
     "station": "8",
-    "type": "video",
+    "type": "image",
     "position": 1,
-    "file": "VV-V05_fresque-guitare.mp4",
-    "poster": "VV-V05.jpg",
-    "duration_s": 23,
-    "note": "Écran TV, fresque murale guitare (Video 23.37.09), son faible."
-  },
-  {
-    "ref": "VV-V21",
-    "station": "8",
-    "type": "video",
-    "position": 2,
-    "file": "VV-V21_bus-ambiance.mp4",
-    "poster": "VV-V21.jpg",
-    "duration_s": 17,
-    "note": "Bus, ambiance (Video 23.38.12).",
-    "consent_status": "granted",
-    "captions": {
-      "fr": {
-        "status": "auto"
-      },
-      "nl": {
-        "status": "auto"
-      },
-      "en": {
-        "status": "auto"
-      }
-    }
-  },
-  {
-    "ref": "VV-V23",
-    "station": "8",
-    "type": "video",
-    "position": 3,
-    "file": "VV-V23_piece-groupe.mp4",
-    "poster": "VV-V23.jpg",
-    "duration_s": 8,
-    "note": "Pièce, groupe (Video 23.38.17)."
+    "file": "VV-P49_8-3.jpg",
+    "orientation": "portrait",
+    "note": "Fichier 8.3.jpeg du dossier vv-sources (10 octobre), station 8.",
+    "consent_status": "granted"
   }
 ]
