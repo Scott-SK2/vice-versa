@@ -1,56 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760" role="img" aria-label="Plan simplifié du lieu : salle principale à droite, par laquelle on entre, couloir d’exposition autour de deux blocs">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1100" role="img" aria-label="Plan simplifié : tout l’atelier se déroule dans la salle principale">
   <!--
-    Plan d’après le croquis des organisateurs (9 octobre) : on entre par la salle principale (SP),
-    à droite, qui accueille l’accueil, quatre stations et la clôture ; le couloir d’exposition
-    (espace blanc) entoure deux blocs hachurés et accueille les quatre autres stations ; zones
-    non utilisées hachurées en haut et en bas à droite. Les pastilles ne sont pas dessinées ici :
-    l’application les superpose d’après x_pct / y_pct de content/vv26/stations.json (repère :
-    ce viewBox, 1000 × 760).
+    Plan du 10 octobre : tout l’atelier se tient dans la salle principale. Écran de projection en
+    haut, chaises de la discussion au centre, entrée en bas à gauche, stations le long des murs en
+    boucle (A à l’entrée, 1 à 3 sur le mur gauche, 4 et 5 en haut, 6 à 8 sur le mur droit, Z en bas
+    à droite). Les pastilles ne sont pas dessinées ici : l’application les superpose d’après
+    x_pct / y_pct de content/vv26/stations.json (repère : ce viewBox, 1000 × 1100).
   -->
   <defs>
-    <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="14" height="14" fill="#E8EFF6"/>
-      <line x1="0" y1="0" x2="0" y2="14" stroke="#B9CBDD" stroke-width="3"/>
-    </pattern>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0 0 L10 5 L0 10 z" fill="#2E7D4F"/>
     </marker>
   </defs>
 
-  <!-- fond -->
-  <rect width="1000" height="760" fill="#FAF6EC"/>
+  <rect width="1000" height="1100" fill="#FAF6EC"/>
+  <!-- salle -->
+  <rect x="40" y="40" width="920" height="960" fill="#EEF0E3"/>
 
-  <!-- couloir / exposition (tout l’espace blanc) -->
-  <rect x="40" y="40" width="600" height="680" fill="#F6F1E4"/>
-  <!-- salle principale -->
-  <rect x="640" y="130" width="320" height="500" fill="#EEF0E3"/>
+  <!-- écran / projection -->
+  <rect x="330" y="56" width="340" height="30" rx="4" fill="#D9E4EE" stroke="#9FB4C8" stroke-width="3"/>
+  <text x="500" y="118" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" fill="#5A6560">Écran · projection</text>
 
-  <!-- blocs centraux et zones non utilisées -->
-  <rect x="280" y="150" width="120" height="140" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <rect x="280" y="440" width="120" height="140" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <rect x="640" y="40" width="320" height="90" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <rect x="640" y="630" width="320" height="90" fill="url(#hatch)" stroke="#B9CBDD" stroke-width="3"/>
-  <text x="800" y="92" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#7A8580">non utilisé</text>
-  <text x="800" y="682" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" fill="#7A8580">non utilisé</text>
-
-  <!-- libellés -->
-  <text x="800" y="565" text-anchor="middle" font-family="system-ui, sans-serif" font-size="24" font-weight="700" fill="#3F4A45">Salle principale</text>
-  <text x="340" y="372" text-anchor="middle" font-family="system-ui, sans-serif" font-size="22" font-weight="700" fill="#3F4A45">Couloir · exposition</text>
-
-  <!-- murs -->
-  <g fill="none" stroke="#3F4A45" stroke-width="10" stroke-linejoin="round">
-    <!-- enceinte fermée -->
-    <path d="M40 40 H960 V720 H40 Z"/>
-    <!-- cloison salle / couloir, avec la porte -->
-    <path d="M640 40 V330 M640 410 V720"/>
-    <!-- séparations de la salle principale -->
-    <path d="M640 130 H960 M640 630 H960"/>
+  <!-- chaises de la discussion -->
+  <g fill="#D5D2C8">
+    <rect x="365" y="360" width="34" height="24" rx="5"/><rect x="415" y="360" width="34" height="24" rx="5"/><rect x="465" y="360" width="34" height="24" rx="5"/><rect x="515" y="360" width="34" height="24" rx="5"/><rect x="565" y="360" width="34" height="24" rx="5"/><rect x="615" y="360" width="34" height="24" rx="5"/>
+    <rect x="365" y="420" width="34" height="24" rx="5"/><rect x="415" y="420" width="34" height="24" rx="5"/><rect x="465" y="420" width="34" height="24" rx="5"/><rect x="515" y="420" width="34" height="24" rx="5"/><rect x="565" y="420" width="34" height="24" rx="5"/><rect x="615" y="420" width="34" height="24" rx="5"/>
+    <rect x="365" y="480" width="34" height="24" rx="5"/><rect x="415" y="480" width="34" height="24" rx="5"/><rect x="465" y="480" width="34" height="24" rx="5"/><rect x="515" y="480" width="34" height="24" rx="5"/><rect x="565" y="480" width="34" height="24" rx="5"/><rect x="615" y="480" width="34" height="24" rx="5"/>
+    <rect x="365" y="540" width="34" height="24" rx="5"/><rect x="415" y="540" width="34" height="24" rx="5"/><rect x="465" y="540" width="34" height="24" rx="5"/><rect x="515" y="540" width="34" height="24" rx="5"/><rect x="565" y="540" width="34" height="24" rx="5"/><rect x="615" y="540" width="34" height="24" rx="5"/>
+    <rect x="365" y="600" width="34" height="24" rx="5"/><rect x="415" y="600" width="34" height="24" rx="5"/><rect x="465" y="600" width="34" height="24" rx="5"/><rect x="515" y="600" width="34" height="24" rx="5"/><rect x="565" y="600" width="34" height="24" rx="5"/><rect x="615" y="600" width="34" height="24" rx="5"/>
   </g>
-  <!-- battant de la porte, ouvert vers le couloir -->
-  <path d="M640 330 A80 80 0 0 0 560 410" fill="none" stroke="#3F4A45" stroke-width="4" stroke-dasharray="6 6"/>
+  <text x="500" y="690" text-anchor="middle" font-family="system-ui, sans-serif" font-size="30" font-weight="700" fill="#3F4A45">Salle principale</text>
+  <text x="500" y="722" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" fill="#5A6560">discussion collective</text>
 
-  <!-- entrée : par la salle principale, puis vers le couloir -->
-  <line x1="700" y1="400" x2="596" y2="400" stroke="#2E7D4F" stroke-width="5" marker-end="url(#arrow)"/>
-  <rect x="725" y="580" width="150" height="40" rx="10" fill="#1E5C3A"/>
-  <text x="800" y="607" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Entrée</text>
+  <!-- sens du parcours conseillé -->
+  <path d="M170 830 V760 M170 640 V560 M170 420 V340 M250 200 H320 M470 200 H530 M680 200 H750 M830 340 V420 M830 560 V640 M830 760 V830"
+        fill="none" stroke="#2E7D4F" stroke-width="4" stroke-dasharray="10 9" stroke-linecap="round" opacity=".7"/>
+
+  <!-- murs, avec l’entrée en bas à gauche -->
+  <path d="M230 1000 H960 V40 H40 V1000 H120" fill="none" stroke="#3F4A45" stroke-width="10" stroke-linejoin="round"/>
+  <!-- battant -->
+  <path d="M120 1000 A110 110 0 0 1 230 890" fill="none" stroke="#3F4A45" stroke-width="4" stroke-dasharray="6 6"/>
+
+  <!-- entrée -->
+  <line x1="175" y1="1078" x2="175" y2="1018" stroke="#2E7D4F" stroke-width="5" marker-end="url(#arrow)"/>
+  <rect x="250" y="1030" width="150" height="40" rx="10" fill="#1E5C3A"/>
+  <text x="325" y="1057" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">Entrée</text>
 </svg>
