@@ -194,7 +194,7 @@ describe("API participant", () => {
     // L'accueil porte un média publié (clip de test) : terminé à 80 % de lecture ; il ne compte jamais dans la progression.
     expect(scanA.body.station.state).toBe("in_progress");
     expect(scanA.body.progress.completed).toBe(2);
-    const mp = await call(postMediaProgress, "POST", "/api/stations/A/media-progress", { token, params: { code: "A" }, body: { media_ref: "VV-V12", progress: 0.85 } });
+    const mp = await call(postMediaProgress, "POST", "/api/stations/A/media-progress", { token, params: { code: "A" }, body: { media_ref: "VV-V41", progress: 0.85 } });
     expect(mp.body.station.state).toBe("completed");
     expect(mp.body.progress.completed).toBe(2);
     const p = await call(getProgress, "GET", "/api/me/progress", { token });
