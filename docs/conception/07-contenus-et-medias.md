@@ -25,7 +25,7 @@ content/vv26/
 
 ```json
 { "slug": "vv26", "name": "VICE VERSA — Deux regards, deux continents", "languages": ["fr", "nl", "en"], "default_lang": "fr", "required_stations": 8,
-  "map": { "file": "map.svg", "width": 1000, "height": 1333 } }
+  "map": { "file": "map.svg", "width": 1000, "height": 1100 } }
 ```
 
 ### `stations.json`
